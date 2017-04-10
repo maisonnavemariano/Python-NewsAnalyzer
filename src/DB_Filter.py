@@ -5,10 +5,13 @@ stopwords = []
 with open("../stopwords/SmartStoplist.txt") as f:
     stopwords = f.read().splitlines()
 
+def hasNumbers(inputString):
+    return any(char.isdigit() for char in inputString)
+
 # * * * * * * * * * * * * * * * * * * Document class Definition * * * * * * * * * * * * * * * * * *
 class Document(object):
 
-    PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-:/;\ "
+    PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
     def __init__(self, title, date = ""):
         self.words = {}
@@ -20,7 +23,7 @@ class Document(object):
         text = "".join(c for c in text if c in self.PERMITTED_CHARS)
         words_array = text.split(" ")
         for word in words_array:
-            if not word in stopwords and len(word)>0:
+            if not word in stopwords and len(word)>0 and not hasNumbers(word):
                 if word in self.words:
                     self.words[word] = self.words[word]+1
                 else:
@@ -28,7 +31,7 @@ class Document(object):
 
 # * * * * * * * * * * * * * * * * * *  End of class Definition  * * * * * * * * * * * * * * * * * *
 
-INPUT = "../db/Enero10"
+INPUT = "../db/Enero"
 OUTPUT = "../db/EneroFiltrado"
 
 TITLE       = "webTitle: "
@@ -75,12 +78,19 @@ for article in articles:
     document.date = article.date
     documents.add(document)
 
-def hasNumbers(inputString):
-    return any(char.isdigit() for char in inputString)
 
-
+todas_las_palabras = set()
 for d in documents:
     for word in d.words:
-        if(hasNumbers(word)):
-            print(word)
+        todas_las_palabras.add(word)
+
+
+writer = open(OUTPUT,"w")
+for document in documents:
+    writer.write("title: "+document.title+"\n")
+    writer.write("date: "+document.date+"\n")
+    writer.write("text: "+str(document.words)+"\n")
+
+
 print("Hay "+str(len(articles))+" articulos validos de "+str(total_articles)+".")
+print("Hay un total de "+str(len(todas_las_palabras))+ " palabras distintas en el dataset.")
