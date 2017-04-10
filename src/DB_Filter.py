@@ -1,7 +1,34 @@
 #!/usr/bin/python3
 from Article import Article
 
-INPUT = "../db/Enero"
+stopwords = []
+with open("../stopwords/SmartStoplist.txt") as f:
+    stopwords = f.read().splitlines()
+
+# * * * * * * * * * * * * * * * * * * Document class Definition * * * * * * * * * * * * * * * * * *
+class Document(object):
+
+    PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-:/;\ "
+
+    def __init__(self, title, date = ""):
+        self.words = {}
+        self.date = date
+        self.title = title
+
+    def addText(self, text):
+        text = text.lower()
+        text = "".join(c for c in text if c in self.PERMITTED_CHARS)
+        words_array = text.split(" ")
+        for word in words_array:
+            if not word in stopwords and len(word)>0:
+                if word in self.words:
+                    self.words[word] = self.words[word]+1
+                else:
+                    self.words[word] = 1
+
+# * * * * * * * * * * * * * * * * * *  End of class Definition  * * * * * * * * * * * * * * * * * *
+
+INPUT = "../db/Enero10"
 OUTPUT = "../db/EneroFiltrado"
 
 TITLE       = "webTitle: "
@@ -12,6 +39,7 @@ DATE        = "webPublicationDate: "
 BODY        = "bodytext: "
 
 articles = set()
+documents = set()
 total_articles = 0
 
 with open(INPUT) as f:
@@ -38,4 +66,21 @@ with open(INPUT) as f:
             if (article.isValidArticle()):
                 articles.add(article)
 
+for article in articles:
+    document = Document(article.title)
+    document.addText(article.bodyText)
+    document.addText(article.trailText)
+    document.addText(article.headline)
+    document.addText(article.sectionName)
+    document.date = article.date
+    documents.add(document)
+
+def hasNumbers(inputString):
+    return any(char.isdigit() for char in inputString)
+
+
+for d in documents:
+    for word in d.words:
+        if(hasNumbers(word)):
+            print(word)
 print("Hay "+str(len(articles))+" articulos validos de "+str(total_articles)+".")

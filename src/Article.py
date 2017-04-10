@@ -2,6 +2,7 @@
 
 class Article(object):
 
+    PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_-"
 
     def __init__(self, title, sectionName='', headline='', trailtext='', bodyText='', date=''): #Default values '' if one of the parameters is not given.
         self.title       = title;
@@ -11,24 +12,9 @@ class Article(object):
         self.bodyText    = bodyText;
         self.date        = date;
 
-    def validArticle(self):
-        return len(self.BodyText)>0;
 
-    def setSection(self, sectionName):
-        self.sectionName = sectionName;
-
-    def setHeadline(self, headline):
-        self.headline = headline;
-
-    def setTrailText(self, trailText):
-        self.trailText = trailText;
-
-    def setBodyText(self, bodyText):
-        self.bodyText = bodyText;
-
-    def setDate(self, date):
-        self.date = date;
     def isValidArticle(self):
-        return len(self.bodyText)>0;
+        return len(self.bodyText)>0 and "".join(c for c in self.bodyText if c in self.PERMITTED_CHARS) ;
+
     def print(self):
         print(self.title + self.date );
