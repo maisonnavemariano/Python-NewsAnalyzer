@@ -1,8 +1,6 @@
-minister
+news
+world
+people
 years
-politics
-business
-country
-part
-made
-david
+year
+pthe

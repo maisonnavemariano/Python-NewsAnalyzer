@@ -62,16 +62,28 @@ umbral2 = (threshold2*len(todo_los_documentos))  # umbral = x
 umbral3 = (threshold3*len(todo_los_documentos))  # umbral = x
 umbral4 = (threshold4*len(todo_los_documentos))  # umbral = x
 
+count1 = 0
+count2 = 0
+count3 = 0
+count4 = 0
 for palabra in palabra_2_frec:
     if palabra_2_frec[palabra] > umbral1:
+        count1 = count1 + 1
         writer1.write(palabra+"\n")
     if palabra_2_frec[palabra] > umbral2:
+        count2 = count2 + 1
         writer2.write(palabra+"\n")
     if palabra_2_frec[palabra] > umbral3:
+        count3 = count3 + 1
         writer3.write(palabra+"\n")
     if palabra_2_frec[palabra] > umbral4:
+        count4 = count4 + 1
         writer4.write(palabra+"\n")
 
+print("Palabras filtradas con el umbral: {0} = {1}.".format(threshold1,count1))
+print("Palabras filtradas con el umbral: {0} = {1}.".format(threshold2,count2))
+print("Palabras filtradas con el umbral: {0} = {1}.".format(threshold3,count3))
+print("Palabras filtradas con el umbral: {0} = {1}.".format(threshold4,count4))
 writer1.close()
 writer2.close()
 writer3.close()

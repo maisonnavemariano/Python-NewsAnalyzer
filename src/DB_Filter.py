@@ -31,7 +31,7 @@ class Document(object):
 
 # * * * * * * * * * * * * * * * * * *  End of class Definition  * * * * * * * * * * * * * * * * * *
 
-INPUT = "../db/Enero"
+INPUT = "../db/noticias/enero"
 OUTPUT = "../db/EneroFiltrado"
 
 TITLE       = "webTitle: "
