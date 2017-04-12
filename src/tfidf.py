@@ -42,7 +42,6 @@ with open(INPUT) as f:
             #print(document.words)
             todo_los_documentos.add(document)
 
-
 mapeo_inverso = {}
 lista_palabras = []
 nro_palabra =0
