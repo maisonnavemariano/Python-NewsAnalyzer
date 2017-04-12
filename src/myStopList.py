@@ -2,7 +2,7 @@
 from DB_Filter import Document
 import operator
 INPUT = "../db/EneroFiltrado"
-threshold1 = 0.10
+threshold1 = 0.010
 threshold2 = 0.25
 threshold3 = 0.50
 threshold4 = 0.80
@@ -64,13 +64,13 @@ umbral4 = (threshold4*len(todo_los_documentos))  # umbral = x
 
 for palabra in palabra_2_frec:
     if palabra_2_frec[palabra] > umbral1:
-        writer1.write(palabra[1:-1]+"\n")
+        writer1.write(palabra+"\n")
     if palabra_2_frec[palabra] > umbral2:
-        writer2.write(palabra[1:-1]+"\n")
+        writer2.write(palabra+"\n")
     if palabra_2_frec[palabra] > umbral3:
-        writer3.write(palabra[1:-1]+"\n")
+        writer3.write(palabra+"\n")
     if palabra_2_frec[palabra] > umbral4:
-        writer4.write(palabra[1:-1]+"\n")
+        writer4.write(palabra+"\n")
 
 writer1.close()
 writer2.close()

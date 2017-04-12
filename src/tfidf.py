@@ -4,8 +4,13 @@ from DB_Filter import Document
 import numpy
 
 INPUT = "../db/EneroFiltrado"
-SMART_STOPWORDS = "../stopwords/myStopList0.1.txt"
+SMART_STOPWORDS = "../stopwords/myStopList0.01.txt"
 OUTPUT = "../db/tfidf_matrix.arff"
+
+stopwords = []
+with open(SMART_STOPWORDS) as f:
+    stopwords = f.read().splitlines()
+
 
 # RECUPERAMOS DOCUMENTOS
 
@@ -31,8 +36,9 @@ with open(INPUT) as f:
                 valor = par.split(": ")[1]       # frec
                 if "}" in valor:
                     valor = valor[:-1]
-                document.words[clave] = int(valor)
-                todas_las_palabras.add(clave)
+                if not clave in stopwords:
+                    document.words[clave] = int(valor)
+                    todas_las_palabras.add(clave)
             #print(document.words)
             todo_los_documentos.add(document)
 
