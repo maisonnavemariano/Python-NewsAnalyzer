@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 INPUT = "../db//noticias/febrero"
-#OUTPUT = "../db/Names"
+OUTPUT = "../db/Names"
 
 names = set()
 TITLE = "webTitle: "
