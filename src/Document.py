@@ -7,7 +7,7 @@ class Document(object):
     def __init__(self, title, date=""):
         self.words = {}
         self.date = date
-        self.title = title
+        self.title = "".join(c for c in title if c in self.PERMITTED_CHARS)
 
     def addText(self, text, stopwords):
         text = text.lower()

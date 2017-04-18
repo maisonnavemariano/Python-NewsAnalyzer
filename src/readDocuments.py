@@ -2,9 +2,12 @@
 from Article import Article
 from Document import Document
 def getDocuments(INPUT):
+    stopwords_files = ["../stopwords/SmartStoplist.txt", "../stopwords/ignored_words.txt"]
     stopwords = []
-    with open("../stopwords/SmartStoplist.txt") as f:
-        stopwords = f.read().splitlines()
+    for sw_file in stopwords_files:
+        with open(sw_file) as f:
+            words = f.read().splitlines()
+        stopwords = stopwords + words
 
 
     TITLE       = "webTitle: "

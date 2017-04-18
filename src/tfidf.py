@@ -1,46 +1,24 @@
 #!/usr/bin/python3
 
-from DB_Filter import Document
+from Document import Document
 import numpy
+from readDocuments import getDocuments
 
-INPUT = "../db/EneroFiltrado"
-SMART_STOPWORDS = "../stopwords/myStopList0.01.txt"
+INPUT = "../db/noticias/enero"
 OUTPUT = "../db/tfidf_matrix.arff"
-
-stopwords = []
-with open(SMART_STOPWORDS) as f:
-    stopwords = f.read().splitlines()
 
 
 # RECUPERAMOS DOCUMENTOS
 
-TITLE = "title: "
-DATE  = "date: "
-TEXT  = "text: "
+todo_los_documentos = getDocuments(INPUT)
 
-todo_los_documentos = set()
 todas_las_palabras = set()
 
-with open(INPUT) as f:
-    for line in f:
-        if line.startswith(TITLE):
-            title = line[len(TITLE):len(line)-1]
-        if line.startswith(DATE):
-            date = line[len(DATE):len(line)-1]
-        if line.startswith(TEXT):
-            text = line[len(TEXT)+1:len(line)-2]
-            document = Document(title)
-            document.date = date
-            for par in text.split(", "):
-                clave = par.split(": ")[0][1:-1] #palabra
-                valor = par.split(": ")[1]       # frec
-                if "}" in valor:
-                    valor = valor[:-1]
-                if not clave in stopwords:
-                    document.words[clave] = int(valor)
-                    todas_las_palabras.add(clave)
-            #print(document.words)
-            todo_los_documentos.add(document)
+for document in todo_los_documentos:
+    for palabra in document.words:
+        todas_las_palabras.add(palabra)
+print("Total de palabras: "+str(len(todas_las_palabras)))
+
 
 mapeo_inverso = {}
 lista_palabras = []
