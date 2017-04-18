@@ -2,7 +2,7 @@
 import json
 import requests
 import sys
-
+from time import sleep
 OUTPUT = "../db/noticias/"
 TITLE = "webTitle: "
 SECTION = "sectionName: "
@@ -52,4 +52,5 @@ for current_month in range(5,12):
             writer.write(TRAILTEXT+trailText+"\n")
             writer.write(DATE+date+"\n")
             writer.write(BODY+bodyText+"\n")
+        sleep(0.1)  # Time in seconds.
     writer.close()

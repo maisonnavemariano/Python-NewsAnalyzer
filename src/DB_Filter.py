@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 from Article import Article
+from Document import Document
 
 stopwords = []
 with open("../stopwords/SmartStoplist.txt") as f:
@@ -8,28 +9,7 @@ with open("../stopwords/SmartStoplist.txt") as f:
 def hasNumbers(inputString):
     return any(char.isdigit() for char in inputString)
 
-# * * * * * * * * * * * * * * * * * * Document class Definition * * * * * * * * * * * * * * * * * *
-class Document(object):
 
-    PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
-
-    def __init__(self, title, date = ""):
-        self.words = {}
-        self.date = date
-        self.title = title
-
-    def addText(self, text):
-        text = text.lower()
-        text = "".join(c for c in text if c in self.PERMITTED_CHARS)
-        words_array = text.split(" ")
-        for word in words_array:
-            if not word in stopwords and len(word)>0 and not hasNumbers(word):
-                if word in self.words:
-                    self.words[word] = self.words[word]+1
-                else:
-                    self.words[word] = 1
-
-# * * * * * * * * * * * * * * * * * *  End of class Definition  * * * * * * * * * * * * * * * * * *
 
 INPUT = "../db/noticias/enero"
 OUTPUT = "../db/EneroFiltrado"
@@ -71,10 +51,10 @@ with open(INPUT) as f:
 
 for article in articles:
     document = Document(article.title)
-    document.addText(article.bodyText)
-    document.addText(article.trailText)
-    document.addText(article.headline)
-    document.addText(article.sectionName)
+    document.addText(article.bodyText, stopwords)
+    document.addText(article.trailText, stopwords)
+    document.addText(article.headline, stopwords)
+    document.addText(article.sectionName, stopwords)
     document.date = article.date
     documents.add(document)
 
