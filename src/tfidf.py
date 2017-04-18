@@ -4,6 +4,9 @@ from Document import Document
 import numpy
 from readDocuments import getDocuments
 
+from scipy.cluster.vq import kmeans2
+
+CANTIDAD_CLUSTERS = 500
 INPUT = "../db/noticias/enero"
 OUTPUT = "../db/tfidf_matrix.arff"
 
@@ -63,3 +66,12 @@ for document in todo_los_documentos:
     doc = doc + 1
 writer.close()
 
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#                                        Aplicacion de Kmeans                                               #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+
+resultado = kmeans2(tfidf,CANTIDAD_CLUSTERS)
+
+print(resultado[1]) # resultado[1] lista de dimension N (donde N es cantidad de documentos) con el nro de cluster al que pertenece cada instancia
