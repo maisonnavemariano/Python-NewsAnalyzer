@@ -15,7 +15,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
 
     # RECUPERAMOS DOCUMENTOS
     if(filtrado):
-        todo_los_documentos = getDocumentosFiltrados(INPUT, stopwords_list)
+        todo_los_documentos = getDocumentosFiltrados(INPUT)
     else:
         todo_los_documentos = getDocuments(INPUT,stopwords_list)
 
