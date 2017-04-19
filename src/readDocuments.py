@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 from Article import Article
 from Document import Document
-def getDocuments(INPUT):
-    stopwords_files = ["../stopwords/SmartStoplist.txt", "../stopwords/ignored_words.txt"]
+def getDocuments(INPUT,stopwords_files):
+    #stopwords_files = ["../stopwords/SmartStoplist.txt", "../stopwords/ignored_words.txt"]
     stopwords = []
     for sw_file in stopwords_files:
         with open(sw_file) as f:

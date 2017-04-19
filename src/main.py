@@ -1,9 +1,15 @@
-#!/usr/bin/python3
+from tfidf import createTFIDF
+from generarHistograma import computeIgnoredWords
+INPUT = "../db/noticias/enero"
+STOPWORDS_FILES = ["../stopwords/SmartStoplist.txt"]
+IGNORED_WORDS_FILE = "../stopwords/ignored_words.txt"
 
-import numpy as np
-print("hello world");
-print("git");
+# Optional 1 - recalcular palabras ignoradas (frecuencia 1)
+threshold = 1
+computeIgnoredWords(threshold, INPUT,IGNORED_WORDS_FILE,STOPWORDS_FILES) #primero usamos los stop words sin palabras ignoradas (para la generacion)
 
-a = np.zeros(shape = (2,5))
-a[1][2] = 21
-print(a)
+#Crear tf-idf
+dataset_filtrado = False
+STOPWORDS_FILES.append(IGNORED_WORDS_FILE)
+createTFIDF(INPUT, dataset_filtrado, STOPWORDS_FILES) # luego como stop words usamos las listas anteriores y las de palabras ignoradas
+

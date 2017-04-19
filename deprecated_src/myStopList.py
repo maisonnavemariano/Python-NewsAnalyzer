@@ -1,6 +1,8 @@
 
-from DB_Filter import Document
 import operator
+
+from deprecated_src.DB_Filter import Document
+
 INPUT = "../db/EneroFiltrado"
 threshold1 = 0.010
 threshold2 = 0.25

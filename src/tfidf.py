@@ -7,67 +7,68 @@ from readDocuments import getDocumentosFiltrados
 
 from scipy.cluster.vq import kmeans2
 
-CANTIDAD_CLUSTERS = 500
-INPUT = "../db/noticias/enero"
-INPUT_FILTRADO = "../db/noticias/enero100"
-OUTPUT = "../db/tfidf_matrix.arff"
+#CANTIDAD_CLUSTERS = 500
+
+def createTFIDF(INPUT, filtrado,stopwords_list):
+    OUTPUT = INPUT+".arff"
 
 
-# RECUPERAMOS DOCUMENTOS
+    # RECUPERAMOS DOCUMENTOS
+    if(filtrado):
+        todo_los_documentos = getDocumentosFiltrados(INPUT, stopwords_list)
+    else:
+        todo_los_documentos = getDocuments(INPUT,stopwords_list)
 
-todo_los_documentos = getDocuments(INPUT)
-#todo_los_documentos = getDocumentosFiltrados(INPUT_FILTRADO)
+    todas_las_palabras = set()
 
-todas_las_palabras = set()
-
-for document in todo_los_documentos:
-    for palabra in document.words:
-        todas_las_palabras.add(palabra)
-print("Total de palabras: "+str(len(todas_las_palabras)))
-
-
-mapeo_inverso = {}
-lista_palabras = []
-nro_palabra =0
-for palabra in todas_las_palabras:
-    lista_palabras.append(palabra)
-    mapeo_inverso[palabra] = nro_palabra
-    nro_palabra = nro_palabra + 1
-
-# Vector palabras  lista_palabras = ['hello', 'world', 'jornal', ...]
-# Mapeo inverso    mapeo_inverso  =  {'hello':0, 'world':1, ....... }
-# Documentos     (todo_los_documentos) (set())
-#  | |  |
-#  | |  +----- Titulo
-#  | +-------- Fecha
-#  +---------- Palabras  {'hello': 34, 'journal': 12, ....} palabra hello 34 veces en documento, palabra journal 12 veces, etc.
+    for document in todo_los_documentos:
+        for palabra in document.words:
+            todas_las_palabras.add(palabra)
+    print("Total de palabras: "+str(len(todas_las_palabras)))
 
 
-tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
-doc = 0
-for document in todo_los_documentos:
-    for palabra in document.words:
-        tfidf[doc][mapeo_inverso[palabra]] = (document.words[palabra])
-    doc = doc + 1
+    mapeo_inverso = {}
+    lista_palabras = []
+    nro_palabra =0
+    for palabra in todas_las_palabras:
+        lista_palabras.append(palabra)
+        mapeo_inverso[palabra] = nro_palabra
+        nro_palabra = nro_palabra + 1
+
+    # Vector palabras  lista_palabras = ['hello', 'world', 'jornal', ...]
+    # Mapeo inverso    mapeo_inverso  =  {'hello':0, 'world':1, ....... }
+    # Documentos     (todo_los_documentos) (set())
+    #  | |  |
+    #  | |  +----- Titulo
+    #  | +-------- Fecha
+    #  +---------- Palabras  {'hello': 34, 'journal': 12, ....} palabra hello 34 veces en documento, palabra journal 12 veces, etc.
 
 
-writer = open(OUTPUT, "w")
-writer.write("@RELATION news\n")
-writer.write("@ATTRIBUTE name STRING\n")
+    tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
+    doc = 0
+    for document in todo_los_documentos:
+        for palabra in document.words:
+            tfidf[doc][mapeo_inverso[palabra]] = (document.words[palabra])
+        doc = doc + 1
 
-for palabra in lista_palabras:
-    writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
 
-writer.write("@DATA\n")
-doc = 0
-for document in todo_los_documentos:
-    linea = "\"" + document.title +"\","
-    for column in range(0,len(todas_las_palabras)):
-        linea = linea + str(tfidf[doc][column])+","
-    linea = linea[:-1]
-    writer.write(linea+"\n")
-    doc = doc + 1
-writer.close()
+    writer = open(OUTPUT, "w")
+    writer.write("@RELATION news\n")
+    writer.write("@ATTRIBUTE name STRING\n")
+
+    for palabra in lista_palabras:
+        writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
+
+    writer.write("@DATA\n")
+    doc = 0
+    for document in todo_los_documentos:
+        linea = "\"" + document.title +"\","
+        for column in range(0,len(todas_las_palabras)):
+            linea = linea + str(tfidf[doc][column])+","
+        linea = linea[:-1]
+        writer.write(linea+"\n")
+        doc = doc + 1
+    writer.close()
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
