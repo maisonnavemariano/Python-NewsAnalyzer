@@ -3,17 +3,20 @@
 from Document import Document
 import numpy
 from readDocuments import getDocuments
+from readDocuments import getDocumentosFiltrados
 
 from scipy.cluster.vq import kmeans2
 
 CANTIDAD_CLUSTERS = 500
 INPUT = "../db/noticias/enero"
+INPUT_FILTRADO = "../db/noticias/enero100"
 OUTPUT = "../db/tfidf_matrix.arff"
 
 
 # RECUPERAMOS DOCUMENTOS
 
 todo_los_documentos = getDocuments(INPUT)
+#todo_los_documentos = getDocumentosFiltrados(INPUT_FILTRADO)
 
 todas_las_palabras = set()
 
@@ -37,7 +40,7 @@ for palabra in todas_las_palabras:
 #  | |  |
 #  | |  +----- Titulo
 #  | +-------- Fecha
-#  +---------- Palabras  {'hello':34, 'journal':12, ....} palabra hello 34 veces en documento, palabra journal 12 veces, etc.
+#  +---------- Palabras  {'hello': 34, 'journal': 12, ....} palabra hello 34 veces en documento, palabra journal 12 veces, etc.
 
 
 tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
@@ -72,6 +75,6 @@ writer.close()
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
-resultado = kmeans2(tfidf,CANTIDAD_CLUSTERS)
+#resultado = kmeans2(tfidf,CANTIDAD_CLUSTERS)
 
-print(resultado[1]) # resultado[1] lista de dimension N (donde N es cantidad de documentos) con el nro de cluster al que pertenece cada instancia
+#print(resultado[1]) # resultado[1] lista de dimension N (donde N es cantidad de documentos) con el nro de cluster al que pertenece cada instancia

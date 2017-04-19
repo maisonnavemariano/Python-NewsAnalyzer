@@ -6,7 +6,7 @@ from readDocuments import getDocuments
 INPUT = "../db/noticias/enero"
 OUTPUT = "../db/histograma.csv"
 IGNORED_WORDS_FILE = "../stopwords/ignored_words.txt"
-threshold = 3 # solo palabras con 3 o menos apariciones.
+threshold = 1 # solo palabras con 3 o menos apariciones.
 documents = getDocuments(INPUT)
 
 word2frec = {}
@@ -19,7 +19,7 @@ for document in documents:
 writer = open(OUTPUT, "w")
 writer_ignored = open(IGNORED_WORDS_FILE, "w")
 writer.write("palabra,frecuencia\n")
-writer.write("palabra,frecuencia\n")
+writer_ignored.write("palabra,frecuencia\n")
 
 for palabra in word2frec:
     writer.write(palabra+","+str(word2frec[palabra])+"\n")
