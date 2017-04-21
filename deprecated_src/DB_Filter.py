@@ -69,7 +69,9 @@ writer = open(OUTPUT,"w")
 for document in documents:
     writer.write("title: "+document.title+"\n")
     writer.write("date: "+document.date+"\n")
+    writer.write("section: "+document.sectionName)
     writer.write("text: "+str(document.words)+"\n")
+
 
 
 print("Hay "+str(len(articles))+" articulos validos de "+str(total_articles)+".")

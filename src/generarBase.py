@@ -19,7 +19,7 @@ current_page = 1
 api_key = "5c622da5-f682-49f4-aaa5-a3d5e014b416"
 
 
-URL = 'http://content.guardianapis.com/search?from-date={0}&to-date={1}&show-fields=all&page-size={2}&page={3}&api-key={4}'
+URL = 'http://content.guardianapis.com/search?from-date={0}&to-date={1}&show-blocks=all&page-size={2}&page={3}&api-key={4}'
 
 for current_month in range(5,12):
     current_page = 1

@@ -46,9 +46,9 @@ def getDocuments(INPUT,stopwords_files):
                     articles.add(article)
 
     for article in articles:
-        document = Document(article.title)
+        document = Document(article.title,article.sectionName)
         # ponderamos el titulo
-        #document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
 
 
         document.addText(article.bodyText,stopwords)
@@ -63,6 +63,7 @@ def getDocumentosFiltrados(INPUT):
     TITLE = "title: "
     DATE = "date: "
     TEXT = "text: "
+    SECTION = "section: "
 
     documents = set()
     with open(INPUT) as f:
@@ -73,6 +74,9 @@ def getDocumentosFiltrados(INPUT):
             if line.startswith(DATE):
                 date = line[len(DATE):-1]
                 document_aux.date = date
+            if line.startswith(SECTION):
+                section = line[len(SECTION):-1]
+                document_aux.sectionName = section
             if line.startswith(TEXT):
                 #{'hola': 2, 'world': 1, 'bla': 1}
                 text = line[len(TEXT):-1]

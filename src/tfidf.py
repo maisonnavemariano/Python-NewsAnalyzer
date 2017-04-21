@@ -58,7 +58,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
 
     for palabra in lista_palabras:
         writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
-
+    writer.write('@ATTRIBUTE section {Society,Business,Worldnews,Politics}\n')
     writer.write("@DATA\n")
     doc = 0
     for document in todo_los_documentos:
@@ -66,7 +66,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
         for column in range(0,len(todas_las_palabras)):
             linea = linea + str(tfidf[doc][column])+","
         linea = linea[:-1]
-        writer.write(linea+"\n")
+        writer.write(linea+","+document.sectionName+"\n")
         doc = doc + 1
     writer.close()
 
