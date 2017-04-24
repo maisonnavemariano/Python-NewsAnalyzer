@@ -55,6 +55,13 @@ def getDocuments(INPUT,stopwords_files):
         document.addText(article.title, stopwords)
 
 
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+
+
         document.addText(article.bodyText,stopwords)
         document.addText(article.trailText,stopwords)
         document.addText(article.headline,stopwords)
