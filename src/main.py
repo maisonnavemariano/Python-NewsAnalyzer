@@ -12,4 +12,3 @@ computeIgnoredWords(threshold, INPUT,IGNORED_WORDS_FILE,STOPWORDS_FILES) #primer
 dataset_filtrado = False
 STOPWORDS_FILES.append(IGNORED_WORDS_FILE)
 createTFIDF(INPUT, dataset_filtrado, STOPWORDS_FILES) # luego como stop words usamos las listas anteriores y las de palabras ignoradas
-

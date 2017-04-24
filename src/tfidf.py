@@ -5,6 +5,7 @@ import numpy
 from readDocuments import getDocuments
 from readDocuments import getDocumentosFiltrados
 
+
 from scipy.cluster.vq import kmeans2
 
 #CANTIDAD_CLUSTERS = 500
@@ -58,7 +59,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
 
     for palabra in lista_palabras:
         writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
-    writer.write('@ATTRIBUTE section {Society,Business,Worldnews,Politics}\n')
+    writer.write('@ATTRIBUTE sectionName {Society,Business,Worldnews,Politics}\n')
     writer.write("@DATA\n")
     doc = 0
     for document in todo_los_documentos:
