@@ -1,10 +1,12 @@
 import re
 import enchant
+from lib.yahooAPI import validPlace
 d = enchant.Dict("en_UK")
-
+factor_ponderacion = 5
 from nltk.stem import RegexpStemmer
-st = RegexpStemmer('ing$|s$|e$|able$', min=4)
-
+from nltk.stem import LancasterStemmer
+st_regex = RegexpStemmer('ing$|s$|e$|able$', min=4)
+st_lancaster = LancasterStemmer()
 def hasNumbers(inputString):
     return any(char.isdigit() for char in inputString)
 
@@ -33,12 +35,19 @@ class Document(object):
         #text = "".join(c for c in text if c in self.PERMITTED_CHARS)
         words_array = text.split(" ")
         for word in words_array:
-            if not word in stopwords and len(word) > 0 and not hasNumbers(word) and not self.hasInvalidCharacter(word) and d.check(word):
-                stem_word = st.stem(word)
-                if d.check(stem_word):
-                    word = stem_word
-                if word in self.words:
-                    self.words[word] = self.words[word] + 1
+            if not word in stopwords and len(word) > 0 and not hasNumbers(word) and not self.hasInvalidCharacter(word):
+                frecuencia =  1
+                stem_word_regex = st_regex.stem(word)
+                stem_word_lancaster = st_lancaster.stem(word)
+                if d.check(stem_word_lancaster):
+                    word = stem_word_lancaster
                 else:
-                    self.words[word] = 1
+                    if d.check(stem_word_regex):
+                        word = stem_word_regex
+                if (not d.check(word)):
+                    frecuencia = frecuencia * factor_ponderacion
+                if word in self.words :
+                    self.words[word] = self.words[word] + frecuencia
+                else:
+                    self.words[word] = frecuencia
 

@@ -49,6 +49,10 @@ def getDocuments(INPUT,stopwords_files):
         document = Document(article.title,article.sectionName)
         # ponderamos el titulo
         document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
+        document.addText(article.title, stopwords)
 
 
         document.addText(article.bodyText,stopwords)
