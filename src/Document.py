@@ -1,4 +1,9 @@
 import re
+import enchant
+d = enchant.Dict("en_UK")
+
+from nltk.stem import RegexpStemmer
+st = RegexpStemmer('ing$|s$|e$|able$', min=4)
 
 def hasNumbers(inputString):
     return any(char.isdigit() for char in inputString)
@@ -28,7 +33,10 @@ class Document(object):
         #text = "".join(c for c in text if c in self.PERMITTED_CHARS)
         words_array = text.split(" ")
         for word in words_array:
-            if not word in stopwords and len(word) > 0 and not hasNumbers(word) and not self.hasInvalidCharacter(word):
+            if not word in stopwords and len(word) > 0 and not hasNumbers(word) and not self.hasInvalidCharacter(word) and d.check(word):
+                stem_word = st.stem(word)
+                if d.check(stem_word):
+                    word = stem_word
                 if word in self.words:
                     self.words[word] = self.words[word] + 1
                 else:

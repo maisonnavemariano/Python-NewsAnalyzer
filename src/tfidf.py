@@ -55,7 +55,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
 
     writer = open(OUTPUT, "w")
     writer.write("@RELATION news\n")
-    writer.write("@ATTRIBUTE name STRING\n")
+    writer.write("@ATTRIBUTE DocumentName STRING\n")
 
     for palabra in lista_palabras:
         writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")

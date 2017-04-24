@@ -8,7 +8,7 @@ def getDocuments(INPUT,stopwords_files):
         with open(sw_file) as f:
             words = f.read().splitlines()
         stopwords = stopwords + words
-
+    stopwords = set(stopwords)
 
     TITLE       = "webTitle: "
     SECTION     = "sectionName: "
