@@ -1,7 +1,18 @@
 #!/usr/bin/python3
 from Article import Article
 from Document import Document
+
+CONFIG = "../etc/var.config"
+FRECUENCIA_TITULOS = "FRECUENCIA_TITULOS = "
+def initVar():
+    with open(CONFIG) as f:
+        for line in f:
+            if line.startswith(FRECUENCIA_TITULOS):
+                frec_titulos = int(line[len(FRECUENCIA_TITULOS):-1])
+    return frec_titulos
+
 def getDocuments(INPUT,stopwords_files):
+    frec_titulos = initVar()
     #stopwords_files = ["../stopwords/SmartStoplist.txt", "../stopwords/ignored_words.txt"]
     stopwords = []
     for sw_file in stopwords_files:
@@ -48,19 +59,8 @@ def getDocuments(INPUT,stopwords_files):
     for article in articles:
         document = Document(article.title,article.sectionName)
         # ponderamos el titulo
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-
-
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-        document.addText(article.title, stopwords)
-
+        for i in range(0,frec_titulos):
+            document.addText(article.title, stopwords)
 
         document.addText(article.bodyText,stopwords)
         document.addText(article.trailText,stopwords)

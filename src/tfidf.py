@@ -8,29 +8,49 @@ from readDocuments import getDocuments
 from readDocuments import getDocumentosFiltrados
 
 from numpy.linalg import svd
+CONFIG = "../etc/var.config"
+def initVar():
+    SVD_ANALYSIS = "SVD_ANALYSIS = "
+    IGNORED_COEFFICIENTS = "IGNORED_COEFFICIENTS = "
+    STOPWORD_FILES = "STOPWORDS_FILES = "
+    IGNORED_WORDS_FILE = "IGNORED_WORDS_FILE = "
+    with open(CONFIG) as f:
+        for line in f:
+            if line.startswith(SVD_ANALYSIS):
+                svd_analysis = int(line[len(SVD_ANALYSIS):-1])
+            if line.startswith(IGNORED_COEFFICIENTS):
+                ignored_coeff = int(line[len(IGNORED_COEFFICIENTS):-1])
+            if line.startswith(STOPWORD_FILES):
+                stopwords = line[len(STOPWORD_FILES)+2:-3].split('\",\"')
+            if line.startswith(IGNORED_WORDS_FILE):
+                ignored_words_file = line[len(IGNORED_WORDS_FILE)+1:-2]
+    return svd_analysis,stopwords, ignored_coeff,ignored_words_file
 
 #SVD_ANLYSIS = True
-
 
 from scipy.cluster.vq import kmeans2
 
 #CANTIDAD_CLUSTERS = 500
 
-def createTFIDF(INPUT, filtrado,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
+def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
+    svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file = initVar()
+
+    stopwords_list.append(ignored_words_file)
     if(svd_analysis):
         OUTPUT = INPUT+"_svd.arff"
     else:
         OUTPUT = INPUT+".arff"
 
-
+    print("Recuperamos todos los documentos...")
     # RECUPERAMOS DOCUMENTOS
     if(filtrado):
         todo_los_documentos = getDocumentosFiltrados(INPUT)
     else:
         todo_los_documentos = getDocuments(INPUT,stopwords_list)
-
+    print("Recuperamos "+str(len(todo_los_documentos)))
     todas_las_palabras = set()
 
+    print("analizamos cantidad de palabras (dimensiones del dataset)")
     for document in todo_los_documentos:
         for palabra in document.words:
             todas_las_palabras.add(palabra)
@@ -53,7 +73,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list, svd_analysis = False, ignored_co
     #  | +-------- Fecha
     #  +---------- Palabras  {'hello': 34, 'journal': 12, ....} palabra hello 34 veces en documento, palabra journal 12 veces, etc.
 
-
+    print("Construímos matriz TF-IDF")
     tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
     doc = 0
     for document in todo_los_documentos:
@@ -64,17 +84,20 @@ def createTFIDF(INPUT, filtrado,stopwords_list, svd_analysis = False, ignored_co
     # * * * * * * * * * * * * * * * * * * * * ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     if(svd_analysis):
+        print("Analisis de semantica latente")
         u, sigma, vt = svd(tfidf, full_matrices=False)
 
         for i in range (1,ignored_coefficients+1):
             sigma[-i] = 0
         sigma = numpy.diag(sigma)
         tfidf = numpy.dot(numpy.dot(u,sigma), vt)
+        print("Analisis de frecuencia latente terminado.")
 
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * FIN ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
+    print("almacenamos matriz ARFF....")
     writer = open("sigma.txt","w")
     for row in sigma:
         for element in row:
@@ -100,6 +123,7 @@ def createTFIDF(INPUT, filtrado,stopwords_list, svd_analysis = False, ignored_co
         writer.write(linea+","+document.sectionName+"\n")
         doc = doc + 1
     writer.close()
+    print("matrix construida satisfactoriamente")
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

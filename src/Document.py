@@ -2,9 +2,20 @@ import re
 import enchant
 from lib.yahooAPI import validPlace
 d = enchant.Dict("en_UK")
+CONFIG = "../etc/var.config"
 
-factor_ponderacion = 5
 
+
+def initVar():
+    FACTOR_POND = "FACTOR_PONDERACION = "
+    with open(CONFIG) as f:
+        for line in f:
+            if line.startswith(FACTOR_POND):
+                factor_pond = int(line[len(FACTOR_POND):-1])
+    return factor_pond
+
+
+factor_ponderacion = initVar()
 from nltk.stem import RegexpStemmer
 from nltk.stem import LancasterStemmer
 st_regex = RegexpStemmer('ing$|s$|e$|able$', min=4)
