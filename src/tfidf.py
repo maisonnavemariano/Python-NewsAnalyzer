@@ -9,14 +9,15 @@ from readDocuments import getDocumentosFiltrados
 
 from numpy.linalg import svd
 
-SVD_ANLYSIS = True
+#SVD_ANLYSIS = True
+
 
 from scipy.cluster.vq import kmeans2
 
 #CANTIDAD_CLUSTERS = 500
 
-def createTFIDF(INPUT, filtrado,stopwords_list):
-    if(SVD_ANLYSIS):
+def createTFIDF(INPUT, filtrado,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
+    if(svd_analysis):
         OUTPUT = INPUT+"_svd.arff"
     else:
         OUTPUT = INPUT+".arff"
@@ -62,9 +63,13 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    if(SVD_ANLYSIS):
+    if(svd_analysis):
         u, sigma, vt = svd(tfidf, full_matrices=False)
-        
+
+        for i in range (1,ignored_coefficients+1):
+            sigma[-i] = 0
+        sigma = numpy.diag(sigma)
+        tfidf = numpy.dot(numpy.dot(u,sigma), vt)
 
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * FIN ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * *
