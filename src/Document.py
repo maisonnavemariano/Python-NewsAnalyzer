@@ -2,7 +2,9 @@ import re
 import enchant
 from lib.yahooAPI import validPlace
 d = enchant.Dict("en_UK")
+
 factor_ponderacion = 5
+
 from nltk.stem import RegexpStemmer
 from nltk.stem import LancasterStemmer
 st_regex = RegexpStemmer('ing$|s$|e$|able$', min=4)

@@ -1,17 +1,25 @@
 #!/usr/bin/python3
 
 from Document import Document
+from numpy.linalg import svd
+from numpy import diag
 import numpy
 from readDocuments import getDocuments
 from readDocuments import getDocumentosFiltrados
 
+from numpy.linalg import svd
+
+SVD_ANLYSIS = True
 
 from scipy.cluster.vq import kmeans2
 
 #CANTIDAD_CLUSTERS = 500
 
 def createTFIDF(INPUT, filtrado,stopwords_list):
-    OUTPUT = INPUT+".arff"
+    if(SVD_ANLYSIS):
+        OUTPUT = INPUT+"_svd.arff"
+    else:
+        OUTPUT = INPUT+".arff"
 
 
     # RECUPERAMOS DOCUMENTOS
@@ -51,7 +59,24 @@ def createTFIDF(INPUT, filtrado,stopwords_list):
         for palabra in document.words:
             tfidf[doc][mapeo_inverso[palabra]] = (document.words[palabra])
         doc = doc + 1
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * * ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    if(SVD_ANLYSIS):
+        u, sigma, vt = svd(tfidf, full_matrices=False)
+        
 
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * * FIN ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+
+    writer = open("sigma.txt","w")
+    for row in sigma:
+        for element in row:
+            writer.write(str(element)+" ")
+        writer.write("\n")
+    print(sigma)
+    writer.close()
 
     writer = open(OUTPUT, "w")
     writer.write("@RELATION news\n")
