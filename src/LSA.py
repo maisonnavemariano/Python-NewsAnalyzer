@@ -21,7 +21,7 @@ def prueba():
     sigma = np.diag(sigma)
     # np.diag(sigma) construye la matriz con todos ceros menos en la diagonal.
     print("descomposicion")
-    
+
     print("u x sigma x vt : "+str(u.shape)+" x "+str(sigma.shape)+" x "+str(vt.shape))
     print(str(sigma))
     # la matrix reconstruida es:  np.dot(np.dot(u,sigma), vt)

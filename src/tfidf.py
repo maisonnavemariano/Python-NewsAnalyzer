@@ -14,17 +14,20 @@ def initVar():
     IGNORED_COEFFICIENTS = "IGNORED_COEFFICIENTS = "
     STOPWORD_FILES = "STOPWORDS_FILES = "
     IGNORED_WORDS_FILE = "IGNORED_WORDS_FILE = "
+    SAVE_ARFF = "SAVE_ARFF = "
     with open(CONFIG) as f:
         for line in f:
             if line.startswith(SVD_ANALYSIS):
-                svd_analysis = int(line[len(SVD_ANALYSIS):-1])
+                svd_analysis = bool(line[len(SVD_ANALYSIS):-1])
             if line.startswith(IGNORED_COEFFICIENTS):
                 ignored_coeff = int(line[len(IGNORED_COEFFICIENTS):-1])
             if line.startswith(STOPWORD_FILES):
                 stopwords = line[len(STOPWORD_FILES)+2:-3].split('\",\"')
             if line.startswith(IGNORED_WORDS_FILE):
                 ignored_words_file = line[len(IGNORED_WORDS_FILE)+1:-2]
-    return svd_analysis,stopwords, ignored_coeff,ignored_words_file
+            if line.startswith(SAVE_ARFF):
+                save_arff = bool(line[len(SAVE_ARFF):-1])
+    return svd_analysis,stopwords, ignored_coeff,ignored_words_file,save_arff
 
 #SVD_ANLYSIS = True
 
@@ -33,7 +36,7 @@ from scipy.cluster.vq import kmeans2
 #CANTIDAD_CLUSTERS = 500
 
 def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
-    svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file = initVar()
+    svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file,save_arff = initVar()
 
     stopwords_list.append(ignored_words_file)
     if(svd_analysis):
@@ -76,6 +79,7 @@ def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignore
     print("Construímos matriz TF-IDF")
     tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
     doc = 0
+
     for document in todo_los_documentos:
         for palabra in document.words:
             tfidf[doc][mapeo_inverso[palabra]] = (document.words[palabra])
@@ -97,33 +101,28 @@ def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignore
     # * * * * * * * * * * * * * * * * * * * * FIN ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-    print("almacenamos matriz ARFF....")
-    writer = open("sigma.txt","w")
-    for row in sigma:
-        for element in row:
-            writer.write(str(element)+" ")
-        writer.write("\n")
-    print(sigma)
-    writer.close()
 
-    writer = open(OUTPUT, "w")
-    writer.write("@RELATION news\n")
-    writer.write("@ATTRIBUTE DocumentName STRING\n")
+    if (save_arff):
+        print("almacenamos matriz ARFF....")
+        writer = open(OUTPUT, "w")
+        writer.write("@RELATION news\n")
+        writer.write("@ATTRIBUTE DocumentName STRING\n")
 
-    for palabra in lista_palabras:
-        writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
-    writer.write('@ATTRIBUTE sectionName {Society,Business,Worldnews,Politics}\n')
-    writer.write("@DATA\n")
-    doc = 0
-    for document in todo_los_documentos:
-        linea = "\"" + document.title +"\","
-        for column in range(0,len(todas_las_palabras)):
-            linea = linea + str(tfidf[doc][column])+","
-        linea = linea[:-1]
-        writer.write(linea+","+document.sectionName+"\n")
-        doc = doc + 1
-    writer.close()
-    print("matrix construida satisfactoriamente")
+        for palabra in lista_palabras:
+            writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
+        writer.write('@ATTRIBUTE sectionName {Society,Business,Worldnews,Politics}\n')
+        writer.write("@DATA\n")
+        doc = 0
+        for document in todo_los_documentos:
+            linea = "\"" + document.title +"\","
+            for column in range(0,len(todas_las_palabras)):
+                linea = linea + str(tfidf[doc][column])+","
+            linea = linea[:-1]
+            writer.write(linea+","+document.sectionName+"\n")
+            doc = doc + 1
+        writer.close()
+        print("matrix construida satisfactoriamente")
+    return todo_los_documentos, tfidf
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #

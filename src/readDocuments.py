@@ -29,7 +29,7 @@ def getDocuments(INPUT,stopwords_files):
     BODY        = "bodytext: "
 
     articles = set()
-    documents = set()
+    documents = []
     total_articles = 0
 
     with open(INPUT) as f:
@@ -67,7 +67,7 @@ def getDocuments(INPUT,stopwords_files):
         document.addText(article.headline,stopwords)
         document.addText(article.sectionName,stopwords)
         document.date = article.date
-        documents.add(document)
+        documents.append(document)
     return documents
 
 def getDocumentosFiltrados(INPUT):
@@ -76,7 +76,7 @@ def getDocumentosFiltrados(INPUT):
     TEXT = "text: "
     SECTION = "section: "
 
-    documents = set()
+    documents = []
     with open(INPUT) as f:
         for line in f:
             if line.startswith(TITLE):
@@ -98,5 +98,5 @@ def getDocumentosFiltrados(INPUT):
                     palabra = palabra[1:-1] # le sacamos las comillas.
                     frecuencia = par.split(": ")[1]
                     document_aux.words[palabra] = frecuencia
-                documents.add(document_aux)
+                documents.append(document_aux)
     return documents

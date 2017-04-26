@@ -1,8 +1,17 @@
 #!/usr/bin/python3
 
+CONFIG = "../etc/var.config"
+def initVar():
+    ALLOWED_SECTIONS = "ALLOWED_SECTIONS ="
+    with open(CONFIG) as f:
+        for line in f:
+            if line.startswith(ALLOWED_SECTIONS):
+                allowed_sections = line[len(ALLOWED_SECTIONS)+2:-3].split('","')
+    return allowed_sections
+
+
 class Article(object):
-    ALLOWED_SECTIONS = {"Society","Business","World news","Politics"}
-    IGNORED_SECTIONS = {"Music","Opinion","Sport","Film","From the Guardian","Footbal","Stage"}
+    ALLOWED_SECTIONS = initVar()
 
     def __init__(self, title, sectionName='', headline='', trailtext='', bodyText='', date=''): #Default values '' if one of the parameters is not given.
         self.title       = title;
