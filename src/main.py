@@ -55,11 +55,15 @@ writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
 for doc in documentosEtiquetados:
     writer.write(str(doc.document.instanceNro)+': \"'+doc.document.title+'\",cluster'+str(doc.label)+"\n")
-writer.close()
 
+writer.write("\n")
+writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+writer.write(" * * * * * * * * * * * * Cantidad de instancias por cluster  * * * * * * * * * * * * * *\n")
 clusters = getClusters(documentosEtiquetados)
 nro = 0
 for cluster in clusters:
-    print("cluster nro: "+str(nro)+" tamanio: "+str(len(cluster)))
+    writer.write("cluster nro: "+str(nro)+" tamanio: "+str(len(cluster))+"\n")
+    nro = nro + 1
+writer.close()
 
 
