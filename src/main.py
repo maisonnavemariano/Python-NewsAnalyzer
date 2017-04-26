@@ -15,7 +15,7 @@ documentos, matriz  = createTFIDF(INPUT, dataset_filtrado ) # luego como stop wo
 
 documentosEtiquetados = applyClustering(matriz,documentos)
 
-writer = open("../db/resultados/clusters.txt")
+writer = open("../db/resultados/clusters.txt", "w")
 for doc in documentosEtiquetados:
-    writer.write(doc.document.title+",cluster"+doc.label+"\n")
+    writer.write(doc.document.title+",cluster"+str(doc.label)+"\n")
 writer.close()

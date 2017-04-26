@@ -18,7 +18,7 @@ def initVar():
     with open(CONFIG) as f:
         for line in f:
             if line.startswith(SVD_ANALYSIS):
-                svd_analysis = bool(line[len(SVD_ANALYSIS):-1])
+                svd_analysis = (line[len(SVD_ANALYSIS):-1]) == "True"
             if line.startswith(IGNORED_COEFFICIENTS):
                 ignored_coeff = int(line[len(IGNORED_COEFFICIENTS):-1])
             if line.startswith(STOPWORD_FILES):
@@ -26,7 +26,7 @@ def initVar():
             if line.startswith(IGNORED_WORDS_FILE):
                 ignored_words_file = line[len(IGNORED_WORDS_FILE)+1:-2]
             if line.startswith(SAVE_ARFF):
-                save_arff = bool(line[len(SAVE_ARFF):-1])
+                save_arff = line[len(SAVE_ARFF):-1] == "True"
     return svd_analysis,stopwords, ignored_coeff,ignored_words_file,save_arff
 
 #SVD_ANLYSIS = True
