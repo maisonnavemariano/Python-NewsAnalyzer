@@ -27,16 +27,19 @@ def getDocuments(INPUT,stopwords_files):
     TRAILTEXT   = "trailText: "
     DATE        = "webPublicationDate: "
     BODY        = "bodytext: "
-
+    INSTANCE_NRO = "instanceNro: "
     articles = set()
     documents = []
     total_articles = 0
 
     with open(INPUT) as f:
         for line in f:
+            if line.startswith(INSTANCE_NRO):
+                instance_nro = int(line[len(INSTANCE_NRO):-1])
             if(line.startswith(TITLE)):
                 title = line[len(TITLE):-1];
                 article = Article(title);
+                article.instanceNro = instance_nro
             if(line.startswith(SECTION)):
                 section = line[len(SECTION):-1];
                 article.sectionName = section;
@@ -61,7 +64,7 @@ def getDocuments(INPUT,stopwords_files):
         # ponderamos el titulo
         for i in range(0,frec_titulos):
             document.addText(article.title, stopwords)
-
+        document.instanceNro = article.instanceNro
         document.addText(article.bodyText,stopwords)
         document.addText(article.trailText,stopwords)
         document.addText(article.headline,stopwords)
@@ -71,6 +74,7 @@ def getDocuments(INPUT,stopwords_files):
     return documents
 
 def getDocumentosFiltrados(INPUT):
+    INSTANCE_NRO = "instanceNro: "
     TITLE = "title: "
     DATE = "date: "
     TEXT = "text: "
@@ -79,9 +83,12 @@ def getDocumentosFiltrados(INPUT):
     documents = []
     with open(INPUT) as f:
         for line in f:
+            if line.startswith(INSTANCE_NRO):
+                instance_nro = int(line[len(INSTANCE_NRO):-1])
             if line.startswith(TITLE):
                 title = line[len(TITLE):-1]
                 document_aux = Document(title)
+                document_aux.instanceNro = instance_nro
             if line.startswith(DATE):
                 date = line[len(DATE):-1]
                 document_aux.date = date

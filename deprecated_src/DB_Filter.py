@@ -15,6 +15,7 @@ INPUT = "../db/noticias/enero"
 OUTPUT = "../db/EneroFiltrado"
 
 TITLE       = "webTitle: "
+INSTANCE_NRO = "instanceNro: "
 SECTION     = "sectionName: "
 HEADLINE    = "headline: "
 TRAILTEXT   = "trailText: "
@@ -27,9 +28,12 @@ total_articles = 0
 
 with open(INPUT) as f:
     for line in f:
+        if line.startswith(INSTANCE_NRO):
+            instance_nro = int(line[len(INSTANCE_NRO):-1])
         if(line.startswith(TITLE)):
             title = line[len(TITLE):-1];
             article = Article(title);
+            article.instanceNro = instance_nro
         if(line.startswith(SECTION)):
             section = line[len(SECTION):-1];
             article.sectionName = section;
@@ -51,6 +55,7 @@ with open(INPUT) as f:
 
 for article in articles:
     document = Document(article.title)
+    document.instanceNro = article.instanceNro
     document.addText(article.bodyText, stopwords)
     document.addText(article.trailText, stopwords)
     document.addText(article.headline, stopwords)
@@ -67,6 +72,7 @@ for d in documents:
 
 writer = open(OUTPUT,"w")
 for document in documents:
+    writer.write(INSTANCE_NRO+str(document.instanceNro)+"\n")
     writer.write("title: "+document.title+"\n")
     writer.write("date: "+document.date+"\n")
     writer.write("section: "+document.sectionName)

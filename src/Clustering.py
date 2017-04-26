@@ -20,3 +20,13 @@ def applyClustering(matrix, lista_documentos):
         documentos_Etiquetados.append(documentoEtiquetado)
         nro_doc = nro_doc + 1
     return documentos_Etiquetados
+
+def getClusters(lista_documentos_etiquetados):
+    nro_of_clusters = initVar()
+    clusters = []
+    for i in range(0,nro_of_clusters):
+        clusters.append(set())
+    for document in lista_documentos_etiquetados:
+        cluster_nro = int(document.label)
+        clusters[cluster_nro].add(document)
+    return clusters

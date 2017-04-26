@@ -2,7 +2,7 @@
 
 CONFIG = "../etc/var.config"
 def initVar():
-    ALLOWED_SECTIONS = "ALLOWED_SECTIONS ="
+    ALLOWED_SECTIONS = "ALLOWED_SECTIONS = "
     with open(CONFIG) as f:
         for line in f:
             if line.startswith(ALLOWED_SECTIONS):
@@ -12,8 +12,8 @@ def initVar():
 
 class Article(object):
     ALLOWED_SECTIONS = initVar()
-
-    def __init__(self, title, sectionName='', headline='', trailtext='', bodyText='', date=''): #Default values '' if one of the parameters is not given.
+    def __init__(self, title, sectionName='', headline='', trailtext='', bodyText='', date='',instanceNro = -1): #Default values '' if one of the parameters is not given.
+        self.instanceNro = instanceNro
         self.title       = title;
         self.sectionName = sectionName;
         self.headline    = headline;

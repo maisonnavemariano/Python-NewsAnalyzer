@@ -32,7 +32,8 @@ def cleanhtml(raw_html):
 class Document(object):
     PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
-    def __init__(self, title,sectionName = "", date=""):
+    def __init__(self, title,sectionName = "", date="", instanceNro=-1):
+        self.instanceNro = instanceNro
         self.sectionName = sectionName.replace(" ","")
         self.words = {}
         self.date = date

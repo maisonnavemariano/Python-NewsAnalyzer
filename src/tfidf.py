@@ -6,8 +6,9 @@ from numpy import diag
 import numpy
 from readDocuments import getDocuments
 from readDocuments import getDocumentosFiltrados
-
+from scipy.cluster.vq import kmeans2
 from numpy.linalg import svd
+
 CONFIG = "../etc/var.config"
 def initVar():
     SVD_ANALYSIS = "SVD_ANALYSIS = "
@@ -29,11 +30,9 @@ def initVar():
                 save_arff = line[len(SAVE_ARFF):-1] == "True"
     return svd_analysis,stopwords, ignored_coeff,ignored_words_file,save_arff
 
-#SVD_ANLYSIS = True
 
-from scipy.cluster.vq import kmeans2
 
-#CANTIDAD_CLUSTERS = 500
+
 
 def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
     svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file,save_arff = initVar()
@@ -123,13 +122,3 @@ def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignore
         writer.close()
         print("matrix construida satisfactoriamente")
     return todo_los_documentos, tfidf
-
-
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-#                                        Aplicacion de Kmeans                                               #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-
-#resultado = kmeans2(tfidf,CANTIDAD_CLUSTERS)
-
-#print(resultado[1]) # resultado[1] lista de dimension N (donde N es cantidad de documentos) con el nro de cluster al que pertenece cada instancia
