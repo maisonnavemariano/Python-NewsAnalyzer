@@ -65,3 +65,15 @@ class Document(object):
                 else:
                     self.words[word] = frecuencia
 
+
+
+def combinarDocumentos(lista_documentos,nombreDelConjunto  ):
+    nuevoDocumento = Document(nombreDelConjunto)
+    palabras = {}
+    for documento in lista_documentos:
+        for palabra in documento.words:
+            if not palabra in palabras:
+                palabras[palabra] = documento.words[palabra]
+            else:
+                palabras[palabra] = palabras[palabra] + documento.words[palabra]
+    return nuevoDocumento

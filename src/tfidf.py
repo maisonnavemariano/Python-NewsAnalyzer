@@ -8,6 +8,7 @@ from readDocuments import getDocuments
 from readDocuments import getDocumentosFiltrados
 from scipy.cluster.vq import kmeans2
 from numpy.linalg import svd
+import math
 
 CONFIG = "../etc/var.config"
 def initVar():
@@ -34,22 +35,29 @@ def initVar():
 
 
 
-def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
+def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
     svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file,save_arff = initVar()
 
     stopwords_list.append(ignored_words_file)
+
+
     if(svd_analysis):
         OUTPUT = INPUT+"_svd.arff"
     else:
         OUTPUT = INPUT+".arff"
 
-    print("Recuperamos todos los documentos...")
-    # RECUPERAMOS DOCUMENTOS
-    if(filtrado):
-        todo_los_documentos = getDocumentosFiltrados(INPUT)
+    if(list_documents == None):
+        print("Recuperamos todos los documentos...")
+        # RECUPERAMOS DOCUMENTOS
+        if(filtrado):
+            todo_los_documentos = getDocumentosFiltrados(INPUT)
+        else:
+            todo_los_documentos = getDocuments(INPUT,stopwords_list)
+        print("Recuperamos "+str(len(todo_los_documentos)))
     else:
-        todo_los_documentos = getDocuments(INPUT,stopwords_list)
-    print("Recuperamos "+str(len(todo_los_documentos)))
+        todo_los_documentos = list_documents
+
+
     todas_las_palabras = set()
 
     print("analizamos cantidad de palabras (dimensiones del dataset)")
@@ -76,12 +84,22 @@ def createTFIDF(INPUT, filtrado): #,stopwords_list, svd_analysis = False, ignore
     #  +---------- Palabras  {'hello': 34, 'journal': 12, ....} palabra hello 34 veces en documento, palabra journal 12 veces, etc.
 
     print("Construímos matriz TF-IDF")
+    idf = [0]*len(todas_las_palabras)
+    for palabra in todas_las_palabras:
+        cant_apariciones = 0
+        for document in todo_los_documentos:
+            if palabra in document.words:
+                cant_apariciones = + 1
+        idf[mapeo_inverso[palabra]] = math.log(float(len(todas_las_palabras)) / float(cant_apariciones) , 10)
+
+
     tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
     doc = 0
 
     for document in todo_los_documentos:
         for palabra in document.words:
-            tfidf[doc][mapeo_inverso[palabra]] = (document.words[palabra])
+            indice_palabra = mapeo_inverso[palabra]
+            tfidf[doc][indice_palabra] = float((document.words[palabra])) *  idf[indice_palabra]
         doc = doc + 1
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * * * *

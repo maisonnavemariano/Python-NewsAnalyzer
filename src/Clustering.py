@@ -1,5 +1,9 @@
 from scipy.cluster.vq import kmeans2
 from LabeledDocument import LabeledDocument
+import re
+import datetime
+now = datetime.datetime.now()
+
 CONFIG = "../etc/var.config"
 def initVar():
     NRO_OF_CLUSTERS = "NRO_OF_CLUSTERS = "
@@ -25,8 +29,32 @@ def getClusters(lista_documentos_etiquetados):
     nro_of_clusters = initVar()
     clusters = []
     for i in range(0,nro_of_clusters):
-        clusters.append(set())
+        clusters.append([])
     for document in lista_documentos_etiquetados:
         cluster_nro = int(document.label)
-        clusters[cluster_nro].add(document)
+        clusters[cluster_nro].append(document.document)
     return clusters
+
+def saveResult(documentosEtiquetados,clusters):
+    writer = open("../db/resultados/clusters" + re.sub(r'\.[0-9]*', "", str(now)) + ".txt", "w")
+    writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+    writer.write(" * * * * * * * * * * * * Archivo de Configuración de la ejecución  * * * * * * * * * * *\n")
+    writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+    with open(CONFIG) as f:
+        for line in f:
+            writer.write(line)
+    writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+    writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+    for doc in documentosEtiquetados:
+        writer.write(str(doc.document.instanceNro) + ': \"' + doc.document.title + '\",cluster' + str(doc.label) + "\n")
+
+    writer.write("\n")
+    writer.write(" * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n")
+    writer.write(" * * * * * * * * * * * * Cantidad de instancias por cluster  * * * * * * * * * * * * * *\n")
+
+
+    nro = 0
+    for cluster in clusters:
+        writer.write("cluster nro: " + str(nro) + " tamanio: " + str(len(cluster)) + "\n")
+        nro = nro + 1
+    writer.close()
