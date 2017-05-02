@@ -23,7 +23,7 @@ def applyClustering(matrix, lista_documentos):
         documentoEtiquetado = LabeledDocument(lista_documentos[nro_doc], etiquetas[nro_doc])
         documentos_Etiquetados.append(documentoEtiquetado)
         nro_doc = nro_doc + 1
-    return documentos_Etiquetados
+    return documentos_Etiquetados,centroides
 
 def getClusters(lista_documentos_etiquetados):
     nro_of_clusters = initVar()

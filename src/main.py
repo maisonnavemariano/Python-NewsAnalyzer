@@ -5,6 +5,7 @@ from LabeledDocument import LabeledDocument
 
 from Document import combinarDocumentos
 
+import numpy as np
 from Clustering import getClusters
 from Clustering import saveResult
 from pathlib import Path
@@ -48,14 +49,18 @@ if not (last_threshold == threshold):
 
 
 documentosEtiquetados_File = Path("../db/pickle/documentosEtiquetados.p")
-if not documentosEtiquetados_File.is_file():
+centroides_File = Path("../db/pickle/centroides.p")
+if not documentosEtiquetados_File.is_file() or not  centroides_File.is_file():
     #Crear tf-idf.
     documentos, matriz  = createTFIDF( INPUT) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
     #Aplicar clustering Kmeans.
-    documentosEtiquetados = applyClustering(matriz,documentos)
+    documentosEtiquetados,centroides = applyClustering(matriz,documentos)
     pickle.dump(documentosEtiquetados, open(str(documentosEtiquetados_File), "wb"))
+    pickle.dump(centroides, open(str(centroides_File),"wb"))
+
 else:
     documentosEtiquetados = pickle.load(open(str(documentosEtiquetados_File), "rb"))
+    centroides = pickle.load(open(str(centroides_File), "rb"))
 
 
 print("Kmeans terminado.")
@@ -63,11 +68,24 @@ clusters = getClusters(documentosEtiquetados)
 #Guardar resultados.
 saveResult(documentosEtiquetados,clusters)
 
-nro = 0
-documentosDeCluster = []
+columnas = ["cantidad_noticias","fecha_centroide","error_cuadratico","varianza_fechas"]
+dataset_clusters = np.zeros(shape = (len(clusters),len(columnas)))
+
+# Columna cantidad_noticias
+c = 0
 for cluster in clusters:
-    nuevoDoc = combinarDocumentos(cluster, "clusterNro"+str(nro))
-    documentosDeCluster.append(nuevoDoc)
-    nro =  1 + nro
+    dataset_clusters[c][0] = len(cluster)
+    dataset_clusters[c][1] = centroides[len(centroides)-1]
+    c = c +1
+
+writer = open("clusters.tmp", "w")
+for row in dataset_clusters:
+    line = ""
+    for element in row:
+        line = line +" "+str(element)
+    print(line)
+writer.close()
+
+
 
 #documentos, matriz  = createTFIDF( dataset_filtrado,"../db/noticias/enero",documentosDeCluster )
