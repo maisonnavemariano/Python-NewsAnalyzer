@@ -75,15 +75,15 @@ dataset_clusters = np.zeros(shape = (len(clusters),len(columnas)))
 c = 0
 for cluster in clusters:
     dataset_clusters[c][0] = len(cluster)
-    dataset_clusters[c][1] = centroides[len(centroides)-1]
+    dataset_clusters[c][1] = centroides[c][len(centroides[c])-1]
     c = c +1
 
-writer = open("clusters.tmp", "w")
+writer = open("../db/clusters.tmp", "w")
 for row in dataset_clusters:
     line = ""
     for element in row:
         line = line +" "+str(element)
-    print(line)
+    writer.write(line+"\n")
 writer.close()
 
 
