@@ -5,7 +5,6 @@ from numpy.linalg import svd
 from numpy import diag
 import numpy
 from readDocuments import getDocuments
-from readDocuments import getDocumentosFiltrados
 from scipy.cluster.vq import kmeans2
 from numpy.linalg import svd
 import math
@@ -16,6 +15,7 @@ def initVar():
     IGNORED_COEFFICIENTS = "IGNORED_COEFFICIENTS = "
     STOPWORD_FILES = "STOPWORDS_FILES = "
     IGNORED_WORDS_FILE = "IGNORED_WORDS_FILE = "
+    CON_FECHA = "WITH_DATE = "
     SAVE_ARFF = "SAVE_ARFF = "
     with open(CONFIG) as f:
         for line in f:
@@ -29,14 +29,16 @@ def initVar():
                 ignored_words_file = line[len(IGNORED_WORDS_FILE)+1:-2]
             if line.startswith(SAVE_ARFF):
                 save_arff = line[len(SAVE_ARFF):-1] == "True"
-    return svd_analysis,stopwords, ignored_coeff,ignored_words_file,save_arff
+            if line.startswith(CON_FECHA):
+                con_fecha = line[len(CON_FECHA):-1] == "True"
+    return svd_analysis,stopwords, ignored_coeff,ignored_words_file,save_arff,con_fecha
 
 
 
 
 
-def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
-    svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file,save_arff = initVar()
+def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
+    svd_analysis, stopwords_list,ignored_coefficients, ignored_words_file,save_arff,fecha = initVar()
 
     stopwords_list.append(ignored_words_file)
 
@@ -49,10 +51,7 @@ def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_
     if(list_documents == None):
         print("Recuperamos todos los documentos...")
         # RECUPERAMOS DOCUMENTOS
-        if(filtrado):
-            todo_los_documentos = getDocumentosFiltrados(INPUT)
-        else:
-            todo_los_documentos = getDocuments(INPUT,stopwords_list)
+        todo_los_documentos = getDocuments(INPUT,stopwords_list)
         print("Recuperamos "+str(len(todo_los_documentos)))
     else:
         todo_los_documentos = list_documents
@@ -93,7 +92,7 @@ def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_
         idf[mapeo_inverso[palabra]] = math.log(float(len(todas_las_palabras)) / float(cant_apariciones) , 10)
 
 
-    tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)))
+    tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras))) # Más uno por la fila con las fechas (epoch)
     doc = 0
 
     for document in todo_los_documentos:
@@ -101,6 +100,8 @@ def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_
             indice_palabra = mapeo_inverso[palabra]
             tfidf[doc][indice_palabra] = float((document.words[palabra])) *  idf[indice_palabra]
         doc = doc + 1
+
+
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -115,9 +116,23 @@ def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_
         print("Analisis de frecuencia latente terminado.")
 
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-    # * * * * * * * * * * * * * * * * * * * * FIN ANALISIS DE SEMANTICA LATENTE * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * * AGREGADO DE EPOCH COMO ATRIBUTO * * * * * * * * * * * * * * * * * * * *
     # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    if(fecha):
+        tfidf_conFecha = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras)+1))
+        # copiamos primeros elementos de tfidf.
+        for row in range(0,len(todo_los_documentos)):
+            for column in range (0,len(todas_las_palabras)):
+                tfidf_conFecha[row][column] = tfidf[row][column]
+        # agregamos fechas
+        for doc in range(0,len(todo_los_documentos)):
+            tfidf_conFecha[doc][len(todas_las_palabras)] = todo_los_documentos[doc].date
 
+        tfidf = tfidf_conFecha
+
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * GUARDAMOS MATRIZ EN ARCHIO ARFF * * * * * * * * * * * * * * * * * * * * *
+    # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
     if (save_arff):
         print("almacenamos matriz ARFF....")
@@ -127,12 +142,15 @@ def createTFIDF( filtrado,INPUT="", list_documents=None): #,stopwords_list, svd_
 
         for palabra in lista_palabras:
             writer.write("@ATTRIBUTE "+palabra.strip('\'"')+" NUMERIC\n")
+        if(fecha):
+            writer.write("@ATTRIBUTE FechaDeLaNoticia NUMERIC\n")
+
         writer.write('@ATTRIBUTE sectionName {Society,Business,Worldnews,Politics}\n')
         writer.write("@DATA\n")
         doc = 0
         for document in todo_los_documentos:
             linea = "\"" + document.title +"\","
-            for column in range(0,len(todas_las_palabras)):
+            for column in range(0,len(tfidf[0])):
                 linea = linea + str(tfidf[doc][column])+","
             linea = linea[:-1]
             writer.write(linea+","+document.sectionName+"\n")

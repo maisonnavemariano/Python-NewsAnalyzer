@@ -1,0 +1,2709 @@
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * Archivo de Configuración de la ejecución  * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+FACTOR_PONDERACION = 3
+FRECUENCIA_TITULOS = 1
+STOPWORDS_FILES = ["../stopwords/SmartStoplist.txt","../stopwords/stopword1.txt","../stopwords/stopword2.txt","../stopwords/stopword3.txt"]
+IGNORED_WORDS_FILE = "../stopwords/ignored_words.txt"
+THRESHOLD = 3
+SVD_ANALYSIS = True
+ALLOWED_SECTIONS = {"Society","Business","World news","Politics"}
+IGNORED_SECTIONS = {"Music","Opinion","Sport","Film","From the Guardian","Footbal","Stage"}
+IGNORED_COEFFICIENTS = 500
+NRO_OF_CLUSTERS = 1000
+SAVE_ARFF = True
+LAST_THRESHOLD_EXECUTED = 3
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+10135: "Indian gangrape victims ashes scattered on river Ganges",cluster926
+10163: "Kim Jongun calls for end to confrontation with South Korea",cluster409
+10146: "Kim Jongun calls for better ties with South Korea",cluster409
+10137: "Israels Jewish population passes 6 million mark",cluster101
+10181: "Spain the pain of austerity deepens",cluster215
+10183: "Domestic abuse changing the conversation",cluster215
+10182: "Iran another year on the edge of the volcano",cluster760
+10191: "UK economy could face groundhog year as morale stays low",cluster605
+10192: "Archbishop hails volunteers in his final New Year message",cluster605
+10193: "Hollande refuses to back down on French supertax",cluster555
+10196: "UK needs its own Michelle Obama to tackle obesity say doctors",cluster328
+10195: "Liver charity calls for early screening",cluster328
+4120: "David Camerons statement on the Algerian hostage crisis",cluster867
+4145: "Algeria hostage crisis over after further casualties",cluster280
+4123: "Algerian hostage crisis six Britons feared dead says David Cameron",cluster572
+4128: "Britains hidden homeless and the death of Michelle Conroy",cluster576
+4195: "Without a new product to propel sales Apple struggles to remain a juicy buy",cluster182
+4155: "Olympics workers crosschecked against unlawful blacklist",cluster341
+4154: "10000 oil rig construction jobs lost as North Sea contracts go to Korea",cluster341
+4177: "Boeings Dreamliner has to rise again  the future of world aviation needs it",cluster329
+4157: "Political coward Binyamin Netanyahu sees rift with Barack Obama widen",cluster431
+4165: "Air cadets rewrite their oath to remove God from pledge",cluster341
+4168: "Theres more to life and to our ailing high streets than shopping",cluster341
+4205: "Living wage zones could become key Labour pledge",cluster394
+4194: "Italys top paparazzo goes missing after being given jail sentence for blackmail",cluster182
+4204: "Torture accusations against UK troops in Iraq echo the scandal of Abu Ghraib",cluster35
+4206: "Blockbuster jobs toll rises to at least 900",cluster182
+4223: "British economy faces threat of lost decade",cluster554
+4244: "Central Americas tiny states caught in deadly crossfire of battle with cartels",cluster269
+4220: "Davos prepares for dose of daftness",cluster554
+4222: "Japans new PM brings rising hopes that economy can be revived",cluster554
+4243: "Malis army suspected of abuses and unlawful killings as war rages",cluster269
+4232: "Cuts to abattoir meat checks will be the next food scandal",cluster265
+4323: "Guatemalas president My country bears the scars from the war on drugs",cluster647
+4262: "Back down on austerity Osborne urged as Britain slips towards tripledip",cluster228
+4263: "Camerons keynote speech on EU will contain redmeat announcement",cluster228
+4278: "Ed Balls Yorkshire beef and Westminster lasagne parties",cluster286
+4265: "Call off war on drugs leader of Guatemala tells the west",cluster29
+4286: "Algerian crisis ends with deaths of militants and hostages  ",cluster781
+4295: "Algeria hostage crisis rivalries and reputation may be part of motive",cluster289
+4294: "Snow could put UK in a tripledip recession",cluster82
+4304: "Algerian crisis over after assault ends with death of seven remaining hostages",cluster690
+4310: "Paris in the snow  in pictures",cluster801
+4331: "Horse abattoir investigated after secret filming reveals shocking abuse",cluster622
+4490: "Algeria siege It was a nightmare There were deaths Everyone was crying",cluster103
+4337: "Algerian troops attempt to end hostage standoff with final assault",cluster622
+4342: "Snow blankets Britain  in pictures",cluster622
+4364: "Algerian hostage crisis is governments top priority says William Hague",cluster739
+4423: "Billionaires fortunes hinder fight against poverty says Oxfam",cluster667
+4481: "Stansted airport to be sold for 15bn to Manchester Airports Group",cluster103
+4483: "Algerian hostage crisis last group of jihadists hold out in gas plant",cluster103
+4545: "Safety concerns emerge over horse DNA in supermarket beef",cluster251
+4502: "UK retail sales fell in December",cluster103
+4554: "David Cameron puts Algeria and Mali crises ahead of EU speech",cluster251
+4504: "US confirms one American hostage killed in Algeria attack",cluster103
+4512: "Letters Friedan and feminisms long links with the fight for wider equality",cluster103
+4551: "Whole Foods CEO John Mackey calling Obamacare fascist is tip of the iceberg",cluster251
+4548: "Tesco tweets itself into more horsemeat trouble",cluster251
+4568: "British hostages freed in Algeria tell of relief",cluster177
+4563: "All change high street shops reveal a retailers revolution",cluster177
+4585: "Eurozone crisis live Greece to probe exfinance minister over tax scandal",cluster247
+4569: "Cuts and deregulation fostered horsemeat scandal says Labour",cluster177
+4581: "Oil firms evacuate nonessential workers from Algeria",cluster247
+4586: "Greek politicians launch inquiry into former finance minister",cluster400
+4590: "LAquila quake Italian judge explains why he jailed scientists over disaster",cluster169
+4589: "The soft option",cluster400
+4600: "Fortnum  Mason profits crash after payouts for late Christmas hampers",cluster348
+4626: "FTSE hits new four and a half year high as BG benefits from bid talk and broker upgrade",cluster532
+4607: "Parents convicted of manslaughter after toddler drinks methadone",cluster545
+4672: "US auto industry back on track but luxury cars keep richest in the fast lane",cluster462
+4628: "Female bishops house of laity chair survives noconfidence vote",cluster187
+4633: "Buddy scheme to give more multinationals access to ministers",cluster194
+4634: "The Libor buck must stop in the RBS boardroom",cluster194
+4637: "Why Boeings 787 Dreamliner was a nightmare waiting to happen",cluster194
+4641: "Mali conflict sparks fears of humanitarian crisis",cluster194
+4654: "Russian vote in Israel integrates into political mainstream",cluster732
+4665: "Algerian hostage crisis militants retain partcontrol of gas plant",cluster732
+4681: "Nato stops sending prisoners to Afghan jails after reports of torture",cluster462
+4692: "Pakistani anticorruption official found hanged",cluster465
+8993: "Hardworking families are picking up the bill for George Osbornes failure  Rachel Reeves",cluster486
+8998: "UKs top firms more maledominated than FTSE rivals new data reveals",cluster486
+8995: "Soldiers teachers cashiers and nurses faces of the benefit cuts",cluster486
+9000: "Wongas bad debts start to rise along with its profits",cluster56
+9008: "Calls to close privately run NHS clinic after death",cluster520
+9009: "Lib Dems face toughest election in a generation says party president",cluster789
+9016: "Binyamin Netanyahu fights surge from rightwing opponent before poll",cluster447
+9022: "Malala survived  that is a big defeat Now they want to kill many Malalas",cluster214
+9011: "India gangrape victims blood found on clothes of accused",cluster447
+9026: "Childhood obesity Jeremy Hunt threatens food industry with legislation",cluster214
+9021: "Four dead including gunman following Aurora standoff",cluster214
+9060: "India gang rape five men charged with murder to appear in court",cluster1
+9044: "Cat caught smuggling phone into Brazilian jail",cluster951
+9040: "Chinese anticorruption drive nets official with 47 mistresses",cluster745
+9046: "NHS patients thwarted in attempt to enter drug trials",cluster97
+9056: "Child benefit reforms under fire as parents fail to opt out",cluster1
+9067: "Criminals should spend longer in jail says Chris Grayling",cluster947
+9064: "Bluefin tuna sells for 1m at auction  in pictures",cluster947
+9071: "Ban highsugar cereals to tackle child obesity says Andy Burnham",cluster133
+9072: "Ecigarettes no smoke without ire  Lionel Shriver",cluster915
+9135: "What Im really thinking the sexual health nurse",cluster767
+9205: "Church of England rules gay men in civil partnerships can become bishops",cluster978
+9157: "Experience my horse sank in quicksand",cluster767
+9182: "Oona King I couldnt resist Dancing On Ice",cluster510
+9181: "Gabby Giffords visits Newtown to meet Sandy Hook families",cluster834
+9188: "Letters Press caricatures bolster attacks against Travellers",cluster796
+9208: "HMRC publishes Flickr gallery of 2012s top tax criminals",cluster326
+9199: "Lib Dems thrive on south coast despite problems in Westminster",cluster978
+9221: "Prostitution and plunder at Honduran embassy Christmas party in Bogot",cluster64
+9238: "Ulster loyalists plan Dublin demonstration over union flag",cluster935
+9213: "Hugo Chvez fights for life as supporters pray in Venezuela",cluster920
+9215: "Liberal Democrats bank on ground war to hold on to seats",cluster920
+9220: "Mint the coin why the platinum coin campaign doesnt even work as satire",cluster64
+9223: "David Cameron Well ensure foreign firms pay their fair share of tax",cluster64
+9226: "Campaigners refer MP over failure to declare gambling industry benefits",cluster255
+9229: "Camerons insistence on EU budget cut counterproductive says Irish MP",cluster827
+9286: "UK bond yields briefly rise above France dont panic say analysts",cluster771
+9237: "Online shopping gilt yields and Goldman  Nils Pratley",cluster935
+9243: "Rape protests spread beyond India",cluster911
+9248: "Girlguiding UK considers dropping God and Queen from its oath",cluster84
+9250: "Syria rebels arms supplies and finances drying up despite western pledges",cluster928
+9253: "FTSE 100 hits highest level for nearly two years despite poor UK service sector figures",cluster928
+9264: "Syria conflict Hezbollah calls for political settlement  Friday 4 January 2013",cluster769
+9268: "Oldest Swiss bank Wegelin to close after admitting aiding US tax evasion",cluster769
+9283: "Chinas fastfood pioneer struggles to keep customers saying YUM",cluster553
+9280: "Syria conflict UN says 60000 dead  ",cluster769
+9290: "German state fights Facebook over alleged privacy violations",cluster672
+9300: "Child benefit reforms will push 320000 families over 50 tax rate",cluster352
+9299: "UK service sector contracts for first time in two years",cluster352
+9320: "US unemployment holds steady at 78 as economy adds 155000 jobs",cluster912
+9326: "Homelessness the growing bed and breakfast crisis",cluster368
+9345: "Rescued Chinese negatives  in pictures",cluster504
+9330: "Disability claimants pushed to the brink by faceless benefits system",cluster368
+9352: "Virgin France to shut Paris flagship store blaming insolvency",cluster41
+9335: "Euro crisis as it happened Shock fall in UK services activity raises recession fears",cluster324
+9344: "Negative views collection of camera film captures changing face of China",cluster504
+9351: "Arabs are losing faith in America lessons from Lebanon 1982",cluster41
+9396: "Tripledip recession here we come  Larry Elliott",cluster726
+9368: "Pakistan schoolgirl Malala Yousafzai discharged from hospital",cluster41
+5481: "Cameron tells supermarkets horsemeat burger scandal unacceptable",cluster453
+6492: "Labour would stop scandalous company tax avoidance says Miliband",cluster728
+7865: "Gavin Mooney obituary",cluster99
+5501: "Indonesian supreme court hopefuls rape remarks spark outrage",cluster853
+6495: "UK government and aerospace firms join forces after 28bn deal collapse",cluster279
+5488: "Blockbuster UK goes into administration",cluster453
+6505: "Indian police investigate two new gang rape cases",cluster908
+7879: "Society daily 090113",cluster824
+7934: "Norovirus new strain may be behind 63 increase in cases",cluster249
+5498: "Boeing 787 Dreamliner whats gone wrong",cluster853
+7867: "David Cameron is a PR man who cant even do a relaunch says Ed Miliband",cluster99
+5516: "Lenins embalmed corpse edges nearer the exit of his Red Square mausoleum",cluster492
+6501: "Hospital watchdog warns 17 have unsafe staffing levels",cluster398
+7873: "Playcom closes retail business as VAT loophole closed",cluster824
+5529: "Belfast is burning while we harp on about horsemeat",cluster814
+6512: "David Camerons expolicy guru Steve Hilton criticised over policy remarks",cluster614
+5535: "Goldman Sachs pay and bonuses rise to 250000 each",cluster137
+6504: "Jaguar Land Rover to create 800 jobs in Solihull",cluster908
+5524: "UK commerce with US underplayed compared with EU trade links",cluster814
+6508: "How lifesaving drugs are caught up in Iranian sanctions",cluster943
+7887: "Welfare cuts the other Miliband strikes a better note  Michael White",cluster709
+5526: "Bogus Mayfair property tycoon convicted of 750m fraud",cluster814
+6507: "Banks risk further fury as bonus season begins in the City",cluster908
+7884: "Vittorio Missonis family dismiss crash scenario as least plausible",cluster709
+5534: "Mali a guide to the conflict",cluster137
+6513: "Optimism in short supply on streets of Tehran as sanctions grind Iran down",cluster665
+7900: "Family release photographs of former FBI agent who went missing in Iran",cluster871
+5539: "Why Russian soldiers are finally replacing foot wraps with socks",cluster137
+6517: "Private NHS providers in line for corporation tax exemption",cluster178
+7912: "Greggs likeforlike sales down over Christmas as tough trading bites",cluster871
+5564: "Malis rebels hold the advantage in a ground war on desert plains",cluster517
+7938: "Enterprise Inns and Punch Taverns slip after new government plans to protect pub tenants",cluster249
+5546: "David Cameron accused of allowing ministers to campaign for EU exit",cluster509
+6521: "Growing up gay in Iran",cluster586
+6530: "Iran unable to get lifesaving drugs due to international sanctions",cluster695
+5551: "Almost a third of Britons cannot afford a holiday poverty report shows",cluster459
+6552: "Money may be tight but smart aid to developing countries can really work  Larry Elliott",cluster79
+7936: "Maldives clerics murder raises fears of growing religious extremism",cluster249
+5565: "Society daily 160113",cluster517
+6529: "ExBaugur boss Jon Asgeir Johannesson lashes out at persecution",cluster695
+7949: "Grayling admits probation privatisation will not cut reoffending dramatically",cluster249
+7953: "Delhi gangrape trial judge upholds ruling to hold trial behind closed doors",cluster249
+6571: "David Cameron risks sleepwalking UK out of EU warns Ed Miliband",cluster810
+5588: "JD Wetherspoon margins hit by increased costs and marketing spending",cluster517
+7985: "Syria conflict prisoner swap  Wednesday 9 January 2013",cluster634
+6541: "Cable  Wireless sells Macau stake to China for 460m",cluster761
+5616: "French Connection hit by profit warning as markets dip on economic worries",cluster877
+7965: "Banking shares give a lift to FTSE 100 with Lloyds boosted by upgrade",cluster249
+6564: "Egyptian court orders Hosni Mubarak retrial",cluster749
+5633: "Dreamliner grounding means a nightmare for Boeing",cluster540
+6610: "Binyamin Netanyahu wasted 3bn on Iranian attack plan",cluster790
+5590: "Mali French troops in direct combat with insurgents within hours",cluster517
+7977: "Probation service revolution means wholesale privatisation",cluster711
+6566: "Costa Concordia survivors return to Giglio for oneyear anniversary",cluster749
+5632: "Horse meat scandal wipes 300m off Tescos market value",cluster540
+7982: "Chinese newspaper makes deal with censors but whitewash claims persist",cluster98
+6568: "Israel evicts E1 Palestinian peace camp protesters",cluster749
+5631: "Anglo American falls as industrial action follows plans to shut or sell three platinum mines",cluster540
+8009: "US considers complete Afghanistan withdrawal on eve of Karzai visit",cluster624
+6596: "Britain to send aircraft to Mali to assist French fight against rebels",cluster32
+5698: "Mali who is doing what",cluster381
+8007: "British military at risk of fatal cyberattack MPs warn",cluster953
+6582: "We dont want our burqas back women in Afghanistan on the Talibans return",cluster404
+5646: "Suicide bombers strike at heart of Afghan capital",cluster432
+8010: "Pakistani troops crossed Kashmir line says India",cluster624
+6613: "After a humiliating year bank bonuses are sure to be negligible Arent they",cluster790
+5661: "Horsemeat discovered in burgers sold by four British supermarkets",cluster16
+8076: "Letters Questions of conscience over churchs approach to gay bishops",cluster907
+6629: "Germanys ambitions arent the problem its love for austerity is",cluster790
+5668: "Horse DNA found in beefburgers from four major supermarkets",cluster830
+8021: "Boeing Dreamliner 787 fire and fuel leak add to safety concerns",cluster226
+6612: "Bolivians demand the right to chew coca leaves",cluster412
+6619: "Marks  Spencer chief faces a less than happy new year after Christmas turkey",cluster790
+5669: "France pledges to fight until Malis Islamist rebels are wiped out",cluster830
+8030: "Health watchdog has long way to go to gain public confidence",cluster34
+6625: "Europes carmakers yearn for the Obama touch",cluster790
+5697: "Kenneth Clarke warns PMs strategy could end in withdrawal from EU",cluster602
+6720: "Ken Clarke and Peter Mandelson join forces to fight Eurosceptics",cluster217
+5672: "HMVs woes do not signal the end for record shops",cluster830
+8034: "Poorest households will be hit hardest by benefit changes Whitehall admits",cluster276
+6672: "Saudi Arabias treatment of foreign workers under fire after beheading of Sri Lankan maid",cluster290
+1068: "Sinkhole appears in Guangzhou China  in pictures",cluster751
+5693: "787 emergency landing Japan grounds entire Boeing Dreamliner fleet",cluster992
+8036: "Lib DemLabour plan likely to stymie shrinking of Commons says Cameron",cluster276
+6649: "World Trade Organisations new boss will face an intray filled with problems",cluster790
+5699: "World Bank urges poor countries to boost growth",cluster381
+8039: "Hidden casualties of Afghan war nomadic farmers adopt more settled life",cluster276
+6778: "Jewish Americans may be increasingly disenchanted with Netanyahu But their priorities lie elsewhere",cluster406
+1064: "Egypts armed forces chief warns unrest could cause collapse of state",cluster40
+5702: "Paperless NHS plan to put patients medical details online",cluster282
+6687: "Bank bonus season set to be a ribtickler",cluster790
+1032: "German row over whitewashing the nword from childrens books",cluster855
+5703: "Hugh Muirs diary  Theresa Mays great DNA trawl hits trouble",cluster282
+6723: "Voters believe Britain should leave EU if it cannot reclaim powers poll reveals",cluster217
+888: "Bashar alAssads wife Asma pregnant with fourth child",cluster526
+5704: "Reform of system for approving NHS drugs taking too long say MPs",cluster282
+8043: "Hugh Muirs diary",cluster276
+6726: "McAlpine denies high court claim it had major role in blacklist scandal",cluster217
+899: "Bumi battle date puts pressure on Takeover Panel to make quick decision",cluster623
+8050: "Hugo Chvez to miss inauguration",cluster650
+6780: "Here Comes the Sun flashmob cheers Spanish unemployment office",cluster406
+903: "Lib Dems vote with Labour to reject constituency boundary review",cluster730
+5724: "Anger as HMV collapse leaves gift cards bought for Christmas worthless",cluster963
+8075: "Letters Steady drift to the right in Israel",cluster907
+6742: "Israeli PM orders eviction of Palestinian activists outside Jerusalem",cluster217
+898: "Julius Malema less ANC firebrand more placid farmer",cluster623
+5733: "Letters Liyu police in breach of human rights",cluster981
+6779: "French secret service hostage and soldiers killed in Somali rescue mission",cluster406
+923: "David Cameron to visit Algeria for talks over In Amenas siege",cluster475
+5725: "Tatlers dog Alan dies in bizarre revolving door accident",cluster301
+8066: "The art of the bailout apology ad lessons for AIG from GM and Chrysler",cluster546
+6783: "Israel election country prepares for next act in the great moving right show",cluster406
+901: "Pakistan hopes offroad car race will prove Taliban threat is on wane",cluster842
+5728: "David Cameron warned off opportunism over Europe",cluster211
+6793: "Samesex marriage will see return to Catholic persecution",cluster275
+910: "Earls Court project the deep commitment of Stephen Greenhalgh",cluster525
+8074: "Letters Political reality for the Lib Dems",cluster907
+8080: "Letters NHS culture set by politicians",cluster907
+5741: "Chrysler chief warns broken Europe maiming auto industry",cluster817
+6869: "Ed Miliband Old and New Labour no longer relevant in Britain today",cluster646
+905: "Mali conflict African and western nations pledge 450m for military force",cluster525
+6794: "Heseltine Camerons EU strategy is an unnecessary gamble",cluster821
+907: "Texas postpones execution of female death row prisoner",cluster525
+5735: "Letters Britains unethical development of drones",cluster391
+8095: " MPs vote on 1 benefits cap Politics live blog",cluster5
+6797: "Labour plans crackdown on rogue landlords",cluster821
+921: "Construction workers blacklist Cable to meet information commissioner",cluster818
+5740: "Mali civilians describe their plight as city of Sgou becomes wars frontline",cluster391
+916: "UK intervention in Mali is strategy for future says defence secretary",cluster818
+5745: "Landmark victory for BA employee over right to wear a cross at work",cluster304
+8082: "David Miliband lights a fuse as he turns on coalition and Ed Balls",cluster907
+8085: "Conservative minister Lord Marland resigns",cluster292
+928: "We need to change the culture in the NHS",cluster475
+5753: "140 UK retailers in critical condition",cluster105
+8089: "Labour reveals 106 target election seats",cluster204
+5766: "Goldman Sachs backs down from delayed bonus tax plan",cluster616
+6927: "Letters A lifetimes journey from postwar hope to impotent rage",cluster240
+927: "Shell moves higher as gas talk surfaces while FTSE closes above 6300",cluster475
+8103: "Tesco chief defends Harris  Hoole branding",cluster440
+6930: "The latest breast cancer surgery scandal is the result of wrong priorities  Deborah Orr",cluster240
+5754: "UKs AAA credit rating under significant pressure warns Fitch",cluster105
+8091: "Strivers v shirkers the language of the welfare debate",cluster204
+950: "Ford unveils spectacular results in North America amid losses in Europe",cluster569
+5757: "HMV shoppers Im disappointed but its understandable why they went bust",cluster375
+8111: "Commons welfare debate reduced to two bald men nitpicking",cluster12
+8110: "Doubts emerge over HSBC sale of Ping An stake",cluster12
+6931: "Letters Whats the EU ever done for us This lot",cluster240
+938: "Iraqi exprisoners call for inquiry into allegations of British military abuse",cluster569
+5763: "US Postal Service pushes the digital envelope in battle for its future",cluster680
+6956: "Camerons EU strategy falters as Merkel backtracks on treaty renegotiation",cluster471
+989: "RBSs John Hourican is he a fall guy for Libor misdeeds",cluster272
+5759: "Treasury select committee baffled by countercyclical buffers  Simon Hoggarts sketch",cluster375
+8108: "Karzai and Obama talks to focus on US military strategy in Afghanistan",cluster440
+5765: "HMV and the death of the British high street why do we care",cluster616
+8114: "Eurozone unemployment hits new high",cluster12
+6934: "Obama hints at accelerated pullout after talks with Karzai on Afghan future",cluster240
+5770: "Pakistan supreme court orders arrest of prime minister on corruption charges",cluster590
+8123: "Malian army attacks Islamist rebels in the north",cluster136
+6957: "France launches air strikes on Mali",cluster471
+944: "QE a monumental mistake pensions experts say",cluster569
+5776: "Walmart decision to hire veterans met with enthusiasm and concern",cluster655
+5781: "Mervyn King hit the right note on Goldman  unlike the Treasury  Nils Pratley",cluster904
+6965: "Why Bumi shareholders should be wary of back Nat campaign",cluster471
+948: "Syrian rebels recover scores of bodies from Aleppo river as floodwaters recede",cluster569
+8119: "Boris Johnson gives mentoring job to Ray Lewis",cluster407
+6974: "Tory Eurosceptics impossible demand poses headache for David Cameron",cluster757
+997: "Fight of the condor Peru bull fiestas threaten future of rare Andean bird",cluster585
+5775: "HMV punk singles picture sleeves and coloured vinyl  it was another world",cluster742
+6975: "Six in hospital after taking hallucinogen",cluster757
+5782: "US Postal Service faces ruin without rescue from Congress watchdog warns",cluster904
+8126: "Is Bellway building trouble for itself with chief executives promotion",cluster136
+8137: "Would Vodafone sell Verizon stake  Juliette Garside",cluster776
+6976: "Frances move into Mali follows push south by jihadist fighters",cluster757
+959: "Eurozone crisis as it happened Spanish retail sales slump as US consumer confidence takes a knock",cluster367
+5778: "Married pair alleged to be Russian cold war type spies on trial in Germany",cluster904
+6977: "EDF 3bn deal with Network Rail makes trains mainly nuclear powered",cluster757
+5786: "Ocado and Cooperative buoyed by online sales boom",cluster904
+8128: "Virgin Atlantic hires American Airlines executive as new CEO",cluster136
+8141: "Plans to dissolve south London NHS trust anger neighbouring hospital",cluster776
+1008: "Labour sets out aims to end absolute poverty and aid dependency",cluster536
+6992: "Alter Argo Iranian film to tell other side of hostage crisis",cluster8
+8139: "French budget minister Jrme Cahuzac faces tax fraud allegations",cluster776
+7016: "George Osborne warns Britain could pull out of EU",cluster932
+996: "Israel president demands crackdown on racism in football",cluster585
+5790: "Stop treating gay people as pariahs evangelical minister tells church",cluster727
+8168: "FTSE 100 slips for second day running but Vodafone jumps on Verizon share sale talk",cluster606
+6986: "Fake Wikipedia researcher hacked Bumi chairmans computer  report",cluster8
+5794: "Housing and social care charities warning over catastrophic 83 cuts",cluster727
+8149: "Waitrose drops Delia Smith from ads",cluster227
+6988: "Eurozone crisis as it happened Moodys downgrade piles pressure on Cyprus",cluster8
+5807: "Israeli forces shot youth in the back as he ran away say Palestinians",cluster706
+8146: "Syrian fighting is preventing food aid getting through to 1m people says UN",cluster776
+7009: "Obama and Karzai meet to thrash out details on post2014 Afghanistan",cluster346
+5818: "Eurozone crisis live Concern over German after economy shrinks  as it happened",cluster717
+8153: "New chief renewed hopes at Anglo American",cluster227
+6994: "Jessops shuts stores for last time with the loss of 1370 jobs",cluster8
+5796: "Halfords to stock Pinarello bikes as it targets premium market",cluster727
+8156: "Eurozone crisis live Unemployment rate hits new record high",cluster227
+6999: "French troops arrive in Mali to stem rebel advance",cluster8
+1002: "Libor rigging US regulators may want RBS to plead guilty to criminal charges",cluster536
+5809: "Atlantic Scientology post leads to apology  and debate over advertising",cluster706
+7006: "January rally continues as FTSE 100 ends week on upbeat note",cluster346
+1004: "G4S in line for more Ministry of Justice contracts despite fallout of Olympics fiasco",cluster536
+5820: "Chinese officials ask to borrow orphans to hide child welfare failings",cluster470
+8167: "Venezuela plans proChvez rally for presidents swearingin",cluster606
+7031: "Syrian rebels take Taftanaz air base  Friday 11 January 2013",cluster61
+5819: "HMV record chain was beset by digital downloads and cheap DVDs",cluster470
+8187: "Libyan revolution casualties lower than expected says new government",cluster900
+7023: "Syrian rebels take control of key Assad airbase",cluster161
+1018: "Manilas waste scavengers are integrated into the recycling chain",cluster855
+5829: "My life according to the National Survey of Health and Development",cluster788
+8170: "Forty years of community service  John Harding",cluster606
+7024: "Economy heading for tripledip recession NIESR warns",cluster518
+1019: "Public debate of sexual abuse is long overdue  Carlene Firmin",cluster855
+5823: "Theresa May publishes plans for police pay Politics live blog",cluster788
+1049: "Has Wales found the winning formula for healthcare",cluster325
+5839: "Anglo American faces wrath of South African government over Amplats cuts",cluster788
+7038: "Fuel poverty brings medieval dread of winter to 21st century families",cluster61
+8191: "ProUK camp suffers friendly fire wound in first skirmish of the year",cluster900
+7063: "Detroit hails return of the truck as auto show prepares to show some muscle",cluster163
+8202: "Christmas trading toughest for 40 years says Debenhams",cluster945
+8: "Diary Gove v teachers Gove v Clegg Gove v Boris Did the education secretary ever see a scrap he didnt like",cluster104
+14: "Adam Afriyie profile before any plot there was always a word farm",cluster104
+15: "Chuck Hagel clashes with Republican senators at confirmation  live updates",cluster257
+16: "Dragons Den star Peter Jones snaps up Jessops brand",cluster104
+46: "Letters Miss Blackburn was a true champion of education for girls",cluster917
+33: "Banks misselling review reveals ugly truths  but not size of scandal",cluster598
+32: "Tory party the rising stars and those fading fast",cluster598
+39: "Cameron faces unfriendly fire from military chiefs over defence budget",cluster138
+35: "France could join list of eurozone casualties in a fresh crisis",cluster598
+45: "Letters Womens vital role inemerging markets",cluster917
+44: "Tories tell PM lift poll ratings or face revolt",cluster917
+55: "Hunt risking future of smaller hospitals with Lewisham ruling",cluster514
+49: "Adam Afriyie superrich backbencher startles MPs with PMinwaiting bid",cluster917
+56: "Letters The dangers of intervention in Mali",cluster917
+64: "Pinewood Studios submits revised plans for controversial expansion",cluster889
+72: "Ernst  Young blames outdated global rules for UK tax avoidance scandals",cluster252
+58: "EU referendum plan attacked by proEurope Tory Lord Howe",cluster644
+67: "As Malis Islamists retreat Tuareg civilians fear vengeful armys reprisals",cluster893
+73: "Burger King reveals its burgers were contaminated in horsemeat scandal",cluster252
+70: "Potash mine under national park will make Yorkshire farmers millionaires",cluster252
+125: "GPs to prescribe selfhelp books for mental health problems",cluster216
+92: "Privatising searchandrescue service and closing bases will cost lives",cluster200
+104: "Himalayan shebear rips into tax avoiders  then strokes their scruples",cluster998
+94: "Hadiya Pendleton murdered honors student and symbol of Chicago violence",cluster630
+96: "Diageo shareholders have good reason to celebrate",cluster533
+98: "Spanish prime minister Rajoy accused of hiding secret income",cluster787
+114: "Kenyan web monitors work to avert election violence",cluster216
+116: "Eurozone crisis live Spanish PM accused of secret payments",cluster786
+147: "Italian election brings female question to fore",cluster864
+146: "Banking shares static despite latest misselling scandal with Barclays shares up 85 in past six months",cluster864
+148: "Privatisation of UKs searchandrescue helicopters raises safety and job fears",cluster679
+152: "Israel faces repercussions of air strike on Syria",cluster969
+164: "HMV workers take over official Twitter feed to vent fury over sacking",cluster241
+153: "Coalition talks stumble over mass optout from EU rules",cluster969
+156: "Alex Salmond prepares to name the day",cluster583
+174: "Ilya Bohac obituary",cluster122
+161: "Four US states considering laws that challenge teaching of evolution",cluster298
+199: "Kenyas Dadaab finds innovative ways to educate knowledgehungry refugees  Clar Ni Chonghaile",cluster423
+171: "Antony Jenkins hopes to plant the seeds of change at Barclays",cluster122
+183: "North Dakota battle over reproductive rights begins with antiabortion hearing",cluster659
+198: "Electoral Commission forces the pace on possible paths for Scotland",cluster423
+185: "Politics Weekly podcast Childcare ethnic minority votes and backbench rumblings",cluster522
+190: "Unemployment claims rise as fragile US jobs market takes hit",cluster806
+231: "Teacher wins China milestone claim for HIVrelated job discrimination",cluster220
+211: "Syria may respond to Israeli air strike says ambassador",cluster142
+235: "Astrazeneca pulls FTSE below 6300 as lack of new drugs dents profits",cluster220
+242: "Santanders profits slide as 18bn of loans turn sour",cluster635
+267: "Society daily 310113",cluster451
+250: "Lewisham hospital wins partial victory over AE plans",cluster635
+247: "Israel must withdraw all settlers or face ICC says UN report",cluster635
+264: "Chinese court convicts two Tibetans for encouraging selfimmolation",cluster451
+340: "Nicola Sturgeon should be cautious in seeking Irish support Dublin has its eye on the North",cluster544
+273: "High streets banks hit by fresh misselling scandal",cluster233
+310: "Guardian Africa Network caption competition  terms and conditions",cluster859
+277: "David Cameron arrives in Libya on surprise visit",cluster233
+301: "As London rents keep soaring what are the best housing crisis solutions",cluster859
+307: "Win a ticket to see Feast ticket in our caption competition",cluster859
+330: "Denis Donaldson fresh inquiry into murder of British spy within Sinn Fin",cluster544
+350: "Kenneth Clarke it is inconceivable PM would make case for leaving EU",cluster773
+339: "Shell dividend pleases shareholders but profits disappoint City",cluster544
+351: "Britain was wrong to close Tehran embassy says David Miliband",cluster773
+358: "Lewisham hospital announcement Politics live blog",cluster360
+379: "Threequarters of local authorities to put up council tax for poorest families",cluster425
+353: "House prices up 05 in January says Nationwide",cluster773
+367: "Russia condemns Israeli air strike on Syria",cluster425
+370: "Israeli warplanes carry out air strike on Syria",cluster425
+386: "Ministers blocking youth unemployment initiatives",cluster110
+415: "Health spending could double by 2061",cluster378
+8054: "Shells Arctic drilling plan under threat after US orders review",cluster650
+414: "Household income is measure of economic recovery LSE panel says",cluster378
+416: "Trident subs aircraft carriers and drones on MoDs 160bn shopping list",cluster378
+424: "Spains economy shrinks again and remains deep in recession",cluster477
+425: "Hugh Muirs diary cant fly cant come Prince Edward and a royal visit that never was",cluster477
+422: "Children of Diabaly witnesses to the Malian war  in pictures",cluster315
+429: "US recovery stalls after first quarter of negative growth in three years",cluster477
+449: "Hospitals face new army of inspectors in wake of Mid Staffordshire scandal",cluster548
+448: "Britain to work with Algeria on counterterrorism says David Cameron",cluster735
+450: "Syria crisis 15bn in humanitarian aid pledged after Ban Kimoon appeal",cluster701
+451: "Anyone who doubts fiscal cliff impacted US economy is living in a fantasyland  Heidi Moore",cluster51
+455: "Letters Managed contraction",cluster51
+458: "Robert Francis QC the man behind the NHS Mid Staffs report",cluster507
+457: "Final report into Mid Staffs scandal likely to prove devastating for NHS",cluster78
+461: "Letters We must act now if the NHS is to be saved",cluster468
+468: "A lighter look",cluster524
+472: "Is the head of Barclays pay committee up to the job",cluster823
+484: "GAY founder takes back control of bar chain from HMV",cluster513
+474: "Expected drop in demand for air travel boosts opponents of airport expansion",cluster991
+477: "Polish supplier linked to burger scandal had been providing meat for a year",cluster991
+483: "Mali rebels hide as French troops drive past  then return",cluster448
+485: "NRA chief Wayne LaPierre new gun laws not a serious solution  as it happened",cluster303
+486: "Barclays former pay chief argued for Bob Diamond to get no bonus",cluster330
+487: "British armys Iraq torture and murder investigations to be reopened",cluster330
+488: "Germany marks 80 years since rise of Hitler with project of remembrance",cluster897
+496: "Deaths of prisoners in British custody in Iraq to be reinvestigated court told",cluster897
+505: "HM admits tough start to the year",cluster863
+504: "Kenneth Clarke leaving EU would be fatal mistake",cluster863
+510: "Balotelli bounce Berlusconi rivals question timing of AC Milan signing",cluster480
+509: "Boeing chief defends use of lithium batteries in grounded 787 planes",cluster815
+511: "Mohamed Morsi promises Germany he will lead Egypt on road to democracy",cluster464
+527: "Eurozone crisis live Surprise fall in US GDP after Spains recession deepens  as it happened",cluster887
+519: "Cameron off for his Araby adventure trailing jeremiads from the House",cluster807
+525: "Phoenix banks get a lowrisk underwriting deal",cluster923
+534: "David Cameron in Algeria a growing warmth in the Sahara",cluster914
+543: "Italy fears for vanishing heritage after arrests over sacking of historic library",cluster589
+530: "Lights out  France to force shops and offices to go dark overnight",cluster923
+538: "The Very Rev Michael Till obituary",cluster891
+619: "US economy shrinks unexpectedly despite improving job market",cluster224
+549: "Herbalife registers internet domain names featuring Bill Ackmans name",cluster107
+560: "FTSE 100 falters following five days of gains after poor US GDP data and trading updates",cluster874
+558: "Growth in GDP relies on governments buying not selling in this climate",cluster874
+568: "What made the US economy shrink The fiscal cliff fight in Congress is what  Heidi Moore",cluster208
+608: "Gabrielle Giffords calls for action on gun control Too many children are dying",cluster607
+574: "Syria crisis opposition leader offers talks with Assad regime  Wednesday 30 January 2013",cluster208
+626: "How to make sure HS2 doesnt anger Tory voters  Westminster digested",cluster210
+638: "Mali conflict French troops retake Kidal airport without resistance",cluster723
+632: "Imperial Tobacco profits hit by black market cigarette trade while FTSE falls on US GDP data",cluster723
+635: "Downing Street high benefits mean food banks should not be needed",cluster723
+5729: "Message to PM over Europe echoes warning by Obama regime",cluster211
+637: "Tesco drops Irish supplier over horsemeat scandal",cluster723
+690: "Zimbabwean government bank balance down to 217",cluster898
+644: "Lloyds Banking Group loses senior executive",cluster649
+663: "Scottish government changes wording of independence referendum question",cluster594
+654: "Mothercare UK boss exits as retailer battles falling sales",cluster999
+677: "Garda Adrian Donohoe murder sparks political row over Troubles deaths",cluster594
+687: "Iranian journalists in fear after arrests",cluster573
+696: "Alex Salmonds Scottish independence referendum question rejected",cluster420
+3234: "The Rio favela transformed into prime real estate",cluster438
+706: "Society daily 300113",cluster902
+729: "Petrofac falls but Phoenix rises",cluster351
+726: "Toyota recalls 13m cars over airbag and windscreen wiper faults",cluster351
+728: "Disability benefit changes  your stories",cluster351
+733: "Louise Menschs business partner says paedophile claims destroyed his life",cluster351
+732: "Egypt protesters defy Morsis curfew  Tuesday 29 January 2013",cluster351
+742: "South Korea launches rocket carrying satellite in battle for space supremacy",cluster100
+784: "Bipolar support service is under threat of closure just when it is needed most  Mary OHara",cluster246
+749: "Mothercare slips as Australian associate goes into administration",cluster100
+754: "Arm jumps on optimism over its next generation processors",cluster143
+767: "New consumer bodies for healthcare are far behind schedule claims Labour",cluster57
+777: "Malis ethnic tensions erupt as troops hunt down suspected Islamists",cluster976
+774: "Cameron flies to Algeria to forge alliance against terror",cluster976
+776: "Berlin marks Hitlers rise to power",cluster976
+791: "Government to announce 62m boost for cycling infrastructure",cluster982
+792: "Mental health patients are being detained in all but name",cluster982
+815: "Diary the great history faceoff Gove v Clegg",cluster349
+816: "Vince Cable seeks action from seven top firms with menonly boardrooms",cluster349
+804: "Julia Gillard Australian election will be held on 14 September",cluster982
+813: "Italys finance minister defends role of government in bank scandal",cluster740
+849: "Families face battle with GSK over dangerous diabetes drug",cluster36
+818: "One in eight councils risks missing savings target finds NAO",cluster770
+850: "Avandia case study He knew it was the drug straight away",cluster36
+825: "Austerity brings more custom to discount supermarkets",cluster612
+836: "President Obama presents plan for immigration reform  as it happened",cluster965
+845: "Live music industry sets off alarm bells over ticket and artist monopolies",cluster36
+874: "Soldier injured in Iraq grenade attack wins benefit battle",cluster10
+857: "Barclays preparing to pay bonus of at least 1m to new chief Antony Jenkins",cluster36
+856: "Letters We dont need an EU referendum",cluster36
+862: "Alex Salmond takes spotlight away from nationalists summit",cluster686
+881: "Childcare changes will cut play and inhibit learning say carers",cluster11
+864: "The US Justice Departments Libor prosecution of RBS is too little too late  Heidi Moore",cluster48
+877: "US signs deal with Niger to operate military drones in west African state",cluster321
+876: "Boundaries debate shipwreck survivors fall out and are over a barrel",cluster321
+880: "Spanish retail sales slump 107 as austerity hurts consumers",cluster11
+1329: "Chief executive of Hovis owner Premier Foods quits after 18 months",cluster883
+1309: "Inside the war for Syrias mountains",cluster296
+1313: "FTSE 100 finishes close to 6300 but downgrades hit retailers with Carphone Warehouse down 3",cluster768
+1316: "Timbuktu mayor Mali rebels torched library of historic manuscripts",cluster768
+1324: "Egypt crisis opposition rejects Morsis offer of talks  Monday 28 January 2013",cluster248
+1342: "Controversial Chelsea Barracks scheme on hold as UK economy stalls",cluster705
+1346: "Blacklist used by construction firms to disrupt environmental protests",cluster885
+1335: "Britain faces UN tribunal over Chagos Islands marine reserve",cluster808
+1338: "Ahmed Baba library in Timbuktu torched by Islamists in pictures",cluster705
+1353: "A lack of plain speaking as Premier Foods gets jilted by its chief executive  Nils Pratley",cluster190
+1378: "Santa Maria fire first funerals held as Brazil declares three days of mourning",cluster489
+1355: "The Windsor set is there a plot against David Cameron",cluster68
+1372: "Investment firm Swift Trade loses appeal over 8m fine for market abuse",cluster489
+1386: "Hundreds of Sure Start centres have closed since election says Labour",cluster489
+1410: "Bank of America makes derivatives switch from Dublin to London",cluster149
+1397: "HS2 highspeed rail route announcement  reaction Politics live blog",cluster489
+1409: "David Cameron offers France further help in Mali campaign",cluster149
+1412: "Timbuktu library  a treasure house of centuries of Malian history",cluster443
+1438: "Society daily 280113",cluster873
+1462: "Holocaust I still dont know why I survived Perhaps it was to talk to you",cluster980
+1444: "National Grid slips on worries about superstorm Sandy costs as FTSE 100 continues to drift",cluster111
+1482: "Outgoing easyJet chairman risks clash with Stelios over departure date",cluster460
+1476: "Pakistan begins pilot scheme to stop radicalisation in madrasas",cluster638
+1508: "Mali jihadist fighters melt away as French begin to regain control",cluster795
+1684: "Nick Clegg EU referendum is against national interest",cluster65
+1680: "French and Malian forces approach Timbuktu",cluster65
+1672: "Larry Elliott the ultimate Davos debate",cluster152
+1665: "Aung San Suu Kyi picks Beatles and Tom Jones on Desert Island Discs",cluster63
+1487: "FTSE 100 edges higher in uncertain trading but Capita hit by broker downgrade",cluster460
+1502: "Ryanair lifts profit forecast as northern Europe stays strong",cluster979
+1520: "Brazil mourns as Santa Maria nightclub death toll exceeds 200",cluster795
+1542: "Bo Xilai corruption trial not likely until after March reports say",cluster392
+1527: "How HayonWye is helping Mali",cluster13
+1526: "Jailed Yulia Tymoshenko set to face murder charges in Ukraine",cluster13
+1556: "Mali conflict  in pictures",cluster496
+1549: "TUC boss Cameron will seize your EU employment rights to weaken them",cluster496
+1548: "Tahrir Square sexual assaults reported during anniversary clashes",cluster496
+1555: "Palestinian deaths raise concern over Israeli army use of live fire",cluster496
+1554: "Estate agents upbeat about property prospects for 2013",cluster496
+1583: "Letter National security and the Shrewsbury 24",cluster700
+1577: "Mohamed Morsi declares emergency in three Egyptian cities",cluster117
+1585: "Letters Hostility to austerity needs a voice",cluster260
+1589: "Letters Lib Dem lessons on political principle",cluster700
+1600: "Starbucks denies investment threat and vows to open more UK stores",cluster670
+1617: "Berlusconi causes outrage by praising Mussolini on Holocaust Memorial Day",cluster670
+1591: "Iranian journalists arrested in raids on newspapers",cluster537
+1603: "RBS boss defends supporting HMV for two years before pulling plug",cluster670
+1648: "France confirms Diane35 drug deaths",cluster129
+1608: "Egypt trapped and terrified in Tahrir",cluster670
+1616: "Its goodbye Lenin hello dinosaur as fossils head to Mongolia museum",cluster670
+1644: "Holocaust Memorial Day genocide victims remembered across world",cluster397
+1647: "Brazil nightclub fire  in pictures",cluster129
+1643: "Khalid Sheikh Mohammed charge uncertain after US appeals court ruling",cluster113
+1646: "Venezuela shuts Uribana prison as riot death toll rises",cluster129
+1651: "Adam Afriyie denies plot to bring down David Cameron",cluster333
+1650: "Britons warned to leave Somaliland after specific threat",cluster973
+1660: "easyJet chairman Sir Mike Rake announces resignation",cluster95
+1656: "Irish property tax penalises Dublin residents warn critics",cluster95
+1692: "The Hitler home movies how Eva Braun documented the dictators private life",cluster65
+1681: "Horsemeat in burgers traced to Polish suppliers",cluster65
+1072: "Society daily 290113",cluster751
+3399: "Iran the Palestinians the US issues the new Israeli government must tackle",cluster236
+4728: "Algerian hostage siege It could only have ended with a massive assault",cluster223
+1070: "Bumi shareholders set for February battle against Nat Rothschild",cluster751
+3403: "Tower Hamlets mayor the day I have to make cuts itll break me  Saba Salman",cluster236
+4697: "Algeria crisis if alQaida is linked to refinery attack the chain is very long",cluster465
+3391: "Letter from India holy waters",cluster736
+4696: "Iran braced for fresh wave of toxic smog",cluster465
+1093: "Royal Bank of Scotland and BT help push FTSE 100 lower after bright start",cluster344
+4707: "Binyamin Netanyahu on course to win Israeli elections",cluster527
+1077: "Welfare cash cards are much more than a tool of state control  Claudia Wood",cluster643
+4706: "IsraeliArab female politician urges Arab citizens to vote in Israels elections",cluster271
+1127: "William Hill sees profits boosted by its growing online business",cluster291
+3416: "Hydrotherapy pool closures leave NHS patients high and dry",cluster472
+4730: "Gas market whistleblower sacked after accusing firms of price fixing",cluster223
+1107: "Has Labour learned lessons from Bradford West byelection defeat",cluster344
+3419: "Officials have right of entry to check pot plants despite vow to curb such powers",cluster229
+4746: "Gio Goi targeted by Sports Direct",cluster687
+3431: "EU justice optout would weaken UK crimefighting says Charles Clarke",cluster561
+4743: "British intelligence team flies to Algeria to help with hostage release",cluster687
+1134: "Carpetright climbs as UK sales rise but Netherlands disappoints",cluster694
+3424: "Osborne and Alexander ask for coalition postelection cuts plan",cluster566
+4758: "Alan Reece obituary",cluster173
+1129: "Turnaround specialist buying shares in 3i",cluster291
+3421: "In Israel ultranationalists centrists and Arabs alike go to the polls",cluster566
+1142: "MPs vote on boundary changes Politics live blog",cluster856
+3464: "Patients must be involved in decisions to change their medication  Peter Dawson",cluster15
+4757: "Spitfire search in Burma draws a blank",cluster120
+1137: "Anglo American counts cost of delays at Brazil iron ore project",cluster694
+3440: "The pensions bill haspolicy lessons for us all  Paul Johnson",cluster561
+4772: "Algerias bloody history forged brutal response to Sahara camp raid",cluster820
+1180: "Bought for 1 the mysterious tower that inspired JRR Tolkien",cluster832
+4766: "Algerian hostage crisis fewer Britons at risk than originally feared",cluster820
+3455: "Taro Aso the Japanese politician who wants older people to hurry up and die",cluster561
+4768: "Society daily 180113",cluster820
+4831: "Algerian hostage crisis what is Cobra",cluster744
+1152: "Boy Scouts of America discussing uturn on gay members ban",cluster812
+3457: "Suicide numbers rise sharply especially among middleaged men",cluster561
+4795: "Generous pay rises as economy recovers could fuel inflation",cluster804
+1155: "Mali Britain prepared to send sizeable amount of troops to support French",cluster812
+3480: "Iranian artists hit by sanctions",cluster175
+4849: "Pakistan cleric protest dramatic sitin ends with a whimper and a deal",cluster587
+4806: "Burger scandal new tests at factory reveal more horse DNA",cluster28
+1157: "New South Wales braces for river peaks as Queensland counts flood cost",cluster812
+3475: "Schroders employee among five arrested in insider dealing investigation",cluster175
+4816: "Is it game over for UK retail  Larry Elliott",cluster28
+1159: "AlQaida how great is the terrorism threat to the west now",cluster327
+4865: "Morrisons unveils new online joint venture with Lakeland while FTSE boosted by Chinese data",cluster587
+1177: "Proposals to allow councils to raise local taxes rejected by Eric Pickles",cluster903
+3477: "Cities plans for more efficient public spending could be thwarted by cuts  Peter Hetherington",cluster175
+4843: "Bovis Homes says profits will beat market expectations",cluster450
+1179: "Most countries do little to combat corruption in arms trade study finds",cluster832
+3489: "SABMiller beats expectations despite cold Chinese winter hitting lager volumes",cluster582
+4928: "Cameron postpones big speech on Europe",cluster189
+3560: "Israelis vote in general election",cluster126
+4853: "Retail sales Christmas winners and losers",cluster587
+3493: "Austerity has damaged recovery says former Bank of England official",cluster852
+4922: "Aid agencies to be paid by results to reduce costs and waste",cluster189
+1182: "Taxman keeps 16 million people hanging on the telephone",cluster832
+3518: "Government borrowing rise puts UKs AAA rating under threat",cluster259
+4897: "Algeria crisis hostages feared dead after troops storm gas field",cluster380
+3515: "Davos 2013 why are only 17 of delegates women",cluster259
+4926: "Horse DNA in burgers may have come from additives",cluster189
+1190: "Hugh Muirs Diary Murdoch to Times directors dont come dine with me",cluster715
+3535: "Irish council approves motion to allow rural drinkdriving",cluster970
+4927: "Hugh Muirs diary  A rallying cry in Whitehall from the man who wrestled the chicken",cluster189
+1192: "Cancer risk much greater among men",cluster715
+3521: "Bumi drops more than 2 as probe fails to prove alleged misuse of funds",cluster188
+4929: "NHS blueprint to shake up emergency care provisions says director",cluster189
+1193: "UK must remain at heart of Europes aerospace industry warns ADS",cluster168
+3542: "FTSE 100 falls back from recent highs with Fresnillo leading the way down",cluster970
+1198: "Royal College of Surgeons calls for end to casual cosmetic treatments",cluster168
+3561: "Algerian hostage crisis aftermath  Tuesday 22 January",cluster126
+4936: "High street winners and losers",cluster896
+1195: "Thinktank recommends issuing benefit cash on prepay cards",cluster168
+3567: "Briton Lindsay Sandiford sentenced to death in Indonesia for drug trafficking",cluster245
+4950: "Algeria many hostages feared dead as special forces move in",cluster388
+1197: "Treasury committee questions Osborne over role of autumn statement",cluster168
+3566: "Companies should come clean on bonus tax dodges investor group says",cluster245
+4967: "Ousted Rio Tinto boss pocketed 22m in cash and shares",cluster388
+3565: " MPs debate changing law of royal succession Politics live blog",cluster696
+4982: "Letters An ethicalshopping revolutions under way",cluster843
+1213: "No point attending Guantnamo terror trial says accused 911 plotter",cluster436
+3570: "Let elderly people hurry up and die says Japanese minister",cluster245
+4952: "Earls Court Boris Greenhalgh and the police",cluster388
+1200: "Santa Maria fire Brazilian police detain two nightclub owners",cluster559
+4981: "Letters To eat horsemeat or not  a very British dilemma",cluster843
+1222: "Wall Street optimism gives US economy a break from the doom and gloom  Heidi Moore",cluster258
+3575: "Snow and ice take hold as temperatures plunge across Britain",cluster245
+4980: "Letters The reality of Britains relationship with the EU",cluster843
+1215: "Hillsborough panel chairman to retire as bishop of Liverpool in August",cluster410
+3587: "Voices from the trans community There will always be prejudice",cluster108
+4989: "UK bosses reveal worries about David Camerons stance on Europe",cluster850
+1221: "Iran launches a monkey into space  and fires warning about its ambitions",cluster281
+3590: "Female genital mutilation I want to help other girls",cluster108
+1223: "Icesave ruling raises important moral hazard questions  Simon Bowers",cluster258
+4985: "Veni vidi vici Now the Pope is to tweet in Latin",cluster691
+3598: "Diane Abbott to launch attack on hypersexualised culture",cluster662
+5001: "US homebuilding is booming  and so are foreclosures for struggling owners",cluster91
+1226: "Letters Changing the debate on rape",cluster610
+3599: "Inauguration Day in pictures Barack Obama is sworn in",cluster662
+4994: "Transgender rights protest at Guardian and Observer offices over Burchill row",cluster850
+3594: "Inauguration balls in pictures as Barack and Michelle Obama celebrate",cluster267
+5002: "Iranian human rights lawyer Nasrin Sotoudeh temporarily freed",cluster91
+1230: "Letters Blood screening",cluster610
+5003: "Cash pile buys time to reinvent Argos",cluster91
+3604: "Aung San Suu Kyi to reveal her Desert Island Discs",cluster748
+5006: "Boris Johnson triggers fresh cronyism claims with Andrew Gilligan job",cluster207
+1242: "Royal Bank of Scotland could hand 4m in bonuses to investment chief",cluster232
+3605: "Charities afraid to challenge public policy amid retribution fears",cluster748
+5005: "Winners emerge from high street wreckage",cluster14
+1232: "George Osborne and Rupert Murdoch enjoyed private dinner in Mayfair",cluster668
+3606: "Funding for lending scheme boosts housing market rather than businesses",cluster748
+5018: "Mali how did it come to this",cluster313
+1235: "Twothirds of top civil servants are ready to quit jobs",cluster868
+3607: "Algerian hostage crisis details emerge of Britons killed",cluster148
+5009: "David Cameron cancels EU speech amid Algerian hostage crisis",cluster14
+1244: "Fendi throws coins in Romes crumbling Trevi fountain",cluster154
+3615: "Barack Obamas secondterm inauguration day  as it happened",cluster857
+5035: "MPs give rein to Tesco anger  Simon Hoggart",cluster389
+1245: "Egypts transition to democracy put in doubt as militias add to polarisation",cluster379
+3627: "Mortgages an end to the freeze for some",cluster33
+5036: "Gas plant raid puts spotlight on Algerian military",cluster389
+1254: "Philip Hammond accused of likening gay marriage to incest",cluster60
+3626: "Hugh Muirs Diary Enigmatic to the last The quiet passing of Idi Amins henchman",cluster33
+5026: "Tesco chief uses Talking Shop blog to rein in horsemeat burger scandal",cluster782
+1259: "One Billion Rising Its like a feminist tsunami",cluster60
+3636: "Algeria crisis names of the three American dead released",cluster250
+5040: "Primark reports 25 sales rise despite no plans for internet presence",cluster772
+1252: "Coop removes Barclays from ethical funds list",cluster60
+3632: "Crest Nicholson plans return to stock exchange",cluster250
+5039: "Conrad Bain obituary",cluster772
+3635: "Former Lloyds banking boss says sorry for PPI misselling scandal",cluster250
+5047: "Horsemeat scandal discarded burgers to be converted into fuel",cluster112
+1256: "Britains trade deficit as worrying as its budget deficit  Larry Elliott",cluster60
+5049: "CDUs GermanScottish crown prince may have higher calling than Lower Saxony",cluster792
+3646: "Letter Council tax blow to people on benefits",cluster370
+5048: "Mali Islamist rebels draw closer to capital Bamako",cluster80
+1268: "Court rules against UK in 23bn Icesave deposit guarantees battle",cluster482
+3638: "Blockbuster paid 250000 in tax despite taking sales of more than 35bn",cluster250
+1267: "Why is Mike Tyson to star in a crime drama about rape",cluster206
+3640: "Game over Atari files for bankruptcy in US",cluster774
+5055: "Why the coalition cabinet is just like Dads Army",cluster704
+1269: "Death too good for alleged 911 mastermind say victims families",cluster239
+3642: "David Cameron alQaida and a thickening sense of dread",cluster774
+5054: "Atos comes under attack in emotional Commons debate",cluster957
+1270: "HMV next for Hilco  restructuring expert that preys on dying brands",cluster901
+3645: "UK to shift focus of terrorism fight to alQaida offshoots in north Africa",cluster230
+5056: "Eurozone crisis live Relief as Greece secures IMF cash",cluster603
+1273: "Soldier left suicidal after DWP accused him of faking injuries tribunal told",cluster653
+3650: "Letters Buddy can you spare us a minister",cluster370
+5060: "Mothercare may sell locks to counter surge in buggy theft",cluster704
+1272: "Queen Beatrix of the Netherlands  in pictures",cluster274
+3649: "Letter Eczema in children",cluster370
+5080: "Syrian rebels accuse jihadist groups of trying to hijack revolution",cluster895
+5071: "International Airlines Group leads FTSE 100 risers on continuing hopes of Iberia resolution",cluster609
+1294: "Eurozone crisis live Greek transport workers to end strikes",cluster974
+3656: "Defeat in German regional elections dents poll hopes of Merkel and heir",cluster455
+5079: "Syria crisis alQaida fighters revealing their true colours rebels say",cluster895
+3664: "How the Vatican built a secret property empire using Mussolinis millions",cluster131
+5073: "Aung San Suu Kyi calls for ceasefire in Burmas Kachin region",cluster609
+1276: "Queen Beatrix of the Netherlands abdicates in favour of son",cluster562
+3657: "Algeria hostage crisis survivors tell of coldblooded killers",cluster568
+5083: "Taliban peace talks are not under way says US ambassador to Afghanistan",cluster218
+3665: "Workers who claim benefits told to increase hours or lose universal credit",cluster171
+5082: "Alex Salmond should start work on a constitution now in fairness to voters",cluster218
+3666: "Mali French hunt fugitive rebels after seizing Diabaly from Islamists",cluster439
+5089: "Boeing rushes to restore faith in 787 Dreamliners",cluster354
+1290: "Why does parliament have a rifle range",cluster974
+3692: "Prince Harry Ive killed in Afghanistan But Dad wants me to act like a prince",cluster21
+5085: "Benefits and child credits squeeze pushes 200000 children into poverty",cluster354
+1317: "Chinese officials urged not to execute domestic violence victim",cluster768
+3699: "Cyprus bailout delayed until spring",cluster775
+5104: "Dixons benefits from Comets demise",cluster946
+1295: "Mamphela Ramphele tipped to launch political party in South Africa",cluster974
+3668: "Hugo Chvez gaining strength in health battle says vicepresident",cluster278
+5117: "Asos exceeds City expectations with 41 rise in Christmas sales",cluster364
+1304: "Boeing 787 regulators admit bafflement over source of aircrafts fault",cluster512
+3679: "Amir Issaa Italian hiphop artist raps about citizenship law",cluster278
+5095: "Irish hostage in Algeria freed",cluster495
+1733: "Womens centres give vital help to exconvicts So why cut them",cluster762
+1732: "Hundreds of women still wrongly imprisoned",cluster487
+1737: "Thousands march in London against Lewisham hospital closures",cluster487
+1738: "Burmese take Kachin mountain outpost after artillery barrage",cluster457
+1739: "Boardrooms would have member dedicated to protecting whistleblowers under plan",cluster487
+1740: "Ukip refuses to oppose EU funding for farright parties",cluster494
+1741: "Patients Association sounds alarm over flawed NHS complaints code",cluster487
+1745: "French troops in Mali take Gao airport from Islamist rebels",cluster487
+1744: "Barcelona pursues Italy over 1938 bombing",cluster487
+1746: "Human safaris to end for Andaman tribe",cluster487
+1770: "Algiers a citywhere France isthe promised land  and still the enemy",cluster350
+1748: "Mothercare tries to sharpen up and cash in on baby boom",cluster106
+1751: "To stop firms gaming the tax system make them admit what theyre doing",cluster487
+3236: "Conservative council leader quits over lie detector tests on benefit claimants",cluster552
+1750: "Davos tackles tax fracking and zombies in hunt for next big idea",cluster487
+3247: "David Camerons EU speech moment of truth for a man opposed to risk  Patrick Wintour",cluster854
+1757: "Facade of central bank control is starting to crumble",cluster363
+3239: "Abundance of bad food makes poorest obese says minister",cluster878
+1788: "Sir Douglas Mawson the unsung hero of Antarctica gets his due at last",cluster703
+1781: "Egypt port hit by lethal riots after football fans given death sentence",cluster765
+3243: "Eric Pickles tells councils to cut spending on problem families",cluster878
+1784: "Lib Dem MP faces party leaderships wrath over Holocaust jibe at Israel",cluster703
+3249: "Hugh Muirs Diary  The great Lib Dem race farrago aka the report that never was",cluster960
+1787: "How cigarette smuggling fuels Africas Islamist violence",cluster353
+3279: "Letters Time has come for a land value tax",cluster430
+1789: "Women of Davos tear off their spouse badges",cluster703
+3285: "Boeing confident it will soon fix 787 Dreamliner problems",cluster906
+1796: "Even in Assads coastal retreat the war has come and the bombs are dropping",cluster703
+3278: "Letters EU referendum talk weakens UKs hand",cluster430
+1815: "World Economic Forum ends on warning note over complacency",cluster816
+3284: "US offers support in hunt for Algerian attackers",cluster906
+1806: "Theres no avoiding taxation this week",cluster703
+3282: "Mervyn King new Bank governors strategy unrealistic and for dreamers",cluster430
+1849: "New Bank of England head Mark Carney hints at big shift in policy",cluster85
+3291: "Bumi report debacle is unsatisfactory conclusion",cluster968
+1839: "First poll on Olympic legacy finds 65 think coalition has failed to boost sport",cluster958
+3288: "Nat Rothschild and Bumi clash again after inquiry",cluster185
+1847: "Boris Johnson and Rupert Murdoch have another private meeting",cluster481
+3292: "Davos 2013 British CEOs among worlds most downbeat says survey",cluster968
+1852: "How Hugo and Manet unveiled Pariss poor and privileged faces",cluster339
+3299: "Alarm at rise in UK suicide rate",cluster195
+1882: "Egypt death sentences over football riot spark lethal clashes in Port Said",cluster203
+2023: "Violence in Egypt on second anniversary of fall of Mubarak  in pictures",cluster632
+3298: "Davos 2013 who will be there",cluster195
+1881: "Kevin McKenna I wrote a piece on Scottish independence and hit send Then the floodgates opened",cluster203
+3301: "Russia starts bringing its nationals home from Syria",cluster4
+1885: "Out100 the worlds most inspirational gay people  in pictures",cluster203
+3303: "Blood screening that is preventing heart attacks  but not in England",cluster725
+1894: "Douglas Alexander says David Cameron is putting Ukip fears ahead of economy",cluster505
+3306: "Hundreds of Barclays and RollsRoyce jobs under threat",cluster547
+1895: "Justin Biebers mother courts conflict with backing for abortion film",cluster505
+1905: "George Osbornes austerity plan risks lost decade for UK economy",cluster699
+3308: "Travellers in Devon not out of woods yet despite plan for 1m site",cluster547
+1912: "Egyptian football fans react to riot death sentences  in pictures",cluster20
+3310: "HMV handed lifeline after debt deal",cluster355
+1909: "Womens rights activists protest at Davos  in pictures",cluster699
+3313: "Bank of Japan bows to pressure with epochmaking financial stimulus",cluster822
+2022: "Detective shot dead during raid in Ireland",cluster632
+3314: "UK special forces active in Mali",cluster822
+1914: "Irish police launch hunt for gang after detective shot dead",cluster20
+3317: "Barnets easyCouncil faces judicial review over outsourcing",cluster123
+1946: "Drug addiction and abuse will not stop if drugs are legalised",cluster831
+3316: "Israeli elections high turnout offers encouragement to Netanyahu rivals",cluster127
+2063: "Lib Dem MP David Ward defends remarks about Israel",cluster484
+3324: "Papists and Paisleyites united  Simon Hoggart",cluster159
+3323: "Meningitis vaccine gets Europe nod",cluster159
+2026: "Deadly violence grips Egypt on revolution anniversary",cluster632
+3319: "Stuart Rose is a good fit for Ocado  Nils Pratley",cluster467
+2046: "Violence flares in Egypt on anniversary of revolution",cluster319
+3327: "A Rhine romance Germany and France celebrate five decades of marriage",cluster159
+2048: "Osbornes economic strategy has failed  Larry Elliott",cluster319
+3326: "New Ocado chairman named as Stuart Rose",cluster159
+2052: "Letters Im marching for Lewisham hospital",cluster833
+3335: "Sugar content cuts to Lucozade and Ribena leave campaigners unimpressed",cluster502
+2054: "Letters Racist language is no joke  even in an episode of Fawlty Towers",cluster733
+2064: "Billionaire showdown Whats behind Icahn and Ackmans CNBC bout  Heidi Moore",cluster484
+3332: "EU approves financial transaction tax for 11 eurozone countries",cluster242
+2088: "Davos diary Boris Johnson lured into town with a little help from the gasman",cluster955
+3334: "Taliban retaliate after Prince Harry compares fighting to a video game",cluster242
+2069: "Sacked Deutsche Bank trader loses 34m bonuses over Libor scandal",cluster631
+3336: "Does UK public finances data really show the economy is healing  Heather Stewart",cluster502
+2073: "Revealed who can fly drones in UK airspace",cluster434
+3340: "Britains loneliness epidemic",cluster155
+3339: "Xi Jinping vows to fight tigers and flies in anticorruption drive",cluster851
+3341: "UK credit rating under threat as borrowing rises again  eurozone crisis live",cluster361
+2087: "George Osborne under pressure to tear up austerity programme",cluster956
+3344: "Shinzo Abes quantitative easing Japan can have a free lunch and eat it too  Mark Weisbrot",cluster155
+2086: "Kachin rebels cling to last stronghold amid Burmese armys deadly barrage",cluster956
+3355: "Cornwall councils privatisation compromise",cluster625
+2098: "Has Apple really started to rot  Nils Pratley on Saturday",cluster654
+3360: "Vodafone shakes off disappointing figures from US partner Verizon but FTSE rally fades",cluster625
+2091: "UK economic downturn what the experts say",cluster836
+3366: "Spanish schoolboy fakes kidnap to avoid parents evening",cluster70
+2116: "Arm Syrian rebels to contain jihadis says Saudi royal",cluster340
+2099: "The shrinking British economy North Sea oil and other excuses",cluster654
+3370: "Election test for Jordanian reform",cluster70
+2102: "Britain halfway to tripledip recession as manufacturing sector stalls",cluster654
+3379: "Education civil servants set to ballot for industrial action over cuts",cluster565
+2101: "Tesco launches horsemeat inquiry after withdrawn burgers found on sale",cluster654
+3383: "World unemployment figures set to rise in 2013 claims UN labour agency",cluster565
+2117: "Mike Tyson energy drink sparks criticism of big three supermarkets",cluster340
+3381: "Algeria hostage crisis may be the undoing of jihadi cause in north Africa Peter Beaumont",cluster565
+2108: "Facebooks Sheryl Sandberg attacks gender stereotypes at work",cluster529
+3388: "Probation service leaders need support to implement reforms  Sarah Billiald",cluster918
+2111: "Isabel dos Santos dubbed princess named Africas first female billionaire",cluster529
+3389: "Le Pong sours crossChannel relations before Cameron EU speech",cluster683
+2121: "Justine Greening I like to cut through the crap",cluster444
+2127: "OFT says bank account charges too complex",cluster43
+2156: "Tim Geithner banking bailouts looked like giving aid to the arsonist",cluster879
+2126: "Venezuela threatens to sue El Pas over fake Hugo Chvez surgery picture",cluster43
+2144: "Health professionals weigh in on fat issue",cluster578
+2132: "Davos 2013 day three  as it happened",cluster192
+2155: "EasyJet heads closer to FTSE 100 after positive update as leading index continues rally",cluster7
+2159: "Timeline of the In Amenas siege",cluster743
+2164: "Justine Greening countries must put hands in pockets for Syrian refugees",cluster633
+2176: "Spare bedroom tax  your stories",cluster499
+2200: "Police investigate hospital where dummy was taped to babys mouth",cluster802
+2194: "UK heading for tripledip recession as GDP shrinks 03 in fourth quarter",cluster959
+2198: "In the mood for some destratification Try our Davos HotPhrase Generator",cluster959
+2201: "Stealing to eat cases increase as austerity bites",cluster802
+2204: "CCTV reveals stores treatment of teenage shoplifter",cluster297
+2203: "Equality commission loses its office but is it losing its purpose",cluster783
+2228: "Oxford abuse trial woman tells of rape at 15 and treatment as a piece of meat",cluster865
+2222: "Game to destroy CCTV cameras vandalism or valid protest",cluster724
+2231: "Boris Johnson urges Osborne to drop hair shirt agenda for UK economy",cluster865
+2240: "The spare bedroom tax a mess of contradiction and impossibility  John Harris",cluster308
+2249: "Algeria hostage crisis death toll from around the world",cluster156
+2248: "How do you catch an escaped crocodile",cluster156
+2245: "Nottingham retailer battles for survival as economic recovery hopes fade",cluster320
+2277: "Ten Chinese officials fired over sex scandal in former Bo Xilai fiefdom",cluster549
+2264: "Malian government says war will be over in days",cluster721
+2307: "A lighter look",cluster442
+2291: "Society daily 250113",cluster613
+2297: "FTSE 100 shakes off poor UK GDP figures but mining shares fall back",cluster613
+2321: "Greece breaks up Athens metro strike",cluster452
+2310: "EarEarls Court Tory council signs peoples estates land deal but antidemolition fight goes onls Court",cluster535
+2322: "Cutting trade red tape could boost global economy by 1tn says WTO",cluster452
+2335: "UK GDP shrank by 03 in fourth quarter",cluster738
+2346: "UK GDP shrinks by 03 in fourth quarter what the economists say",cluster581
+2341: "Live webchat Hospital closures",cluster581
+2347: "Waitrose pulls beefburgers as a precaution amid horsemeat scare",cluster581
+2358: "Algeria hostage crisis could weaken veteran spymaster  Profile",cluster261
+2352: "British Airways owner IAG and Easyjet soar higher after budget airlines recent update",cluster581
+2382: "Politics live readers edition  Friday 25 January",cluster140
+2392: "Clashes in Cairo as Egypt marks revolution anniversary  as it happened",cluster181
+2393: "Macau casino sues Chinese highrollers",cluster140
+2399: "George Osborne ignores IMFs warnings on austerity plans",cluster179
+2428: "Starbucks celebrates record revenues after David Camerons tax attack",cluster490
+2406: "Foreign Office Britons should leave Benghazi immediately",cluster179
+2405: "North Korea Pyongyang plans nuclear test targeted at US",cluster179
+2415: "Authors join tugofwar at top German publishing house Suhrkamp Verlag",cluster671
+2420: "Council adoption services at risk from heavyhanded shakeup",cluster671
+8201: "Foreign national prisoners lose right to legal aid",cluster835
+9411: "Marks  Spencer slips ahead of trading update",cluster597
+7102: "Pakistans politicians smell plot to derail polls in clerics march plans",cluster299
+8215: "Aldi enjoys a Christmas boom as shoppers turn to discount chains",cluster984
+9406: "UK services sector contracts what the economists say",cluster726
+2433: "Not in my hospital the delicate process of NHS reforms",cluster490
+7054: "Boeing 787 Dreamliner to be investigated by US authorities",cluster994
+9413: "Nuclear deal with Iran is possible if bad habits change",cluster160
+2431: "David Cameron makes swipe at Starbucks as he promises focus on tax",cluster490
+8214: "Indebted NHS hospital trust should be dissolved and replaced says report",cluster556
+9419: "GPs patient satisfaction tests can act as flashing light says Cameron",cluster759
+7065: "London Underground 150 what is the future for the Tube",cluster163
+8219: "US and North Korea ties wobble again under weight of mutual suspicion",cluster674
+9438: "FTSE 100 dips on UK data but BP boosted by Transocean deal",cluster295
+2432: "EU referendum pledge wont rule out new coalition says Nick Clegg",cluster490
+7180: "Alasdair Liddell obituary",cluster508
+8226: "Debating whether outsourcing is good or bad is beside the point  Anne Torry",cluster493
+7104: "Abdullah alSenussi Foreign Office urged to prevent execution of spy chief",cluster306
+8225: "Centamin shares jump 8 as it latest export dispute is resolved",cluster493
+9435: "Unemployed must be working and training not claiming says Labour",cluster167
+9439: "Cameron promises voters a real choice over relations with Europe",cluster295
+2437: "Diary for Gods sake go pleads Maude to union boss",cluster273
+7149: "Society daily 110113",cluster449
+9454: "Kim Jonguns wife said to have given birth",cluster844
+2484: "Letters Animal antibiotics",cluster62
+7152: "Jeweller Theo Fennell issues profit warning after disappointing Christmas",cluster987
+8233: "Boris Johnson will he really improve Londons private rented housing sector",cluster408
+2474: "Rise of superbugs threatens antibiotic crisis",cluster384
+7177: "Honda cuts 800 jobs at Swindon as European car sales slump",cluster508
+8239: "The people affected by cuts to frontline services in northeast England  Kate Belgrave",cluster793
+2450: "UN inquiry into US drone strikes prompts cautious optimism",cluster845
+7169: "Double dose of gloom as Honda axes jobs and UK manufacturing shrinks",cluster508
+9450: "GPs should be subject to patient satisfaction tests says David Cameron",cluster844
+9468: "Labour proposes tough but fair jobs and welfare scheme",cluster37
+7189: "Silvio Berlusconis furious debate glues Italy to television",cluster426
+9452: "Syrias rising death toll  Thursday 3 January 2013",cluster844
+8248: "Englands housing crisis is being ignored by politicians  Peter Hetherington",cluster922
+2480: "Labour refers David Cameron to statistics watchdog over debt error",cluster62
+7290: "Nick Clegg and the giant courgette  Simon Hoggarts sketch",cluster2
+8255: "Letter from Morocco couscous Friday",cluster922
+2483: "Letters We are doing all we can for Syrian students",cluster285
+7198: "SuperGroup climbs on positive response to autumn range launch",cluster429
+9469: "UKs first hand transplant goes ahead after donor found on Boxing Day",cluster37
+2482: "Norways female boardroom pioneer rejects quotas for women",cluster62
+7202: "UK industrial production growth weaker than forecast",cluster429
+8266: "The NHS needs to be more open with the people it belongs to  Jeremy Taylor",cluster488
+9477: "GPs in crossfire as separated parents seek access to childrens records",cluster311
+2485: "Letters Camerons chance to deal with longterm EU problems",cluster611
+7210: "Does sex education exclude young gay people",cluster441
+8269: "Climate change debt and inequality threaten financial stability",cluster87
+2486: "Letters Urgent need to review access to AE services",cluster600
+7248: "Pakistan bombings Quetta death toll over 100",cluster371
+8271: "Ronseal what does it have to do with the coalition",cluster766
+9483: "Hugh Muirs diary",cluster55
+7213: "British Airways owner IAG soars to the top of the FTSE 100 after upgrade",cluster372
+8276: "People living with serious mental health problems deserve New Year honours  Clare Allan",cluster31
+9486: "Rail fare row MPs reject peaktime premium",cluster55
+2490: "Five NHS trusts show high death rates",cluster600
+7220: "FTSE 100 continues to edge higher but Tullow Oil slides on disappointing update",cluster734
+9485: "IVF should use only single embryos report recommends",cluster55
+7228: "Politics live readers edition  Friday 11 January",cluster734
+8283: "British soldier killed in Afghanistan in suspected green on blue attack",cluster162
+9497: "IMF warning over US strategy dampens global stock markets",cluster94
+7245: "Kurdish activists Paris murders cast shadow over Turkish peace process",cluster805
+9528: "Letters Listening to Haiti",cluster463
+7250: "Japanese PM criticises Chinas response to protests over islands dispute",cluster318
+8288: "Newcastle council leader arts cuts are inevitable result of coalition policy",cluster183
+9529: "Letters Political apathy resignation and some possible solutions",cluster132
+2489: "NHS chief stop playing politics with closures",cluster600
+7284: "Inflation changes a classic British fudge  Analysis",cluster575
+8321: "Social enterprise network daily Tuesday 8 January",cluster500
+9533: "Letters So convenient to blame the planners",cluster132
+7278: "Hugo Chvez supporters stage inauguration day rally for absent leader",cluster575
+8290: "Society daily 080113",cluster183
+9546: "Man arrested in East Sussex over Nepal war crimes",cluster205
+2493: "Wall Street and City stock markets on upward trajectory",cluster707
+7300: "Top RBS bankers may pay the price for Libor scandal",cluster2
+8301: "Syria conflict refugee numbers near 600000  Tuesday 8 January 2013",cluster936
+9545: "Vatican City tourists card payments stopped by higher power",cluster454
+7286: "Diary The spy pipped at the top post  Hugh Muir",cluster575
+8295: "Dominos Pizza buoyed by soggy weather",cluster881
+9544: "Malala Yousafzais father appointed to diplomatic job at UK consulate",cluster629
+2508: "Davos diary Paul Coelho becomes most retweeted attendee",cluster905
+7310: "Germany tells Cameron dont blackmail the EU",cluster778
+8330: "Majestic Wine sales lose fizz over Christmas",cluster869
+2495: "Mob prosecutor Mary Jo White to be nominated to lead SEC",cluster707
+7294: "ECB chief Euro on the road to recovery",cluster2
+8308: "Cold weather in India  in pictures",cluster466
+2502: "Boundary changes vote could be close says Labour",cluster905
+7299: "Music retailers expected to follow Jessops into administration",cluster2
+9548: "More households to pay council tax as benefits cease under coalition rules",cluster312
+9549: "Basque party linked to Eta declares its own dissolution",cluster310
+2497: "Judge denies Barclays staff anonymity in Libor case",cluster919
+7335: "Letters Cotton slavery",cluster144
+8331: "Duncan Smith defends benefits squeeze",cluster869
+2499: "Top mandarin feels the squeeze  Simon Hoggarts sketch",cluster919
+7334: "Letters Labour talk of coalition is defeatist",cluster144
+8332: "Coalition midterm report why wasnt it delivered to MPs  Michael White",cluster869
+9552: "Footballer in gay magazine its time to tackle the last taboo",cluster310
+2501: "Providence Resources claims big oil find off Antrim coast",cluster919
+7324: "Will Jacob Lew take on financial reform Dont hold your breath  Heidi Moore",cluster778
+8342: "African Barrick Gold slumps 20 after collapse of Chinese stake sale talks",cluster563
+2507: "Carphone Warehouse beats predictions with 16 rise in UK revenue",cluster905
+7333: "Marks  Spencer investors panic after shock release of festive retail figures",cluster564
+8381: "Online sales fails to cheer UK retailers disappointed by flat end to flat year",cluster67
+9566: "Venezuelan leaders gather at bedside of Hugo Chvez",cluster237
+2515: "Labour risks another death tax row with social care blueprint",cluster737
+7336: "Letters Our right to know about private health firms",cluster362
+9562: "Next reports bumper online sales over Christmas period",cluster675
+8352: "Vodafone lifts FTSE 100 on hopes of 50bn Verizon Wireless sale",cluster563
+9565: "Putin offers Grard Depardieu Russian citizenship",cluster237
+7337: "Letters Mauritius truths",cluster144
+8393: "Delhi gangrape case the court met in secret but all of India was watching",cluster474
+9574: "Italys web guru tastes power as new political movement goes viral",cluster237
+2519: "Davos 2013 day two  as it happened",cluster993
+8392: "Genetic tests could pave way to personalised asthma drugs",cluster474
+9569: "Diane Abbott outlines plan to curb fast food shops",cluster237
+2518: "Disabled by grenade  now soldier fights for his benefits",cluster737
+7339: "Letters A strategy for growth not cuts",cluster144
+8401: "British Gas chief Phil Bentley to quit with 10m sendoff",cluster491
+7362: "Obama inauguration pastor backs out after antigay remarks are revealed",cluster503
+8400: "Raid on home of Twitter user suspected of spreading Chvez health rumours",cluster491
+9571: "UK women may not have recognised black rapist says Barbadian police chief",cluster237
+9579: "Afghan census dodges questions of ethnicity and language",cluster785
+2520: "Cardinal Jzef Glemp obituary",cluster737
+7361: "MPs call for in private at least a 32 pay rise",cluster503
+8399: "Venezuela military joins search for Vittorio Missonis aircraft",cluster491
+2521: "John Kerry secretary of state confirmation hearing  live",cluster300
+7348: "Michael Gove appoints Tory donor John Nash as education minister",cluster334
+8412: "Hugh Muirs diary",cluster860
+9573: "Ireland is moving towards economic strength says jobs minister",cluster237
+2522: "SEC nomination signals Obamas tougher approach to Wall Street",cluster737
+7356: "Indias womenonly trains  in pictures",cluster165
+9582: "London zoos annual census  in pictures",cluster785
+2532: "After Depardieu Belgian plan by Frances richest man fuels 75 tax row",cluster437
+7363: "Inflation index to stay as ONS decides against radical change to RPI",cluster503
+8404: "Tripledip recession fears rejected by British Chambers of Commerce report",cluster72
+9583: "Euro crisis as it happened fiscal cliff deal euphoria wanes",cluster396
+2531: "South African farmworkers sacked in truckloads after strike says union",cluster437
+7392: "India and Pakistan trade accusations after Kashmir border skirmishes",cluster797
+8406: "Morrisons considers launching online store after miserable Christmas",cluster72
+7366: "Lord Heseltine says state must be central to economic growth",cluster983
+8420: "Nick Clegg joins protests over shirkers tag",cluster937
+9584: "Gift returns take shine off Christmas retail figures",cluster184
+9588: "FTSE 100 continues fiscal cliff relief rally while Imagination Technologies lifted by US consumer show hopes",cluster253
+2534: "Greggs poaches new chief executive",cluster437
+7371: "Klaus Kinski repeatedly raped me during my childhood claims daughter",cluster46
+8434: "Exbankers partnership profits from advising on his risky buyouts",cluster66
+2556: "Iranian journalist Every week they try to smear me discredit me",cluster784
+7386: "Captain steered Costa Concordia like a canoe says prosecutor",cluster753
+8431: "Letters Tory ideology is destroying education in England",cluster128
+9593: "House price rises create 50000 new property millionaires",cluster890
+7373: "UK tenders to train Ethiopian paramilitaries accused of abuses",cluster791
+8429: "Letter Plan for more homes",cluster128
+9595: "Unilever sells Skippy peanut butter brand to Hormel maker of Spam",cluster870
+7387: "Manchester shoppers keep faith in high street as Jessops enters administration",cluster753
+8433: "Lord Strathclyde resigns as leader of the House of Lords",cluster128
+9600: "Hong Kong sees protests both for and against leader Leung ChunYing",cluster892
+9612: "Fall in productivity takes shine off UK employment figures",cluster428
+2538: "More than a quarter of Spanish workforce are jobless",cluster134
+7414: "Tesco cautiously optimistic after Christmas cheer",cluster678
+8435: "Midterm review how have they done",cluster66
+2569: "Angela Merkel tells Davos austerity must continue",cluster784
+7389: "Tesco back on form as Christmas sales beat City forecasts",cluster753
+8455: "US banks agree 185bn settlements in effort to clean up mortgage crisis",cluster941
+9619: "John Boehner reelected as Speaker of the House  as it happened",cluster199
+2572: "FTSE 100 closes above 6200 adding 17bn to reach best level since midMay 2008",cluster784
+7394: "Kurdish activists shot dead in Paris",cluster797
+8450: "Xi Jinping faces litmus test on vows of transparency and rule of law",cluster838
+7402: "Iranian elections  just dont mention the f word  Saeed Kamali Dehghan",cluster418
+8484: "Silvio Berlusconi renews rightwing alliance ahead of Italian elections",cluster357
+9620: "Spanish gang steals tonne of hashish at midnight on New Years Eve",cluster199
+9683: "Man arrested in East Sussex over torture allegations in Nepal",cluster121
+2582: "Ladbrokes need to go cutprice with Betdaq to compete with Betfair",cluster81
+7399: "Skills minister Matthew Hancock couldnt get out of bed for interview",cluster418
+8469: "Nick and Dave varnish over the cracks with an Action Initiative  Simon Hoggarts sketch",cluster359
+2578: "Secret UK uranium components plant closed over safety fears",cluster648
+7428: "Alex Salmond gave incomplete answers on EU legal advice inquiry finds",cluster729
+8460: "The euro crisis is over declares Jos Manuel Barroso",cluster941
+9633: "How to spot a fake indie business",cluster619
+8475: "Bumi grants founder Nat Rothschilds request for shareholder meeting",cluster359
+9658: "Delhi gangrape accused face rape and murder charges",cluster386
+9690: "Berliners find a voice in choir for homeless people",cluster121
+7427: "Sakine Cansiz a legend among PKK members",cluster678
+8487: "Bahrain under pressure over refusal to reconsider activists sentences",cluster357
+2584: "Thousands expected to protest over plans to shut Lewisham hospital units",cluster506
+7434: "Chinas Southern Weekly newspaper reappears after censorship standoff",cluster729
+8513: "Morrisons  what the experts say",cluster962
+2589: "David Camerons Davos speech pushes poverty debate beyond aid budgets",cluster483
+7430: "Eurozone crisis live Mario Draghi sees positive contagion as ECB leaves rates unchanged  as it happened",cluster678
+8508: "Lady Thatcher isnt the only one to opt for hotel living",cluster22
+9685: "Obese and unhealthy people could face benefit cuts",cluster121
+2588: "CBI survey confirms high street slowdown",cluster483
+7450: "Artist found dead on Rio mosaic staircase he spent 20 years creating",cluster750
+8504: "Baltic exchange meet the Lithuanians who have made Britain their home",cluster22
+2595: "British Council removes union flag poster from Hong Kong subway",cluster170
+7452: "Woman with learning difficulties can decide own pregnancy fate court rules",cluster235
+8510: "FTSE falls for first time this year as profit takers move in but banks benefit from capital changes",cluster754
+9701: "Chemring climbs 5 after appointing new finance director",cluster528
+2594: "Sure Start cuts will pay for Michael Goves adoption crusade",cluster170
+7480: "Critics of US drone programme angered by John Brennans nomination to CIA",cluster479
+8524: "Montreux jazz festival founder Claude Nobs in a coma",cluster116
+2602: "Iran creates fake blogs in smear campaign against journalists in exile",cluster180
+7460: "Mexico City killings blamed on pack of wild dogs",cluster479
+8525: "Pope asks world to stop Syria becoming field of ruins  ",cluster365
+9704: "Ferrari sales suffer as Italians shun luxury cars",cluster528
+2623: "Nick Clegg may send oldest son to private school",cluster618
+7517: "Jessops goes into administration staff and customers react",cluster560
+8521: "China anticensorship protest attracts support across country",cluster116
+2609: "Austerity plan is failing IMF tells Osborne",cluster180
+7468: "Piracy fears over ships laden with arms in international watersSomali pirates concern over floating armouries",cluster479
+8523: "Naftali Bennett interview There wont be a Palestinian state within Israel",cluster116
+9741: "In the wake of the Delhi bus rape what is the future for India",cluster73
+2604: "The IMF is calling for a plan B but will George Osborne listen",cluster180
+7475: "Tel Aviv blast may have targeted crime gang leader say police",cluster479
+8541: "Cameron and Clegg pledge to uphold coalitions Ronseal deal",cluster202
+2647: "Politics Weekly podcast Cameron promises EU referendum",cluster383
+7488: "Politics Weekly podcast George Osbornes welfare trap and the midterm review",cluster819
+8545: "Greeces Lagarde list sparks calls for catharsis over tax avoidance",cluster202
+9751: "Paedophilia bringing dark desires to light",cluster23
+2621: "ANC elder quits Lonmin after criticism over Marikana emails",cluster741
+7494: "Woman with MS loses fight to legalise assisted suicide in Ireland",cluster942
+8530: "Lord Strathclyde resigns as leader of House of Lords",cluster335
+2626: "Washington police failures on rape detailed in groundbreaking report",cluster882
+7506: "Retail winners and losers budget grocers lead 2012s Christmas crackers",cluster971
+8535: "US drone attacks counterproductive former Obama security adviser claims",cluster335
+9776: "Means test winter fuel cash for pensioners to fund care says Lib Dem",cluster595
+7496: "Former UBS bankers accused of gross negligence over Libor by MPs",cluster942
+8546: "Punjabi farmers find pastures new and cheap in Georgia",cluster949
+9757: "US drone strike kills Pakistan Taliban commander",cluster415
+2654: "Mississippis sole abortion clinic faces fresh legal fight to stay open",cluster383
+2705: "Why sex education matters",cluster716
+2655: "David Camerons Davos keynote speech targets tax avoiders",cluster383
+2694: "North Korea threatens to raise the nuclear stakes",cluster25
+2703: "Thousands of crocodiles on loose after floods hit South African farm",cluster716
+2715: "Society daily 240113",cluster191
+2733: "Mali rebel splinter group says it is ready for talks",cluster944
+2739: "Prudential gains as Morgan Stanley looks at prospects for a breakup",cluster366
+2784: "Apples disappointing results hits suppliers Arm Imagination and Laird",cluster628
+2744: "Diary The rise and fall of Theresa Mays sex police  Hugh Muir",cluster693
+2754: "Easyjet climbs 4 as business travellers boost revenues",cluster288
+2788: "MPs debate voting at 16 Politics live blog",cluster809
+2773: "Vodafone adds 2 as analysts suggest mobile company could buy cable assets",cluster433
+2806: "Syria warplanes bomb Damascus suburbs  24 January 2013",cluster196
+2814: "EU speech lets talk says Merkel after Camerons referendum gamble",cluster456
+2824: "Dont buy South African wines striking workers plea to foreign consumers",cluster456
+2839: "UN to examine UK and US drone strikes",cluster681
+2840: "Tower blocks should be demolished says Tory thinktank",cluster756
+2841: "NHS maternity units to share 25m fund to improve childbirth experience",cluster756
+2853: "David Camerons EU uncertainty makes business leaders anxious",cluster714
+2854: "McDonalds creates 2500 new jobs",cluster669
+2851: "Support for Scottish independence slumps to lowest level since devolution",cluster596
+2868: "WH Smith Kate Swann turns 135m losses into 106m profit in a decade",cluster698
+2872: "Letters Support the right not to be a wage slave",cluster661
+2867: "IMF sees hope beyond the crisis but cuts world growth predictions",cluster332
+2873: "Letters The Scottish play",cluster302
+2874: "Letters What happened to Thatcher after Bruges",cluster952
+2875: "Letters A referendum is not the best way to decide on Europe",cluster150
+2876: "Letters Cameron puts up EU smokescreen",cluster637
+2884: "David Camerons EU referendum pledge wins over Eurosceptic Tories",cluster620
+2882: "Davos diary Mario Monti takes a stab at standup",cluster620
+2888: "Travellers views on EU membership It would be a shame if Britain left",cluster651
+2892: "HMV sites attract interest from supermarkets",cluster651
+2886: "WH Smith plans to open more stores after Christmas boost",cluster685
+2895: "Antibioticresistant diseases pose apocalyptic threat top expert says",cluster405
+2894: "Taliban kill 1100 members of Afghan security forces in six months",cluster405
+2904: "In out in out The EU hokeycokeys not really what its all about  Simon Hoggarts sketch",cluster627
+2897: "Dr Doom says quantitative easing will create zombie banks firms and borrowers",cluster405
+2903: "Further arrests over contaminated ecstasy deaths",cluster697
+2910: "Food fraud report reveals rise in manufacturers costcutting measures",cluster89
+2911: "Blacklisting ruined lives of thousands of construction workers say MPs",cluster89
+2909: "UK unemployment rate falls to 77 but wages stagnate below inflation",cluster411
+2914: "Greeces fragile political stability at risk as violence escalates",cluster89
+2938: "Drugs advisory group decides against banning qat in UK",cluster621
+2917: "Jamie Dimons defence of bankers wont fly",cluster309
+2916: "Weak pound the danger will come if things get out of control",cluster89
+2920: "Ed Miliband unnerves colleagues by rejecting inout EU referendum",cluster309
+2919: "Ikea profits up 8 in 2012",cluster309
+2929: "Davos 2013 day one  as it happened",cluster543
+2948: "Ukips Nigel Farage ridicules David Camerons EU referendum speech",cluster421
+2937: "George Soros backs Guatemalan presidents call to end war on drugs",cluster673
+2949: "Indian report on gang rape receives guarded welcome from campaigners",cluster421
+2950: "Israel election result hands rising star Yair Lapid a pivotal role",cluster794
+2951: "SSE chief executive Ian Marchant to step down in summer",cluster752
+2971: "Hillary Clinton testifies before House committee on Benghazi  live",cluster270
+2985: "Pound remains under pressure as it loses safe haven status",cluster45
+2981: "Afghan rape victim attacked again by government workers protecting her",cluster45
+2975: "Ken Loach demands release of Shrewsbury 24 classified documents",cluster930
+2984: "Latvia Russias playground for business politics  and crime",cluster414
+2988: "Chinese workers dance Gangnam Style to protest over unpaid wages",cluster373
+2997: "Selfridges raw milk sales prompts FSA prosecution on food safety charges",cluster640
+3002: "Private health contractors staff told to cut 999 calls to meet targets",cluster640
+3024: "Britain leaving EU major threat to global economy says Sir Martin Sorrell",cluster604
+3004: "Reaction to Camerons EU speech A politics of cherrypicking will not work",cluster640
+3013: "Two injured as Ryanair plane makes emergency descent in Italy",cluster604
+3078: "Website hosting abusive Mary Beard comments closes",cluster83
+3040: "Boris police targets designed to grab headlines says crime expert",cluster813
+3031: "Dmitry Medvedev tells Davos fears for Russias stability are unfounded",cluster676
+3036: "Europe signals clear opposition to David Camerons demands",cluster676
+3053: "Lloyds job cuts reach 38000 since HBOS rescue as 940 more roles go",cluster839
+3045: "Tony Blair Camerons EU strategy is holding a gun to his own head",cluster813
+3066: "Ed Miliband rules out support for inorout EU referendum",cluster682
+3060: "Flybe to cut 300 jobs as it targets return to profit",cluster777
+3097: "At whom was David Camerons Europe speech aimed",cluster501
+3083: "UK unemployment what the experts say",cluster305
+3089: "JP Morgan CEO condemns five years of scapegoating of banks",cluster501
+3185: "Snow enjoys last hurrah with rain on the way",cluster876
+3102: "Society daily 230113",cluster501
+3120: "Irans morality police crack down on coffee shops",cluster76
+3121: "The view from the EU Camerons Europe  la carte is not an option",cluster76
+3126: "Denial panic and doubt in Davos  Larry Elliott",cluster76
+3128: "Snow gives way to new threat of flooding",cluster76
+3145: "David Cameron calls for UK exemption from EUs evercloser union",cluster401
+3158: "Yair Lapid smooth face of Israels new normal",cluster401
+3155: "Tories hail Cameron speech that transfers Europe problem to Labour",cluster401
+3195: "David Camerons EU speech  full text",cluster876
+3166: "David Camerons Europe speech  the key points",cluster985
+3174: "Is David Camerons inout referendum on Europe a step too far",cluster985
+3206: "A newspaper for people with learning disabilities was a lightbulb moment  Kaliya Franklin",cluster69
+3197: "Zimbabwe elections Why Robert Mugabe may win",cluster876
+3210: "EU referendum Inout choice by end of 2017 Cameron promises",cluster69
+3231: "Labour warns David Cameron against foolish cap on longterm care costs",cluster424
+3209: "Binyamin Netanyahu suffers setback as centrists gain ground in Israel election",cluster69
+3213: "North Korea defiant as UN security council condemns rocket launch",cluster294
+3214: "Camerons Europe speech and PMQs Politics live blog",cluster601
+3232: "Police warn of contaminated ecstasy tablets after three deaths",cluster424
+2990: "Israel election Netanyahu looks to form coalition  as it happened",cluster287
+2993: "Binyamin Netanyahu in weaker position after election battering",cluster640
+3016: "IMF cuts world economic growth forecast for 2013",cluster604
+2987: "Fame finally finds teenage township singing sensation",cluster373
+5845: "Revealed Americas arms sales to Bahrain amid bloody crackdown",cluster799
+5832: "Chip designer Arm falls on growth worries while Apple hit by downgrade",cluster788
+5835: "Iranian single women might need fathers permission to go abroad",cluster788
+5854: "NHS regulator rules out tax exemptions for private health firms",cluster244
+5861: "UK jobs soar  but how many of these jobs are real",cluster90
+5882: "High ethical standards need constant attention  Christopher Kelly",cluster541
+5870: "Wandsworth jail reading group Herethey dont have to be prisoners",cluster718
+5872: "AstraZenecas new boss axes research and commercial heads",cluster718
+5878: "Nicola Sturgeon steps up plea for early divorce talks as London defends the marriage",cluster718
+5885: "Africans can relieve weary Britons",cluster541
+5893: "HMV calls in administrators  putting 4500 jobs at risk",cluster469
+5915: "Patients feel the strain of fiscal pains  Zara Aziz",cluster153
+5887: "Iran struggles to woo reluctant Egypt",cluster541
+5900: "Jane Raca fighting for life support for her disabled son  Amelia Gentleman",cluster92
+5907: "Germanys export model faces reality check",cluster47
+5916: "Britain facilitating mining firms talks with repressive Eritrean regime",cluster238
+5912: "France expected to more than triple Mali troop numbers",cluster47
+5917: "Easter Island issues Chile with independence threat",cluster153
+5931: "Collaborate will unite the public private and voluntary sectors  John Tizard",cluster382
+5919: "Letter from Vietnam hot fashion",cluster153
+5925: "Mali the danger of mission creep on alQaidas new frontier",cluster382
+5928: "Russia emerges from twoweek new year drinking binge",cluster382
+5938: "Does the breast cancer drug tamoxifen have sideeffects",cluster731
+5951: "Which brands have changed their products because of the recession",cluster445
+5947: "Indian culture war breaks out over Delhi gang rape",cluster939
+5953: "What if the Mid Staffs report calls for formal accountability for NHS staff",cluster445
+5956: "Society daily 150113",cluster445
+5986: "Are pubic lice in danger of extinction",cluster570
+5979: "Anglo American subsidiary Amplats to mothball two platinum mines and cut 14000 jobs",cluster570
+6055: "Avaaz can online campaigning reinvent politics",cluster416
+5996: "NHS trust failed to stop dangerous breast cancer operations",cluster356
+6004: "Rising energy and food bills keep inflation high",cluster356
+6024: "France pushes on with Mali air strikes",cluster986
+6023: "Burberry and Ocado lift the retail gloom with positive festive updates",cluster986
+6029: "Nick Clegg uncertainty over EU will have chilling effect on jobs",cluster996
+6028: "HMV in administration analysts reaction",cluster977
+6078: "Bank of England gets sweeping powers to prevent next house price bubble",cluster374
+6039: "Syria At least 10 killed in attack on Aleppo university  as it happened",cluster861
+6043: "Peace process dead if Binyamin Netanyahu wins Israeli election academics warn  Paul Owen",cluster861
+6061: "UK inflation expected to stick at 27",cluster416
+6063: "Landmark European court judgment on religious freedoms due",cluster416
+6080: "Tony Blair remarks could make civil service reform easier ministers believe",cluster395
+6072: "JP Morgan ordered to improve control functions after heavy losses",cluster75
+6074: "4500 jobs at risk at HMV as it calls in administrators after rescue talks fail",cluster910
+6081: "Lady Neuberger to investigate claims on care for dying patients",cluster567
+6084: "500000 women to be offered breast cancer drugs",cluster846
+6083: "Like for like is an unreliable measure says accountancy body",cluster567
+6088: "Earls Court project complaint against Boris Johnson policing deputy referred to IPCC",cluster316
+6109: "EU justice optouts are a security risk PM warned",cluster262
+6096: "Hugh Muirs diary Revealed  the rumbustious past of the PMs adviser",cluster316
+6091: "David Cameron hopes to heal divisions and unite a party split over Europe",cluster316
+6112: "Letters GP commissioning and privatisation",cluster847
+6105: "Mali conflict France has opened gates of hell say rebels",cluster574
+6113: "Letters Strategy needed to deal with HIV epidemic",cluster755
+6114: "LettersTaxbreak treatment for health firms",cluster875
+6115: "Letters What will we tell our grandchildren about the selloff of the NHS",cluster658
+3689: "Gift voucher law must be changed  Nils Pratley",cluster21
+3706: "West overlooked risk of Libya weapons reaching Mali says expert",cluster125
+3695: "Turkey wages cultural war in pursuit of its archaeological treasures",cluster775
+3720: "Stelios threatens to sell easyJet stake",cluster102
+3701: "Algeria hostage crisis claims of Canadian leader raises fears",cluster125
+3713: "Is Stelios serious about selling familys easyJet stake  Nils Pratley",cluster961
+3715: "Boeing faces lengthy Dreamliner delay former US transport chief warns",cluster961
+3723: "China rebukes US over ignorant comments on island dispute with Japan",cluster376
+3726: "Stobart under fire for appointing executive chairman",cluster172
+3725: "Child asthma hospital admissions fell after smoking ban study shows",cluster894
+3733: "Canadian coordinated terrorist attack says Algerian PM ",cluster746
+3754: "Cameron rhetoric on AlQaida in Africa could backfire",cluster186
+3752: "Algerian hostage crisis coverage dominated by Mauritanian news agency",cluster186
+3774: "Is Call the Midwife anything like the profession today",cluster886
+3764: "Meggitt drops on Boeing Dreamliner worries but FTSE edges higher in thin trading",cluster186
+3784: "Is human branding an animalrights stunt too far",cluster886
+3808: "Oxford child sex abuse ring witness tells court I did not have a choice",cluster811
+3818: "Eurozone crisis as it happened Finance chiefs vote in new leader as Juncker bows out",cluster626
+3817: "Israeli elections set to amplify religious voice in Knesset",cluster722
+3816: "Snow causes school closures and travel disruption  Monday 21 January",cluster722
+3852: "Labour lead over Tories shrinks to five points according to GuardianICM poll",cluster49
+3835: "Mugabe revives Gaddafis United States of Africa dream",cluster916
+3833: "HMV backtracks over refusal to accept gift vouchers",cluster916
+3872: "Healthcare minnow Ark slumps after shareholders fail to support fundraising plans",cluster888
+3840: "Denis MacShane expenses investigation reopened",cluster551
+3859: "French and Malian troops enter Diabaly after jihadists retreat",cluster151
+3864: "UK snow  your pictures",cluster710
+3884: "Society daily 210113",cluster588
+3869: "David Cameron to deliver Europe speech in London",cluster198
+3873: "Brazilian designer takes revenge on thieves by putting them in advert",cluster888
+3878: "Algerian hostage crisis aftermath  Monday 21 January",cluster588
+3894: "Diageo dips on worries about US trading and loss of tequila contract",cluster588
+3890: "Delhi gang rape trial begins",cluster588
+3913: "Kabul police officers killed in Taliban suicide attack",cluster884
+3991: "MPs criticise Cameron and Heywood over plebgate affair",cluster849
+3919: "William Hague UK cannot prevent terrorism in Africa",cluster884
+3935: "Car insurer Admiral accelerates on Goldman upgrade as FTSE 100 climbs despite snow disruption",cluster884
+3990: "Depressed banking sector raises spectre of tripledip recession",cluster166
+3952: "Cameron statement on Algerian hostage crisis Politics live blog",cluster652
+3961: "Algerian hostage toll rises with reports of Japanese deaths",cluster652
+3987: "Setback for Angela Merkel after tight election defeat in Lower Saxony",cluster950
+9556: "Irelands former richest man Sean Quinn freed from jail",cluster617
+3989: "David Cameron calls for global response after Algerian hostage crisis",cluster166
+3992: "Cost of retail crime rises to 16bn",cluster571
+4059: "British survivors of Algeria siege return home with tales of escape",cluster115
+4043: "Rival coalitions neck and neck in key German regional election",cluster402
+4042: "Torture on rise in Afghan jails says UN report",cluster402
+4045: "Bulgarian gas pistol attack was stunt",cluster702
+4070: "Cases of neglect exist across NHS says Jeremy Hunt",cluster927
+4047: "Kenneth Baker People told me to abandon Thatcher but I stood by her",cluster800
+4067: "CIA to exempt strikes on Pakistan from drones codification  reports",cluster927
+4062: "French forces advance towards northern Mali",cluster201
+4069: "RBS awaits hefty fines for Libor rigging",cluster927
+4077: "Binyamin Netanyahu rejects calls for Palestinian state within 1967 lines",cluster692
+4073: "Ricky Tomlinson calls on government to lift veil of secrecy on Shrewsbury 24",cluster284
+4072: "David Camerons Europe speech to be delivered this week",cluster141
+4108: "Algeria says siege death toll likely to rise after 23 hostages confirmed killed",cluster663
+4087: "Algerian hostage crisis does not mean we are back to dark days of extremism",cluster656
+4101: "A 1930sstyle building boom could bring back growth",cluster954
+4100: "Bolshoi ballet artistic director calm after acid attack on Moscow street",cluster954
+4107: "Cycling in Britain government to get serious with allparty inquiry",cluster254
+4103: "Aon defers bonus payments to avoid 50 income tax",cluster954
+4115: "Arab gloom as Israel shifts rightwards",cluster222
+4110: "Davos what can we expect from world leaders trip up the Magic Mountain",cluster234
+4112: "Snow covers Britain with big freeze to continue into next week",cluster222
+4118: "David Cameron fight against terrorism in north Africa may last decades",cluster164
+4119: "Why means testing family benefits misses the point  Katharine Whitehorn",cluster867
+9594: "London zoo opens gates to colony of snappers for annual animal census",cluster890
+9679: "UK housing market stays afloat but dont expect miracles",cluster121
+5114: "Israelis use Facebook to deliver poke at democracy in elections",cluster364
+5128: "Politics Weekly podcast banging on about Europe",cluster780
+5135: "Transport group Stobart warns on full year performance",cluster780
+5150: "Mr Marlboro the jihadist back from the dead to launch Algerian gas field raid",cluster157
+5145: "Aberdeen Asset Management benefits as investors put cash into Asian shares",cluster157
+5182: "The Albanese years at Rio Tinto a squandered opportunity",cluster758
+5157: "Algeria keen to lead on hostage crisis says No 10",cluster909
+5156: "Dreamliner planes grounded  in pictures",cluster909
+5161: "Horsemeat scandal watchdog to test all beef products at UK supermarkets",cluster909
+5166: "Algeria hostages escape Islamist militant captors",cluster940
+5207: "Pussy Riot member denied appeal",cluster579
+5211: "Society daily 170113",cluster579
+5184: "A lighter look",cluster758
+5190: "David Camerons tightrope act on Europe",cluster534
+5212: "Alex Salmond entices left and lawyers with promise of new rights in a written constitution",cluster579
+5221: "Aviva continues disposal programme with sale of Malaysian joint venture",cluster579
+5243: "Ed Miliband warns Cameron is leading us towards the EU exit",cluster516
+5272: "Boeing Dreamliner US joins Japan in grounding 787s",cluster50
+5252: "Primark avoids high street malaise with 25 jump in sales boosting parent Associated British Foods",cluster516
+5271: "Fears for hostages as Algeria attacks gas complex  as it happened",cluster77
+5264: "EU set to back French war in Mali",cluster550
+5340: "Obama and Biden unveil gun control agenda in White House speech  live",cluster307
+5310: "Vince Cable This is a terrible time for David Cameron to threaten an EU exit",cluster948
+5274: "Islamist militants and Algerian troops in hostage standoff",cluster50
+5276: "Miliband criticises Cameron ahead of Europe speech Politics live blog  Politics live blog",cluster77
+5305: "Algeria hostage crisis sparks fears of escalation across region",cluster948
+5311: "Hugh Muirs diary  Revealed  the brickbats being prepared for Big Dave",cluster948
+5314: "Indebted Mid Staffordshire hospital trust faces breakup",cluster948
+5350: "Letters UK support is good news for Ethiopians",cluster176
+5343: "Onesies confusion over Europe and uncooperative civil servants  Westminster digested",cluster413
+5344: "Letters Help Afghan women",cluster413
+5346: "Letters Demise of our high streets and nostalgia for a predigital world",cluster413
+5357: "HMV accused of theft over gift vouchers debacle",cluster130
+5353: "Horsemeat in frozen burgers prompts urgent inquiry by food watchdogs",cluster591
+5367: "Mali a rising tide of refugees and wounded",cluster476
+5360: "EU referendum Cameron playing difficult game says veteran of 1975",cluster130
+5359: "Blockbuster joins UK retail casualty list and calls in the administrators",cluster130
+5369: "TUC accuses Tory Eurosceptics of trying to undermine labour law",cluster476
+5368: "Kallakis how offshore secrecy in British Virgin Islands lends itself to fraud",cluster476
+5376: "Qadris Islamabad sitin raises fears of soft coup among Pakistans politicians",cluster712
+5374: "Blockbuster follows HMV and Jessops in a terrible week for the high street",cluster712
+5386: "Horses and burgers bring bad memories for Tories",cluster803
+9691: "Mortgage lending expected to increase says Bank of England",cluster121
+5404: "South African platinum workers strike over job cut plans",cluster599
+5381: "Michael Goves Upstairs Downstairs department exminister speaks out",cluster803
+5383: "TUI merger talks lift shares",cluster803
+5393: "French forces fighting handtohand in Diabaly",cluster645
+5405: "Somewhat less neglected tropical diseases",cluster720
+5395: "Boris Johnson flying regulations will be examined after helicopter crash",cluster42
+5409: "Wonder Breads demise was exaggerated but it did affect prices  Heidi Moore",cluster720
+5422: "French Connection set to report its first loss since 2009",cluster485
+5429: "Shire gains after AstraZeneca takeover talk but FTSE falters on economic concerns",cluster293
+9728: "FTSE 100 holds onto most of its fiscal cliff gains but mixed fortunes for Compass and Serco",cluster73
+5418: "Two killed after militants take western contractors hostage in Algeria raid",cluster485
+5426: "JP Morgan slashes Jamie Dimons pay following London trading fiasco",cluster19
+5430: "Welfare reform the bedroom tax a policy that has no logic",cluster26
+5450: "Chinese police arrest seven abetters after Tibetan mans selfimmolation",cluster639
+5454: "Cameron at PMQs and Fresh Start launch Politics live blog",cluster660
+5438: "Achilleas Kallakis property empire",cluster385
+5441: "Russian mafia boss shot dead by sniper",cluster385
+5445: "Could Ed Miliband be Labours Margaret Thatcher",cluster385
+5457: "Briton reported killed in kidnap raid in Algeria",cluster660
+5470: "Tesco and the horsemeat scandal answers needed quickly",cluster399
+9750: "New year messages from Nick Clegg David Cameron and Ed Milband Westminster digested",cluster30
+5466: "Syria Russia blames opposition terrorists for attack on Aleppo University  as it happened",cluster27
+5459: "Mali militants whos who among Islamist rebels",cluster660
+5461: "Politicians stoke next housing bubble",cluster660
+5487: "Horsemeatinburgers scandal prompts food hygiene fears",cluster453
+5473: "Tui Travel jumps 4 after approach from German parent Tui AG",cluster264
+5482: "Syrian forces launch push on rebelheld Aleppo",cluster453
+5479: "Eurozone crisis live Finnish PM says EU without UK would be like fish without chips",cluster666
+9752: "Hugo Chvez Venezuelans urged to ignore enemy health rumours",cluster913
+7524: "Society daily 100113",cluster862
+9777: "Business leaders more optimistic Britain can avoid tripledip recession",cluster595
+7508: "Tesco and Sainsburys all apples and oranges over Christmas trading figures  Josephine Moulds",cluster124
+7525: "Andrew Mitchell could have been victim of gigantic conspiracy",cluster677
+9798: "Letters New Labours short memory on NHS",cluster636
+9780: "Hugh Muirs diary",cluster158
+7526: "MPs avoid pensioner backlash over inflation reforms  for now",cluster225
+7541: "Interest rates in the UK since 1694 Download the data and see it visualised",cluster390
+9797: "Letters Adoptive thinking",cluster114
+7574: "Oxfam African campaign is helping to dispel negative stereotypes",cluster530
+7534: "Nick Cleggs radio phonein whats his policy on onesies",cluster0
+9799: "Letters A plea for proper care for a life in the balance",cluster114
+7543: "Seven prisons in England to close",cluster345
+9821: "Martin McGuinness given title of steward and bailiff",cluster147
+7570: "Nick Clegg launches LBC radio show  and admits to owning a onesie",cluster530
+9807: "Fiscal cliff still in view for Americans facing income and spending cuts",cluster419
+7601: "Marks  Spencer loses 270m stock market value",cluster387
+9802: "Letters Focusing on the positives of the European Union",cluster114
+7586: "Northern Irelands first minister urges unionists to solve flag row peacefully",cluster530
+9832: "Customers criticise indie image of the coffee shops partowned by Tesco",cluster58
+7594: "RollsRoyce appoints Lord Gold to review anticorruption procedures",cluster530
+9809: "Fiscal cliff Chris Christie blasts Republicans on Sandy relief",cluster938
+7625: "Googles Eric Schmidt says North Korea must open up to internet as visit ends",cluster713
+9820: "Central African Republic rebels agree to talks",cluster221
+7610: "MPs question cabinet secretary over plebgate Politics live blog",cluster323
+9823: "Keith Vaz on Jacintha Saldanhas children This could be me 42 years ago",cluster593
+7608: "Syria accuses Brahimi of bias  Thursday 11 January 2013",cluster387
+9847: "Avis Budget buys Zipcar for 500m  a 50 premium to its share value",cluster119
+7650: "MS admits bigger than expected sales drop in trading statement",cluster209
+9833: "Sir Martin Sorrell defends Starbucks tax arrangements",cluster511
+7612: "Delhi gangrape accused were tortured by police lawyer claims",cluster322
+9850: "Disabled convict Daniel Roque Hall wins injunction preventing return to jail",cluster435
+9839: "Morrisons set to report tough Christmas",cluster858
+7628: "Britain should stay in European Union says Obama administration",cluster713
+9844: "India debates naming new law after gangrape victim",cluster858
+7649: "Marks  Spencer sales figures leak cockup or conspiracy",cluster314
+9864: "Dutchwoman swaps Farc AK47 for peace talks with Colombia government",cluster17
+7652: "Communities to be offered cash incentives to accept new homes",cluster209
+9852: "FTSE surges past 6000 to record best daily gain since November after US fiscal cliff deal",cluster435
+7654: "Hugh Muirs diary",cluster615
+9865: "Miliband and Balls yet to earn voters trust on the economy says Mandelson",cluster17
+7656: "Jobready claimants get priority in work programme say academics",cluster615
+9863: "Fiscal cliff deal stock markets surge on compromise",cluster17
+7666: "Peugeot Citron sales hit by falling demand in southern Europe",cluster841
+9875: "60000 killed in Syrian war says UN",cluster967
+7669: "Tourism in Mali fades away as instability leads to hardship",cluster841
+9868: "John Lewis update signals upbeat trading season for fashion retailers",cluster967
+7668: "Coalition promises separating substance from spin",cluster841
+7672: "Bankers bonus round risks salting scandal wound",cluster841
+9894: "Parents of stillborn baby wanted an explanation but went through hell",cluster872
+7686: "Letters Plan now for a LabourLib Dem coalition",cluster243
+9895: "NHS hospital dishonest to parents of stillborn baby over failures in care",cluster872
+7680: "Coalition midterm review an unhappy exercise with minimal upside",cluster38
+7690: "Letters Act of vandalism based on ideology",cluster243
+9901: "Fiscal cliff deal Markets soar as compromise agreed",cluster277
+7682: "Coalition guilty of astonishing omission in audit says Labour",cluster38
+9903: "Euros discarded as impoverished Greeks resort to bartering",cluster277
+7685: "Letters Leave Lucas alone",cluster243
+9902: "John Lewis reveals record festive sales",cluster277
+9904: "India rejects claims it exported fake medicine to Africa",cluster277
+9937: "Jean Michel Jarre denies London tax move",cluster825
+7695: "Use your pension to insure against longterm care costs say ministers",cluster266
+9925: "Ivory Coast stampede death toll rises",cluster358
+7706: "Mass donor organ fraud shakes Germany",cluster539
+9924: "British theatre producer escapes two years in Ugandan jail for gay play",cluster358
+7698: "Nuclear talks with Iran delayed",cluster331
+9938: "London Underground at 150 its past and future",cluster899
+7707: "Boy left brain damaged at birth wins 71m compensation",cluster539
+9939: "FTSE 100 breaks 6000 as fiscal cliff and eurozone fears recede",cluster929
+9940: "Likud members call for Israeli annexation of West Bank territories",cluster521
+7711: "Its my party Cleggster and youll cry if I want you to Westminster digested",cluster337
+9971: "Greek debt crisis far from over",cluster343
+7716: "Top UBS banker attacks City culture",cluster921
+9986: "Mining and banking shares lead the way as FTSE receives fiscal cliff boost",cluster369
+7709: "German politicians threaten to block Cyprus bailout",cluster539
+9966: "Lamprell shares jump 14 as oil rig maker secures waivers to banking covenants",cluster689
+7717: "PMQs and release of the coalitions pledge audit Politics live blog",cluster933
+9979: "Morrisons misses out on rally on worries about Christmas trading",cluster538
+7713: "Camerons audit of pledges dismissed as nasty party PR move by Miliband",cluster337
+10014: "Thai man arrested over killing of British tourist at New Years Eve party",cluster9
+7715: "UK trade deficit narrows but remains on track for another poor year",cluster337
+9994: "Wettest English year sealed with a seal",cluster478
+7720: "Syria and Iran swap prisoners after months of complex international talks",cluster519
+7755: "FTSE 100 hits prefinancial crisis levels",cluster393
+10022: "Benefit rises outstrip private sector pay says government",cluster9
+7726: "Skivers v strivers the argument that pollutes peoples minds",cluster519
+10038: "UK has worlds fifthhighest rate of children with type 1 diabetes",cluster427
+7770: "Jessops goes into administration putting 2000 jobs at risk",cluster997
+10037: "Education policies hitting teachers morale poll finds",cluster427
+7731: "Sainsburys strong Christmas sales throws down gauntlet to Tesco",cluster931
+10036: "Retail bankruptcies soar for third year amid weak demand and rising costs",cluster427
+7740: "Hindsight defence from architect of RBSABN Amro deal doesnt wash",cluster393
+7773: "Berlusconi accuses judges of feminist bias over divorce deal",cluster997
+7761: "Banks and miners lift FTSE 100 to best level since May 2008 while Meggitt shines",cluster417
+10041: "Hugh Muirs diary",cluster592
+7779: "Hugo Chvez inauguration delay angers Venezuelan opposition",cluster997
+10051: "Letters How not to protect children from abuse",cluster342
+7776: "Japan and China step up drone race as tension builds over disputed islands",cluster997
+7780: "A lighter look",cluster997
+10072: "Universal credit welfare pilot beset by IT failures",cluster719
+10056: "Chinas Great Famine the true story",cluster53
+7791: "If David Cameron has never broken the law hes a very unusual sort of citizen  Michael White",cluster542
+10054: "Letters Survival of the fittest in 2013",cluster577
+7787: "NHS trust under scrutiny over claims of unnecessary breast operations",cluster848
+10062: "David Cameron sets free trade agreement as his G8 priority",cluster174
+7850: "Guardian and Observer Christmas appeal raises over 200000",cluster684
+10083: "Chinas taste for pork serves up a pollution problem",cluster54
+7834: "ITV boosted by analyst talk of strong advertising growth in January",cluster515
+10075: "Gunmen kill seven Pakistani aid workers",cluster688
+7793: "Eurozone crisis live Germany takes hard line on Cyprus bailout  as it happened",cluster542
+10115: "Peter DaCosta blackcab killer or London taxis driving force",cluster580
+10108: "Indian bus rape Delhi sees rush for guns",cluster580
+7837: "Recordbreaking Sainsburys Sort of",cluster747
+10087: "Prospects for underwater goldmine in Pacific decline",cluster54
+7839: "Worst effects of austerity yet to be felt disability advice charity warns",cluster747
+10103: "MoD compensation log illustrates human cost of Afghan war",cluster283
+7844: "Saudi Arabia executes maid accused of murdering baby",cluster747
+10130: "Letter from Lithuania modern mayhem",cluster39
+7858: "UK trade deficit shows widening northsouth divide  Larry Elliott",cluster99
+10121: "Can Afghan troops hold off the Taliban after Nato withdraws",cluster39
+10134: "Benito Mussolini a dictator for all seasons in Italy",cluster71
+7857: "Zorb ball ski slope disaster kills Russian man and badly injures friend",cluster99
+10126: "While change shakes the Arab world inertia still reigns supreme in Morocco",cluster39
+8577: "CSR and Imagination Technologies in demand as Las Vegas consumer show begins",cluster988
+8563: "UK car market sees biggest growth in more than 10 years",cluster924
+8554: "Are the Los Roques islands the new Bermuda Triangle",cluster642
+8574: "Lord Hill a sharp brain in need of sharper elbows",cluster988
+8569: "Eurozone crisis as it happened Silvio Berlusconi reaches Italian election deal",cluster557
+8590: "Lord Strathclyde leaves politics a contented man",cluster422
+8585: "Afghan president flies to Washington for tough talks on military future",cluster96
+8582: "Child benefit changes why the critics are on solid ground  Phillip Inman",cluster6
+8604: "Oxfams new Africa campaign reveals a misguided messiah complex",cluster403
+8613: "Society daily 070113",cluster403
+8638: "ITV brightens on profit hopes and analyst upgrade",cluster995
+8620: "Christmas sales House of Fraser celebrates online surge",cluster403
+8626: "Banks get new years boost as liquidity rules relaxed",cluster403
+8622: "Indian gangrape accused appear in Delhi court",cluster403
+8629: "Ladbrokes in talks to buy Betdaq betting exchange",cluster995
+8640: "Nick Clegg to cohost LBC radio show in attempt to woo voters",cluster995
+8649: "Cameron and Clegg publish coalitions midterm review Politics live blog",cluster840
+8652: "The coalition needs to be cautious over plans to add gender equality into the royal line of succession  Michael White",cluster840
+8708: "Child benefit what are the new rules",cluster377
+8666: "Change4Life advertising campaign highlights sugar and fat in food",cluster840
+8679: "More cuts on the way says David Laws",cluster925
+8687: "Zimbabwe Mugabes plan to outsmart Zuma ahead of 2013 election",cluster925
+8686: "Bank shares boosted by easing of capital rules but FTSE slips on profit taking",cluster925
+8702: "Banks win concessions and time on liquidity rules",cluster377
+8692: "Tory modernisers set out ideas for 2015 manifesto",cluster925
+8749: "Epiphany celebrations  in pictures",cluster828
+8710: "Assads call for talks dismissed as a waste of time by Syrian opposition",cluster377
+8723: "Nigel Farage Id rather have a party of eccentrics than bland ghastly people",cluster934
+8717: "School leavers to join civil service on fasttrack apprenticeship scheme",cluster798
+8732: "Cameron and Clegg renew coalition vows with sense of shared purpose",cluster829
+8753: "Letters The despicable demonising of the poor",cluster828
+8751: "Letters The Church of Englands bedroom police",cluster828
+8766: "The worlds most extreme tourist",cluster498
+8791: "British Gas managing director to step down",cluster3
+8782: "NHS being atomised by expansion of private sectors role say doctors",cluster764
+8788: "David Camerons threat to block EU reforms branded economic insanity",cluster18
+8817: "Doctor under fire for alleged errors prescribing sexchange hormones",cluster826
+8790: "Israel to build border fence between Golan Heights and Syria",cluster18
+8794: "Women are the losers in child benefit cuts says Labour",cluster135
+8797: "RollsRoyce accused of bribing a Chinese airline executive",cluster338
+8811: "Fix infrastructure dont fund flagship projects",cluster664
+8816: "Military chiefs call for reversal of defence cuts",cluster93
+8824: "Italian council chief blocks filming of antimafia TV series in Naples suburb",cluster975
+8844: "Canadian PM to meet First Nations leaders after protests",cluster263
+8819: "Chinas child athletes train at Fuzhou sports school  in picturess young athletes  in pictures",cluster826
+8823: "Morrisons expected to announce Christmas sales slump",cluster866
+8838: "4G spectrum bidders to be confirmed as auction begins",cluster461
+8830: "Hardy Frost obituary",cluster837
+8845: "France shaken by fresh scandal over weightloss drug linked to deaths",cluster263
+8856: "Syrias Bashar alAssad calls on foreign countries to end support for rebels",cluster446
+8850: "David Cameron entitled to use threat of veto to win back powers from Europe",cluster446
+8849: "Marikana mine massacre why British lawyer has joined fight for justice",cluster263
+8853: "Care failings are betrayal of NHS values says Jeremy Hunt",cluster446
+8866: "Revealed soldiers nurses and teachers hit by benefit curbs",cluster52
+8887: "Supermarkets ready to talk turkey after Christmas",cluster336
+8888: "Women inch towards equality in the boardroom",cluster336
+8957: "The McLaren Technology Centre in pictures",cluster347
+8891: "McLaren Formula One engineers set to cash in on winning formula",cluster336
+8958: "Tripledip recession will give the Tories a massive electoral headache",cluster608
+8959: "Ana Matronic demands justice for 24yearold South African woman who was raped and murdered for being a lesbian",cluster608
+8978: "Pamplonas locksmiths join revolt as banks throw families from their homes",cluster193
+8992: "Exmodel sues Tory ministers family over healthy rice firm",cluster763
+8984: "Call for gay dean Jeffrey John to be made a bishop in Wales",cluster558
+6122: "Republican hubris on spending cuts a character flaw that will ruin America  Heidi Moore",cluster880
+6121: "HMV prepares to call in administrators",cluster880
+6118: "Letters Aid to Ethiopia",cluster755
+6132: "Insulting to be dropped from section 5 of Public Order Act",cluster24
+6141: "Webbs pension contribution proves simply baffling",cluster497
+6139: "Tory fury as Lib Dem peers join Labour to delay boundary review",cluster118
+6156: "Government under pressure to stop banks deferring bonuses",cluster641
+6155: "Benefit cuts reforms will leave disabled people ghettoised and excluded",cluster990
+6169: "UPS drops TNT Express bid amid competition fears",cluster212
+6174: "Quinoa brings riches to the Andes",cluster212
+6190: "Hamid Karzai Afghans will decide on scale of US post2014 presence",cluster317
+6180: "Eurozone showing signs of recovery says IMF chief",cluster212
+6189: "Iranian songwriter arrested with four other musicians says poet",cluster317
+6188: "Why cant we read the Scientology book Going Clear in the UK",cluster317
+6191: "Bakrie family threatens to renege on offer to withdraw from Bumi plc",cluster317
+6207: "Cameron brings forward EU speech as Eurosceptic expectations mount",cluster268
+6217: "Pilgrims tale identity of Iranians kidnapped in Syria begins to emerge  Saeed Kamali Dehghan",cluster523
+6222: "Silvio Berlusconi trial Milan court rejects suspension plea",cluster708
+6212: "Marks  Spencer chief under fire as sales dip",cluster473
+6243: "Ambitious about Autism the options for further education are so limited",cluster109
+6234: "Ten brrrrilliant things about snow",cluster109
+6252: "Eurozone crisis live Greek PM defiant after attacks as Lagarde sees recovery ",cluster139
+6272: "From mephedrone to Benzo Fury the new legal highs",cluster197
+6253: "Financial Policy Committee must tread delicate path on new bank capital rules  Jill Treanor",cluster779
+6255: "Grard Depardieu praises Vladimir Putin and attacks Russian opposition",cluster779
+6269: "Auto industry warns Washington fiscal uncertainty threatens recovery",cluster197
+6267: "Malian rebels overrun garrison town and advance towards capital",cluster197
+6347: "Animal rights activists plan direct action against beagle imports",cluster213
+6296: "Pakistan sacks Baluchistan government after massacre",cluster972
+6292: "George Osborne could stop Goldman Sachss bonus tax ploy at a stroke   Nils Pratley",cluster972
+6295: "Kumbh Mela in India  in pictures",cluster972
+6298: "The grid is No 10s policy planning system broken",cluster972
+6318: "Mali conflict militants killed as French air strikes pound rebel camps",cluster657
+6314: "Tunisia goes on the defensive two years after overthrowing regime",cluster219
+6323: "Society daily 140113",cluster59
+6325: "Burma steps up military offensive against Kachin rebels",cluster146
+6333: "Social enterprise network daily Monday 14 January",cluster231
+6327: "ProEurope lobby must confess past sins to win public blessing  Michael White",cluster44
+6338: "Englands football stars feature in Holocaust education film for schools",cluster231
+6337: "Israeli settlement products need EU ban says human rights report",cluster231
+6354: "Imani Green shooting Jamaica police arrest eight",cluster213
+6374: "Chinas censorship rules were tested But will it be back to business as usual",cluster531
+6386: "Im jealous of my childrens onesies says David Cameron",cluster531
+6368: "David Cameron Britain would not collapse outside EU",cluster531
+6370: "New flatrate state pension announced politics live blog",cluster531
+6405: "Swatch pays 1bn for jeweller to the stars Harry Winston",cluster964
+6397: "Mubarak faces retrial as Egyptian court upholds appeal  as it happened",cluster964
+6399: "David Cameron beating heart of Britain wants less EU interference",cluster964
+6408: "Britain wakes up to snow with more to come",cluster964
+6414: "The worlds craziest tyrants battle for supremacy",cluster74
+6434: "FTSE companies warned over executive pay",cluster256
+6429: "999 call takers offered rewards for sending fewer ambulances",cluster966
+6432: "Goldman Sachs considers shifting bonuses to benefit from tax rate cut",cluster256
+6439: "Make legal highs available for sale government urged",cluster256
+6449: "Lloyds admits trader sacked for irregularities",cluster989
+6455: "Imani Green murder how violence plagues Jamaica",cluster989
+6473: "Letters Benefit cuts threaten womens refuges",cluster458
+6469: "David Cameron faces battle over Europe as Eric Pickles joins fray",cluster458
+6458: "Mali high stakes in Hollandes war",cluster145
+6460: "Letters Other areas of debate on Europe",cluster145
+6490: "Costa Concordia survivors and islanders mark disasters anniversary",cluster584
+6499: "Jimmy Dushku the man North Korea is following on Twitter",cluster279
+6485: "British girl shot dead in Jamaica was accidental victim of feud",cluster88
+
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * Cantidad de instancias por cluster  * * * * * * * * * * * * * *
+cluster nro: 0 tamanio: 1
+cluster nro: 1 tamanio: 2
+cluster nro: 2 tamanio: 4
+cluster nro: 3 tamanio: 1
+cluster nro: 4 tamanio: 1
+cluster nro: 5 tamanio: 1
+cluster nro: 6 tamanio: 1
+cluster nro: 7 tamanio: 1
+cluster nro: 8 tamanio: 5
+cluster nro: 9 tamanio: 2
+cluster nro: 10 tamanio: 1
+cluster nro: 11 tamanio: 2
+cluster nro: 12 tamanio: 3
+cluster nro: 13 tamanio: 2
+cluster nro: 14 tamanio: 2
+cluster nro: 15 tamanio: 1
+cluster nro: 16 tamanio: 1
+cluster nro: 17 tamanio: 3
+cluster nro: 18 tamanio: 2
+cluster nro: 19 tamanio: 1
+cluster nro: 20 tamanio: 2
+cluster nro: 21 tamanio: 2
+cluster nro: 22 tamanio: 2
+cluster nro: 23 tamanio: 1
+cluster nro: 24 tamanio: 1
+cluster nro: 25 tamanio: 1
+cluster nro: 26 tamanio: 1
+cluster nro: 27 tamanio: 1
+cluster nro: 28 tamanio: 2
+cluster nro: 29 tamanio: 1
+cluster nro: 30 tamanio: 1
+cluster nro: 31 tamanio: 1
+cluster nro: 32 tamanio: 1
+cluster nro: 33 tamanio: 2
+cluster nro: 34 tamanio: 1
+cluster nro: 35 tamanio: 1
+cluster nro: 36 tamanio: 5
+cluster nro: 37 tamanio: 2
+cluster nro: 38 tamanio: 2
+cluster nro: 39 tamanio: 3
+cluster nro: 40 tamanio: 1
+cluster nro: 41 tamanio: 3
+cluster nro: 42 tamanio: 1
+cluster nro: 43 tamanio: 2
+cluster nro: 44 tamanio: 1
+cluster nro: 45 tamanio: 2
+cluster nro: 46 tamanio: 1
+cluster nro: 47 tamanio: 2
+cluster nro: 48 tamanio: 1
+cluster nro: 49 tamanio: 1
+cluster nro: 50 tamanio: 2
+cluster nro: 51 tamanio: 2
+cluster nro: 52 tamanio: 1
+cluster nro: 53 tamanio: 1
+cluster nro: 54 tamanio: 2
+cluster nro: 55 tamanio: 3
+cluster nro: 56 tamanio: 1
+cluster nro: 57 tamanio: 1
+cluster nro: 58 tamanio: 1
+cluster nro: 59 tamanio: 1
+cluster nro: 60 tamanio: 4
+cluster nro: 61 tamanio: 2
+cluster nro: 62 tamanio: 3
+cluster nro: 63 tamanio: 1
+cluster nro: 64 tamanio: 3
+cluster nro: 65 tamanio: 4
+cluster nro: 66 tamanio: 2
+cluster nro: 67 tamanio: 1
+cluster nro: 68 tamanio: 1
+cluster nro: 69 tamanio: 3
+cluster nro: 70 tamanio: 2
+cluster nro: 71 tamanio: 1
+cluster nro: 72 tamanio: 2
+cluster nro: 73 tamanio: 2
+cluster nro: 74 tamanio: 1
+cluster nro: 75 tamanio: 1
+cluster nro: 76 tamanio: 4
+cluster nro: 77 tamanio: 2
+cluster nro: 78 tamanio: 1
+cluster nro: 79 tamanio: 1
+cluster nro: 80 tamanio: 1
+cluster nro: 81 tamanio: 1
+cluster nro: 82 tamanio: 1
+cluster nro: 83 tamanio: 1
+cluster nro: 84 tamanio: 1
+cluster nro: 85 tamanio: 1
+cluster nro: 86 tamanio: 0
+cluster nro: 87 tamanio: 1
+cluster nro: 88 tamanio: 1
+cluster nro: 89 tamanio: 4
+cluster nro: 90 tamanio: 1
+cluster nro: 91 tamanio: 3
+cluster nro: 92 tamanio: 1
+cluster nro: 93 tamanio: 1
+cluster nro: 94 tamanio: 1
+cluster nro: 95 tamanio: 2
+cluster nro: 96 tamanio: 1
+cluster nro: 97 tamanio: 1
+cluster nro: 98 tamanio: 1
+cluster nro: 99 tamanio: 4
+cluster nro: 100 tamanio: 2
+cluster nro: 101 tamanio: 1
+cluster nro: 102 tamanio: 1
+cluster nro: 103 tamanio: 6
+cluster nro: 104 tamanio: 3
+cluster nro: 105 tamanio: 2
+cluster nro: 106 tamanio: 1
+cluster nro: 107 tamanio: 1
+cluster nro: 108 tamanio: 2
+cluster nro: 109 tamanio: 2
+cluster nro: 110 tamanio: 1
+cluster nro: 111 tamanio: 1
+cluster nro: 112 tamanio: 1
+cluster nro: 113 tamanio: 1
+cluster nro: 114 tamanio: 3
+cluster nro: 115 tamanio: 1
+cluster nro: 116 tamanio: 3
+cluster nro: 117 tamanio: 1
+cluster nro: 118 tamanio: 1
+cluster nro: 119 tamanio: 1
+cluster nro: 120 tamanio: 1
+cluster nro: 121 tamanio: 5
+cluster nro: 122 tamanio: 2
+cluster nro: 123 tamanio: 1
+cluster nro: 124 tamanio: 1
+cluster nro: 125 tamanio: 2
+cluster nro: 126 tamanio: 2
+cluster nro: 127 tamanio: 1
+cluster nro: 128 tamanio: 3
+cluster nro: 129 tamanio: 3
+cluster nro: 130 tamanio: 3
+cluster nro: 131 tamanio: 1
+cluster nro: 132 tamanio: 2
+cluster nro: 133 tamanio: 1
+cluster nro: 134 tamanio: 1
+cluster nro: 135 tamanio: 1
+cluster nro: 136 tamanio: 3
+cluster nro: 137 tamanio: 3
+cluster nro: 138 tamanio: 1
+cluster nro: 139 tamanio: 1
+cluster nro: 140 tamanio: 2
+cluster nro: 141 tamanio: 1
+cluster nro: 142 tamanio: 1
+cluster nro: 143 tamanio: 1
+cluster nro: 144 tamanio: 4
+cluster nro: 145 tamanio: 2
+cluster nro: 146 tamanio: 1
+cluster nro: 147 tamanio: 1
+cluster nro: 148 tamanio: 1
+cluster nro: 149 tamanio: 2
+cluster nro: 150 tamanio: 1
+cluster nro: 151 tamanio: 1
+cluster nro: 152 tamanio: 1
+cluster nro: 153 tamanio: 3
+cluster nro: 154 tamanio: 1
+cluster nro: 155 tamanio: 2
+cluster nro: 156 tamanio: 2
+cluster nro: 157 tamanio: 2
+cluster nro: 158 tamanio: 1
+cluster nro: 159 tamanio: 4
+cluster nro: 160 tamanio: 1
+cluster nro: 161 tamanio: 1
+cluster nro: 162 tamanio: 1
+cluster nro: 163 tamanio: 2
+cluster nro: 164 tamanio: 1
+cluster nro: 165 tamanio: 1
+cluster nro: 166 tamanio: 2
+cluster nro: 167 tamanio: 1
+cluster nro: 168 tamanio: 4
+cluster nro: 169 tamanio: 1
+cluster nro: 170 tamanio: 2
+cluster nro: 171 tamanio: 1
+cluster nro: 172 tamanio: 1
+cluster nro: 173 tamanio: 1
+cluster nro: 174 tamanio: 1
+cluster nro: 175 tamanio: 3
+cluster nro: 176 tamanio: 1
+cluster nro: 177 tamanio: 3
+cluster nro: 178 tamanio: 1
+cluster nro: 179 tamanio: 3
+cluster nro: 180 tamanio: 3
+cluster nro: 181 tamanio: 1
+cluster nro: 182 tamanio: 3
+cluster nro: 183 tamanio: 2
+cluster nro: 184 tamanio: 1
+cluster nro: 185 tamanio: 1
+cluster nro: 186 tamanio: 3
+cluster nro: 187 tamanio: 1
+cluster nro: 188 tamanio: 1
+cluster nro: 189 tamanio: 5
+cluster nro: 190 tamanio: 1
+cluster nro: 191 tamanio: 1
+cluster nro: 192 tamanio: 1
+cluster nro: 193 tamanio: 1
+cluster nro: 194 tamanio: 4
+cluster nro: 195 tamanio: 2
+cluster nro: 196 tamanio: 1
+cluster nro: 197 tamanio: 3
+cluster nro: 198 tamanio: 1
+cluster nro: 199 tamanio: 2
+cluster nro: 200 tamanio: 1
+cluster nro: 201 tamanio: 1
+cluster nro: 202 tamanio: 2
+cluster nro: 203 tamanio: 3
+cluster nro: 204 tamanio: 2
+cluster nro: 205 tamanio: 1
+cluster nro: 206 tamanio: 1
+cluster nro: 207 tamanio: 1
+cluster nro: 208 tamanio: 2
+cluster nro: 209 tamanio: 2
+cluster nro: 210 tamanio: 1
+cluster nro: 211 tamanio: 2
+cluster nro: 212 tamanio: 3
+cluster nro: 213 tamanio: 2
+cluster nro: 214 tamanio: 3
+cluster nro: 215 tamanio: 2
+cluster nro: 216 tamanio: 2
+cluster nro: 217 tamanio: 4
+cluster nro: 218 tamanio: 2
+cluster nro: 219 tamanio: 1
+cluster nro: 220 tamanio: 2
+cluster nro: 221 tamanio: 1
+cluster nro: 222 tamanio: 2
+cluster nro: 223 tamanio: 2
+cluster nro: 224 tamanio: 1
+cluster nro: 225 tamanio: 1
+cluster nro: 226 tamanio: 1
+cluster nro: 227 tamanio: 3
+cluster nro: 228 tamanio: 2
+cluster nro: 229 tamanio: 1
+cluster nro: 230 tamanio: 1
+cluster nro: 231 tamanio: 3
+cluster nro: 232 tamanio: 1
+cluster nro: 233 tamanio: 2
+cluster nro: 234 tamanio: 1
+cluster nro: 235 tamanio: 1
+cluster nro: 236 tamanio: 2
+cluster nro: 237 tamanio: 6
+cluster nro: 238 tamanio: 1
+cluster nro: 239 tamanio: 1
+cluster nro: 240 tamanio: 4
+cluster nro: 241 tamanio: 1
+cluster nro: 242 tamanio: 2
+cluster nro: 243 tamanio: 3
+cluster nro: 244 tamanio: 1
+cluster nro: 245 tamanio: 4
+cluster nro: 246 tamanio: 1
+cluster nro: 247 tamanio: 2
+cluster nro: 248 tamanio: 1
+cluster nro: 249 tamanio: 6
+cluster nro: 250 tamanio: 4
+cluster nro: 251 tamanio: 4
+cluster nro: 252 tamanio: 3
+cluster nro: 253 tamanio: 1
+cluster nro: 254 tamanio: 1
+cluster nro: 255 tamanio: 1
+cluster nro: 256 tamanio: 3
+cluster nro: 257 tamanio: 1
+cluster nro: 258 tamanio: 2
+cluster nro: 259 tamanio: 2
+cluster nro: 260 tamanio: 1
+cluster nro: 261 tamanio: 1
+cluster nro: 262 tamanio: 1
+cluster nro: 263 tamanio: 3
+cluster nro: 264 tamanio: 1
+cluster nro: 265 tamanio: 1
+cluster nro: 266 tamanio: 1
+cluster nro: 267 tamanio: 1
+cluster nro: 268 tamanio: 1
+cluster nro: 269 tamanio: 2
+cluster nro: 270 tamanio: 1
+cluster nro: 271 tamanio: 1
+cluster nro: 272 tamanio: 1
+cluster nro: 273 tamanio: 1
+cluster nro: 274 tamanio: 1
+cluster nro: 275 tamanio: 1
+cluster nro: 276 tamanio: 4
+cluster nro: 277 tamanio: 4
+cluster nro: 278 tamanio: 2
+cluster nro: 279 tamanio: 2
+cluster nro: 280 tamanio: 1
+cluster nro: 281 tamanio: 1
+cluster nro: 282 tamanio: 3
+cluster nro: 283 tamanio: 1
+cluster nro: 284 tamanio: 1
+cluster nro: 285 tamanio: 1
+cluster nro: 286 tamanio: 1
+cluster nro: 287 tamanio: 1
+cluster nro: 288 tamanio: 1
+cluster nro: 289 tamanio: 1
+cluster nro: 290 tamanio: 1
+cluster nro: 291 tamanio: 2
+cluster nro: 292 tamanio: 1
+cluster nro: 293 tamanio: 1
+cluster nro: 294 tamanio: 1
+cluster nro: 295 tamanio: 2
+cluster nro: 296 tamanio: 1
+cluster nro: 297 tamanio: 1
+cluster nro: 298 tamanio: 1
+cluster nro: 299 tamanio: 1
+cluster nro: 300 tamanio: 1
+cluster nro: 301 tamanio: 1
+cluster nro: 302 tamanio: 1
+cluster nro: 303 tamanio: 1
+cluster nro: 304 tamanio: 1
+cluster nro: 305 tamanio: 1
+cluster nro: 306 tamanio: 1
+cluster nro: 307 tamanio: 1
+cluster nro: 308 tamanio: 1
+cluster nro: 309 tamanio: 3
+cluster nro: 310 tamanio: 2
+cluster nro: 311 tamanio: 1
+cluster nro: 312 tamanio: 1
+cluster nro: 313 tamanio: 1
+cluster nro: 314 tamanio: 1
+cluster nro: 315 tamanio: 1
+cluster nro: 316 tamanio: 3
+cluster nro: 317 tamanio: 4
+cluster nro: 318 tamanio: 1
+cluster nro: 319 tamanio: 2
+cluster nro: 320 tamanio: 1
+cluster nro: 321 tamanio: 2
+cluster nro: 322 tamanio: 1
+cluster nro: 323 tamanio: 1
+cluster nro: 324 tamanio: 1
+cluster nro: 325 tamanio: 1
+cluster nro: 326 tamanio: 1
+cluster nro: 327 tamanio: 1
+cluster nro: 328 tamanio: 2
+cluster nro: 329 tamanio: 1
+cluster nro: 330 tamanio: 2
+cluster nro: 331 tamanio: 1
+cluster nro: 332 tamanio: 1
+cluster nro: 333 tamanio: 1
+cluster nro: 334 tamanio: 1
+cluster nro: 335 tamanio: 2
+cluster nro: 336 tamanio: 3
+cluster nro: 337 tamanio: 3
+cluster nro: 338 tamanio: 1
+cluster nro: 339 tamanio: 1
+cluster nro: 340 tamanio: 2
+cluster nro: 341 tamanio: 4
+cluster nro: 342 tamanio: 1
+cluster nro: 343 tamanio: 1
+cluster nro: 344 tamanio: 2
+cluster nro: 345 tamanio: 1
+cluster nro: 346 tamanio: 2
+cluster nro: 347 tamanio: 1
+cluster nro: 348 tamanio: 1
+cluster nro: 349 tamanio: 2
+cluster nro: 350 tamanio: 1
+cluster nro: 351 tamanio: 5
+cluster nro: 352 tamanio: 2
+cluster nro: 353 tamanio: 1
+cluster nro: 354 tamanio: 2
+cluster nro: 355 tamanio: 1
+cluster nro: 356 tamanio: 2
+cluster nro: 357 tamanio: 2
+cluster nro: 358 tamanio: 2
+cluster nro: 359 tamanio: 2
+cluster nro: 360 tamanio: 1
+cluster nro: 361 tamanio: 1
+cluster nro: 362 tamanio: 1
+cluster nro: 363 tamanio: 1
+cluster nro: 364 tamanio: 2
+cluster nro: 365 tamanio: 1
+cluster nro: 366 tamanio: 1
+cluster nro: 367 tamanio: 1
+cluster nro: 368 tamanio: 2
+cluster nro: 369 tamanio: 1
+cluster nro: 370 tamanio: 3
+cluster nro: 371 tamanio: 1
+cluster nro: 372 tamanio: 1
+cluster nro: 373 tamanio: 2
+cluster nro: 374 tamanio: 1
+cluster nro: 375 tamanio: 2
+cluster nro: 376 tamanio: 1
+cluster nro: 377 tamanio: 3
+cluster nro: 378 tamanio: 3
+cluster nro: 379 tamanio: 1
+cluster nro: 380 tamanio: 1
+cluster nro: 381 tamanio: 2
+cluster nro: 382 tamanio: 3
+cluster nro: 383 tamanio: 3
+cluster nro: 384 tamanio: 1
+cluster nro: 385 tamanio: 3
+cluster nro: 386 tamanio: 1
+cluster nro: 387 tamanio: 2
+cluster nro: 388 tamanio: 3
+cluster nro: 389 tamanio: 2
+cluster nro: 390 tamanio: 1
+cluster nro: 391 tamanio: 2
+cluster nro: 392 tamanio: 1
+cluster nro: 393 tamanio: 2
+cluster nro: 394 tamanio: 1
+cluster nro: 395 tamanio: 1
+cluster nro: 396 tamanio: 1
+cluster nro: 397 tamanio: 1
+cluster nro: 398 tamanio: 1
+cluster nro: 399 tamanio: 1
+cluster nro: 400 tamanio: 2
+cluster nro: 401 tamanio: 3
+cluster nro: 402 tamanio: 2
+cluster nro: 403 tamanio: 5
+cluster nro: 404 tamanio: 1
+cluster nro: 405 tamanio: 3
+cluster nro: 406 tamanio: 4
+cluster nro: 407 tamanio: 1
+cluster nro: 408 tamanio: 1
+cluster nro: 409 tamanio: 2
+cluster nro: 410 tamanio: 1
+cluster nro: 411 tamanio: 1
+cluster nro: 412 tamanio: 1
+cluster nro: 413 tamanio: 3
+cluster nro: 414 tamanio: 1
+cluster nro: 415 tamanio: 1
+cluster nro: 416 tamanio: 3
+cluster nro: 417 tamanio: 1
+cluster nro: 418 tamanio: 2
+cluster nro: 419 tamanio: 1
+cluster nro: 420 tamanio: 1
+cluster nro: 421 tamanio: 2
+cluster nro: 422 tamanio: 1
+cluster nro: 423 tamanio: 2
+cluster nro: 424 tamanio: 2
+cluster nro: 425 tamanio: 3
+cluster nro: 426 tamanio: 1
+cluster nro: 427 tamanio: 3
+cluster nro: 428 tamanio: 1
+cluster nro: 429 tamanio: 2
+cluster nro: 430 tamanio: 3
+cluster nro: 431 tamanio: 1
+cluster nro: 432 tamanio: 1
+cluster nro: 433 tamanio: 1
+cluster nro: 434 tamanio: 1
+cluster nro: 435 tamanio: 2
+cluster nro: 436 tamanio: 1
+cluster nro: 437 tamanio: 3
+cluster nro: 438 tamanio: 1
+cluster nro: 439 tamanio: 1
+cluster nro: 440 tamanio: 2
+cluster nro: 441 tamanio: 1
+cluster nro: 442 tamanio: 1
+cluster nro: 443 tamanio: 1
+cluster nro: 444 tamanio: 1
+cluster nro: 445 tamanio: 3
+cluster nro: 446 tamanio: 3
+cluster nro: 447 tamanio: 2
+cluster nro: 448 tamanio: 1
+cluster nro: 449 tamanio: 1
+cluster nro: 450 tamanio: 1
+cluster nro: 451 tamanio: 2
+cluster nro: 452 tamanio: 2
+cluster nro: 453 tamanio: 4
+cluster nro: 454 tamanio: 1
+cluster nro: 455 tamanio: 1
+cluster nro: 456 tamanio: 2
+cluster nro: 457 tamanio: 1
+cluster nro: 458 tamanio: 2
+cluster nro: 459 tamanio: 1
+cluster nro: 460 tamanio: 2
+cluster nro: 461 tamanio: 1
+cluster nro: 462 tamanio: 2
+cluster nro: 463 tamanio: 1
+cluster nro: 464 tamanio: 1
+cluster nro: 465 tamanio: 3
+cluster nro: 466 tamanio: 1
+cluster nro: 467 tamanio: 1
+cluster nro: 468 tamanio: 1
+cluster nro: 469 tamanio: 1
+cluster nro: 470 tamanio: 2
+cluster nro: 471 tamanio: 3
+cluster nro: 472 tamanio: 1
+cluster nro: 473 tamanio: 1
+cluster nro: 474 tamanio: 2
+cluster nro: 475 tamanio: 3
+cluster nro: 476 tamanio: 3
+cluster nro: 477 tamanio: 3
+cluster nro: 478 tamanio: 1
+cluster nro: 479 tamanio: 4
+cluster nro: 480 tamanio: 1
+cluster nro: 481 tamanio: 1
+cluster nro: 482 tamanio: 1
+cluster nro: 483 tamanio: 2
+cluster nro: 484 tamanio: 2
+cluster nro: 485 tamanio: 2
+cluster nro: 486 tamanio: 3
+cluster nro: 487 tamanio: 9
+cluster nro: 488 tamanio: 1
+cluster nro: 489 tamanio: 4
+cluster nro: 490 tamanio: 4
+cluster nro: 491 tamanio: 3
+cluster nro: 492 tamanio: 1
+cluster nro: 493 tamanio: 2
+cluster nro: 494 tamanio: 1
+cluster nro: 495 tamanio: 1
+cluster nro: 496 tamanio: 5
+cluster nro: 497 tamanio: 1
+cluster nro: 498 tamanio: 1
+cluster nro: 499 tamanio: 1
+cluster nro: 500 tamanio: 1
+cluster nro: 501 tamanio: 3
+cluster nro: 502 tamanio: 2
+cluster nro: 503 tamanio: 3
+cluster nro: 504 tamanio: 2
+cluster nro: 505 tamanio: 2
+cluster nro: 506 tamanio: 1
+cluster nro: 507 tamanio: 1
+cluster nro: 508 tamanio: 3
+cluster nro: 509 tamanio: 1
+cluster nro: 510 tamanio: 1
+cluster nro: 511 tamanio: 1
+cluster nro: 512 tamanio: 1
+cluster nro: 513 tamanio: 1
+cluster nro: 514 tamanio: 1
+cluster nro: 515 tamanio: 1
+cluster nro: 516 tamanio: 2
+cluster nro: 517 tamanio: 4
+cluster nro: 518 tamanio: 1
+cluster nro: 519 tamanio: 2
+cluster nro: 520 tamanio: 1
+cluster nro: 521 tamanio: 1
+cluster nro: 522 tamanio: 1
+cluster nro: 523 tamanio: 1
+cluster nro: 524 tamanio: 1
+cluster nro: 525 tamanio: 3
+cluster nro: 526 tamanio: 1
+cluster nro: 527 tamanio: 1
+cluster nro: 528 tamanio: 2
+cluster nro: 529 tamanio: 2
+cluster nro: 530 tamanio: 4
+cluster nro: 531 tamanio: 4
+cluster nro: 532 tamanio: 1
+cluster nro: 533 tamanio: 1
+cluster nro: 534 tamanio: 1
+cluster nro: 535 tamanio: 1
+cluster nro: 536 tamanio: 3
+cluster nro: 537 tamanio: 1
+cluster nro: 538 tamanio: 1
+cluster nro: 539 tamanio: 3
+cluster nro: 540 tamanio: 3
+cluster nro: 541 tamanio: 3
+cluster nro: 542 tamanio: 2
+cluster nro: 543 tamanio: 1
+cluster nro: 544 tamanio: 3
+cluster nro: 545 tamanio: 1
+cluster nro: 546 tamanio: 1
+cluster nro: 547 tamanio: 2
+cluster nro: 548 tamanio: 1
+cluster nro: 549 tamanio: 1
+cluster nro: 550 tamanio: 1
+cluster nro: 551 tamanio: 1
+cluster nro: 552 tamanio: 1
+cluster nro: 553 tamanio: 1
+cluster nro: 554 tamanio: 3
+cluster nro: 555 tamanio: 1
+cluster nro: 556 tamanio: 1
+cluster nro: 557 tamanio: 1
+cluster nro: 558 tamanio: 1
+cluster nro: 559 tamanio: 1
+cluster nro: 560 tamanio: 1
+cluster nro: 561 tamanio: 4
+cluster nro: 562 tamanio: 1
+cluster nro: 563 tamanio: 2
+cluster nro: 564 tamanio: 1
+cluster nro: 565 tamanio: 3
+cluster nro: 566 tamanio: 2
+cluster nro: 567 tamanio: 2
+cluster nro: 568 tamanio: 1
+cluster nro: 569 tamanio: 4
+cluster nro: 570 tamanio: 2
+cluster nro: 571 tamanio: 1
+cluster nro: 572 tamanio: 1
+cluster nro: 573 tamanio: 1
+cluster nro: 574 tamanio: 1
+cluster nro: 575 tamanio: 3
+cluster nro: 576 tamanio: 1
+cluster nro: 577 tamanio: 1
+cluster nro: 578 tamanio: 1
+cluster nro: 579 tamanio: 4
+cluster nro: 580 tamanio: 2
+cluster nro: 581 tamanio: 4
+cluster nro: 582 tamanio: 1
+cluster nro: 583 tamanio: 1
+cluster nro: 584 tamanio: 1
+cluster nro: 585 tamanio: 2
+cluster nro: 586 tamanio: 1
+cluster nro: 587 tamanio: 3
+cluster nro: 588 tamanio: 4
+cluster nro: 589 tamanio: 1
+cluster nro: 590 tamanio: 1
+cluster nro: 591 tamanio: 1
+cluster nro: 592 tamanio: 1
+cluster nro: 593 tamanio: 1
+cluster nro: 594 tamanio: 2
+cluster nro: 595 tamanio: 2
+cluster nro: 596 tamanio: 1
+cluster nro: 597 tamanio: 1
+cluster nro: 598 tamanio: 3
+cluster nro: 599 tamanio: 1
+cluster nro: 600 tamanio: 3
+cluster nro: 601 tamanio: 1
+cluster nro: 602 tamanio: 1
+cluster nro: 603 tamanio: 1
+cluster nro: 604 tamanio: 3
+cluster nro: 605 tamanio: 2
+cluster nro: 606 tamanio: 3
+cluster nro: 607 tamanio: 1
+cluster nro: 608 tamanio: 2
+cluster nro: 609 tamanio: 2
+cluster nro: 610 tamanio: 2
+cluster nro: 611 tamanio: 1
+cluster nro: 612 tamanio: 1
+cluster nro: 613 tamanio: 2
+cluster nro: 614 tamanio: 1
+cluster nro: 615 tamanio: 2
+cluster nro: 616 tamanio: 2
+cluster nro: 617 tamanio: 1
+cluster nro: 618 tamanio: 1
+cluster nro: 619 tamanio: 1
+cluster nro: 620 tamanio: 2
+cluster nro: 621 tamanio: 1
+cluster nro: 622 tamanio: 3
+cluster nro: 623 tamanio: 2
+cluster nro: 624 tamanio: 2
+cluster nro: 625 tamanio: 2
+cluster nro: 626 tamanio: 1
+cluster nro: 627 tamanio: 1
+cluster nro: 628 tamanio: 1
+cluster nro: 629 tamanio: 1
+cluster nro: 630 tamanio: 1
+cluster nro: 631 tamanio: 1
+cluster nro: 632 tamanio: 3
+cluster nro: 633 tamanio: 1
+cluster nro: 634 tamanio: 1
+cluster nro: 635 tamanio: 3
+cluster nro: 636 tamanio: 1
+cluster nro: 637 tamanio: 1
+cluster nro: 638 tamanio: 1
+cluster nro: 639 tamanio: 1
+cluster nro: 640 tamanio: 4
+cluster nro: 641 tamanio: 1
+cluster nro: 642 tamanio: 1
+cluster nro: 643 tamanio: 1
+cluster nro: 644 tamanio: 1
+cluster nro: 645 tamanio: 1
+cluster nro: 646 tamanio: 1
+cluster nro: 647 tamanio: 1
+cluster nro: 648 tamanio: 1
+cluster nro: 649 tamanio: 1
+cluster nro: 650 tamanio: 2
+cluster nro: 651 tamanio: 2
+cluster nro: 652 tamanio: 2
+cluster nro: 653 tamanio: 1
+cluster nro: 654 tamanio: 4
+cluster nro: 655 tamanio: 1
+cluster nro: 656 tamanio: 1
+cluster nro: 657 tamanio: 1
+cluster nro: 658 tamanio: 1
+cluster nro: 659 tamanio: 1
+cluster nro: 660 tamanio: 4
+cluster nro: 661 tamanio: 1
+cluster nro: 662 tamanio: 2
+cluster nro: 663 tamanio: 1
+cluster nro: 664 tamanio: 1
+cluster nro: 665 tamanio: 1
+cluster nro: 666 tamanio: 1
+cluster nro: 667 tamanio: 1
+cluster nro: 668 tamanio: 1
+cluster nro: 669 tamanio: 1
+cluster nro: 670 tamanio: 5
+cluster nro: 671 tamanio: 2
+cluster nro: 672 tamanio: 1
+cluster nro: 673 tamanio: 1
+cluster nro: 674 tamanio: 1
+cluster nro: 675 tamanio: 1
+cluster nro: 676 tamanio: 2
+cluster nro: 677 tamanio: 1
+cluster nro: 678 tamanio: 3
+cluster nro: 679 tamanio: 1
+cluster nro: 680 tamanio: 1
+cluster nro: 681 tamanio: 1
+cluster nro: 682 tamanio: 1
+cluster nro: 683 tamanio: 1
+cluster nro: 684 tamanio: 1
+cluster nro: 685 tamanio: 1
+cluster nro: 686 tamanio: 1
+cluster nro: 687 tamanio: 2
+cluster nro: 688 tamanio: 1
+cluster nro: 689 tamanio: 1
+cluster nro: 690 tamanio: 1
+cluster nro: 691 tamanio: 1
+cluster nro: 692 tamanio: 1
+cluster nro: 693 tamanio: 1
+cluster nro: 694 tamanio: 2
+cluster nro: 695 tamanio: 2
+cluster nro: 696 tamanio: 1
+cluster nro: 697 tamanio: 1
+cluster nro: 698 tamanio: 1
+cluster nro: 699 tamanio: 2
+cluster nro: 700 tamanio: 2
+cluster nro: 701 tamanio: 1
+cluster nro: 702 tamanio: 1
+cluster nro: 703 tamanio: 5
+cluster nro: 704 tamanio: 2
+cluster nro: 705 tamanio: 2
+cluster nro: 706 tamanio: 2
+cluster nro: 707 tamanio: 2
+cluster nro: 708 tamanio: 1
+cluster nro: 709 tamanio: 2
+cluster nro: 710 tamanio: 1
+cluster nro: 711 tamanio: 1
+cluster nro: 712 tamanio: 2
+cluster nro: 713 tamanio: 2
+cluster nro: 714 tamanio: 1
+cluster nro: 715 tamanio: 2
+cluster nro: 716 tamanio: 2
+cluster nro: 717 tamanio: 1
+cluster nro: 718 tamanio: 3
+cluster nro: 719 tamanio: 1
+cluster nro: 720 tamanio: 2
+cluster nro: 721 tamanio: 1
+cluster nro: 722 tamanio: 2
+cluster nro: 723 tamanio: 4
+cluster nro: 724 tamanio: 1
+cluster nro: 725 tamanio: 1
+cluster nro: 726 tamanio: 2
+cluster nro: 727 tamanio: 3
+cluster nro: 728 tamanio: 1
+cluster nro: 729 tamanio: 2
+cluster nro: 730 tamanio: 1
+cluster nro: 731 tamanio: 1
+cluster nro: 732 tamanio: 2
+cluster nro: 733 tamanio: 1
+cluster nro: 734 tamanio: 2
+cluster nro: 735 tamanio: 1
+cluster nro: 736 tamanio: 1
+cluster nro: 737 tamanio: 4
+cluster nro: 738 tamanio: 1
+cluster nro: 739 tamanio: 1
+cluster nro: 740 tamanio: 1
+cluster nro: 741 tamanio: 1
+cluster nro: 742 tamanio: 1
+cluster nro: 743 tamanio: 1
+cluster nro: 744 tamanio: 1
+cluster nro: 745 tamanio: 1
+cluster nro: 746 tamanio: 1
+cluster nro: 747 tamanio: 3
+cluster nro: 748 tamanio: 3
+cluster nro: 749 tamanio: 3
+cluster nro: 750 tamanio: 1
+cluster nro: 751 tamanio: 3
+cluster nro: 752 tamanio: 1
+cluster nro: 753 tamanio: 3
+cluster nro: 754 tamanio: 1
+cluster nro: 755 tamanio: 2
+cluster nro: 756 tamanio: 2
+cluster nro: 757 tamanio: 4
+cluster nro: 758 tamanio: 2
+cluster nro: 759 tamanio: 1
+cluster nro: 760 tamanio: 1
+cluster nro: 761 tamanio: 1
+cluster nro: 762 tamanio: 1
+cluster nro: 763 tamanio: 1
+cluster nro: 764 tamanio: 1
+cluster nro: 765 tamanio: 1
+cluster nro: 766 tamanio: 1
+cluster nro: 767 tamanio: 2
+cluster nro: 768 tamanio: 3
+cluster nro: 769 tamanio: 3
+cluster nro: 770 tamanio: 1
+cluster nro: 771 tamanio: 1
+cluster nro: 772 tamanio: 2
+cluster nro: 773 tamanio: 3
+cluster nro: 774 tamanio: 2
+cluster nro: 775 tamanio: 2
+cluster nro: 776 tamanio: 4
+cluster nro: 777 tamanio: 1
+cluster nro: 778 tamanio: 2
+cluster nro: 779 tamanio: 2
+cluster nro: 780 tamanio: 2
+cluster nro: 781 tamanio: 1
+cluster nro: 782 tamanio: 1
+cluster nro: 783 tamanio: 1
+cluster nro: 784 tamanio: 3
+cluster nro: 785 tamanio: 2
+cluster nro: 786 tamanio: 1
+cluster nro: 787 tamanio: 1
+cluster nro: 788 tamanio: 5
+cluster nro: 789 tamanio: 1
+cluster nro: 790 tamanio: 7
+cluster nro: 791 tamanio: 1
+cluster nro: 792 tamanio: 1
+cluster nro: 793 tamanio: 1
+cluster nro: 794 tamanio: 1
+cluster nro: 795 tamanio: 2
+cluster nro: 796 tamanio: 1
+cluster nro: 797 tamanio: 2
+cluster nro: 798 tamanio: 1
+cluster nro: 799 tamanio: 1
+cluster nro: 800 tamanio: 1
+cluster nro: 801 tamanio: 1
+cluster nro: 802 tamanio: 2
+cluster nro: 803 tamanio: 3
+cluster nro: 804 tamanio: 1
+cluster nro: 805 tamanio: 1
+cluster nro: 806 tamanio: 1
+cluster nro: 807 tamanio: 1
+cluster nro: 808 tamanio: 1
+cluster nro: 809 tamanio: 1
+cluster nro: 810 tamanio: 1
+cluster nro: 811 tamanio: 1
+cluster nro: 812 tamanio: 3
+cluster nro: 813 tamanio: 2
+cluster nro: 814 tamanio: 3
+cluster nro: 815 tamanio: 1
+cluster nro: 816 tamanio: 1
+cluster nro: 817 tamanio: 1
+cluster nro: 818 tamanio: 2
+cluster nro: 819 tamanio: 1
+cluster nro: 820 tamanio: 3
+cluster nro: 821 tamanio: 2
+cluster nro: 822 tamanio: 2
+cluster nro: 823 tamanio: 1
+cluster nro: 824 tamanio: 2
+cluster nro: 825 tamanio: 1
+cluster nro: 826 tamanio: 2
+cluster nro: 827 tamanio: 1
+cluster nro: 828 tamanio: 3
+cluster nro: 829 tamanio: 1
+cluster nro: 830 tamanio: 3
+cluster nro: 831 tamanio: 1
+cluster nro: 832 tamanio: 3
+cluster nro: 833 tamanio: 1
+cluster nro: 834 tamanio: 1
+cluster nro: 835 tamanio: 1
+cluster nro: 836 tamanio: 1
+cluster nro: 837 tamanio: 1
+cluster nro: 838 tamanio: 1
+cluster nro: 839 tamanio: 1
+cluster nro: 840 tamanio: 3
+cluster nro: 841 tamanio: 4
+cluster nro: 842 tamanio: 1
+cluster nro: 843 tamanio: 3
+cluster nro: 844 tamanio: 3
+cluster nro: 845 tamanio: 1
+cluster nro: 846 tamanio: 1
+cluster nro: 847 tamanio: 1
+cluster nro: 848 tamanio: 1
+cluster nro: 849 tamanio: 1
+cluster nro: 850 tamanio: 2
+cluster nro: 851 tamanio: 1
+cluster nro: 852 tamanio: 1
+cluster nro: 853 tamanio: 2
+cluster nro: 854 tamanio: 1
+cluster nro: 855 tamanio: 3
+cluster nro: 856 tamanio: 1
+cluster nro: 857 tamanio: 1
+cluster nro: 858 tamanio: 2
+cluster nro: 859 tamanio: 3
+cluster nro: 860 tamanio: 1
+cluster nro: 861 tamanio: 2
+cluster nro: 862 tamanio: 1
+cluster nro: 863 tamanio: 2
+cluster nro: 864 tamanio: 2
+cluster nro: 865 tamanio: 2
+cluster nro: 866 tamanio: 1
+cluster nro: 867 tamanio: 2
+cluster nro: 868 tamanio: 1
+cluster nro: 869 tamanio: 3
+cluster nro: 870 tamanio: 1
+cluster nro: 871 tamanio: 2
+cluster nro: 872 tamanio: 2
+cluster nro: 873 tamanio: 1
+cluster nro: 874 tamanio: 2
+cluster nro: 875 tamanio: 1
+cluster nro: 876 tamanio: 3
+cluster nro: 877 tamanio: 1
+cluster nro: 878 tamanio: 2
+cluster nro: 879 tamanio: 1
+cluster nro: 880 tamanio: 2
+cluster nro: 881 tamanio: 1
+cluster nro: 882 tamanio: 1
+cluster nro: 883 tamanio: 1
+cluster nro: 884 tamanio: 3
+cluster nro: 885 tamanio: 1
+cluster nro: 886 tamanio: 2
+cluster nro: 887 tamanio: 1
+cluster nro: 888 tamanio: 2
+cluster nro: 889 tamanio: 1
+cluster nro: 890 tamanio: 2
+cluster nro: 891 tamanio: 1
+cluster nro: 892 tamanio: 1
+cluster nro: 893 tamanio: 1
+cluster nro: 894 tamanio: 1
+cluster nro: 895 tamanio: 2
+cluster nro: 896 tamanio: 1
+cluster nro: 897 tamanio: 2
+cluster nro: 898 tamanio: 1
+cluster nro: 899 tamanio: 1
+cluster nro: 900 tamanio: 2
+cluster nro: 901 tamanio: 1
+cluster nro: 902 tamanio: 1
+cluster nro: 903 tamanio: 1
+cluster nro: 904 tamanio: 4
+cluster nro: 905 tamanio: 3
+cluster nro: 906 tamanio: 2
+cluster nro: 907 tamanio: 5
+cluster nro: 908 tamanio: 3
+cluster nro: 909 tamanio: 3
+cluster nro: 910 tamanio: 1
+cluster nro: 911 tamanio: 1
+cluster nro: 912 tamanio: 1
+cluster nro: 913 tamanio: 1
+cluster nro: 914 tamanio: 1
+cluster nro: 915 tamanio: 1
+cluster nro: 916 tamanio: 2
+cluster nro: 917 tamanio: 5
+cluster nro: 918 tamanio: 1
+cluster nro: 919 tamanio: 3
+cluster nro: 920 tamanio: 2
+cluster nro: 921 tamanio: 1
+cluster nro: 922 tamanio: 2
+cluster nro: 923 tamanio: 2
+cluster nro: 924 tamanio: 1
+cluster nro: 925 tamanio: 4
+cluster nro: 926 tamanio: 1
+cluster nro: 927 tamanio: 3
+cluster nro: 928 tamanio: 2
+cluster nro: 929 tamanio: 1
+cluster nro: 930 tamanio: 1
+cluster nro: 931 tamanio: 1
+cluster nro: 932 tamanio: 1
+cluster nro: 933 tamanio: 1
+cluster nro: 934 tamanio: 1
+cluster nro: 935 tamanio: 2
+cluster nro: 936 tamanio: 1
+cluster nro: 937 tamanio: 1
+cluster nro: 938 tamanio: 1
+cluster nro: 939 tamanio: 1
+cluster nro: 940 tamanio: 1
+cluster nro: 941 tamanio: 2
+cluster nro: 942 tamanio: 2
+cluster nro: 943 tamanio: 1
+cluster nro: 944 tamanio: 1
+cluster nro: 945 tamanio: 1
+cluster nro: 946 tamanio: 1
+cluster nro: 947 tamanio: 2
+cluster nro: 948 tamanio: 4
+cluster nro: 949 tamanio: 1
+cluster nro: 950 tamanio: 1
+cluster nro: 951 tamanio: 1
+cluster nro: 952 tamanio: 1
+cluster nro: 953 tamanio: 1
+cluster nro: 954 tamanio: 3
+cluster nro: 955 tamanio: 1
+cluster nro: 956 tamanio: 2
+cluster nro: 957 tamanio: 1
+cluster nro: 958 tamanio: 1
+cluster nro: 959 tamanio: 2
+cluster nro: 960 tamanio: 1
+cluster nro: 961 tamanio: 2
+cluster nro: 962 tamanio: 1
+cluster nro: 963 tamanio: 1
+cluster nro: 964 tamanio: 4
+cluster nro: 965 tamanio: 1
+cluster nro: 966 tamanio: 1
+cluster nro: 967 tamanio: 2
+cluster nro: 968 tamanio: 2
+cluster nro: 969 tamanio: 2
+cluster nro: 970 tamanio: 2
+cluster nro: 971 tamanio: 1
+cluster nro: 972 tamanio: 4
+cluster nro: 973 tamanio: 1
+cluster nro: 974 tamanio: 3
+cluster nro: 975 tamanio: 1
+cluster nro: 976 tamanio: 3
+cluster nro: 977 tamanio: 1
+cluster nro: 978 tamanio: 2
+cluster nro: 979 tamanio: 1
+cluster nro: 980 tamanio: 1
+cluster nro: 981 tamanio: 1
+cluster nro: 982 tamanio: 3
+cluster nro: 983 tamanio: 1
+cluster nro: 984 tamanio: 1
+cluster nro: 985 tamanio: 2
+cluster nro: 986 tamanio: 2
+cluster nro: 987 tamanio: 1
+cluster nro: 988 tamanio: 2
+cluster nro: 989 tamanio: 2
+cluster nro: 990 tamanio: 1
+cluster nro: 991 tamanio: 2
+cluster nro: 992 tamanio: 1
+cluster nro: 993 tamanio: 1
+cluster nro: 994 tamanio: 1
+cluster nro: 995 tamanio: 3
+cluster nro: 996 tamanio: 1
+cluster nro: 997 tamanio: 5
+cluster nro: 998 tamanio: 1
+cluster nro: 999 tamanio: 1

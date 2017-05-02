@@ -47,12 +47,10 @@ if not (last_threshold == threshold):
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 
-dataset_filtrado = False
-
 documentosEtiquetados_File = Path("../db/pickle/documentosEtiquetados.p")
 if not documentosEtiquetados_File.is_file():
     #Crear tf-idf.
-    documentos, matriz  = createTFIDF( dataset_filtrado,INPUT ) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
+    documentos, matriz  = createTFIDF( INPUT) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
     #Aplicar clustering Kmeans.
     documentosEtiquetados = applyClustering(matriz,documentos)
     pickle.dump(documentosEtiquetados, open(str(documentosEtiquetados_File), "wb"))
