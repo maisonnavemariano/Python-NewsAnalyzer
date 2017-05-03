@@ -136,6 +136,8 @@ def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis 
 
     if (save_arff):
         print("almacenamos matriz ARFF....")
+        if INPUT == "":
+            OUTPUT = "../db/resultados/matrix.arff"
         writer = open(OUTPUT, "w")
         writer.write("@RELATION news\n")
         writer.write("@ATTRIBUTE DocumentName STRING\n")

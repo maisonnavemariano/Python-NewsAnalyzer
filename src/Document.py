@@ -1,5 +1,6 @@
 import re
 import enchant
+import pickle
 from lib.yahooAPI import validPlace
 d = enchant.Dict("en_UK")
 CONFIG = "../etc/var.config"
@@ -32,12 +33,16 @@ def cleanhtml(raw_html):
 class Document(object):
     PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
+    #location2code = pickle.load(open("../db/pickle/map_location2code.p","rb"))
+    country2code = pickle.load(open("../db/pickle/map_country2code.p","rb"))
+
     def __init__(self, title,sectionName = "", date="", instanceNro=-1):
         self.instanceNro = instanceNro
         self.sectionName = sectionName.replace(" ","")
         self.words = {}
         self.date = date
         self.title = "".join(c for c in title if c in self.PERMITTED_CHARS)
+        self.locations = set()
 
     def hasInvalidCharacter(self, cadena):
         return len("".join(c for c in cadena if c in self.PERMITTED_CHARS))< len(cadena)
@@ -47,6 +52,12 @@ class Document(object):
         text = text.lower()
         text = cleanhtml(text)
         #text = "".join(c for c in text if c in self.PERMITTED_CHARS)
+        # for location in self.location2code:
+        #     if location in text:
+        #         self.locations.add(location)
+        for country in self.country2code:
+            if country in text:
+                self.locations.add(country)
         words_array = text.split(" ")
         for word in words_array:
             if not word in stopwords and len(word) > 0 and not hasNumbers(word) and not self.hasInvalidCharacter(word):

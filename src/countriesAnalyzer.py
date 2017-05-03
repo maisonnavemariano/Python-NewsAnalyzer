@@ -32,7 +32,7 @@ with open(COUNTRY_INFO) as f:
             countries_count = countries_count +1
             parts = line[:-1].split("\t")
             codigo = parts[0]
-            pais = parts[4]
+            pais = parts[4].lower()
             todos_los_codigos.add(codigo)
 
             country2code[pais] = codigo
@@ -42,7 +42,7 @@ with open(LOCATIONS) as f:
         parts = line[:-1].split("\t")
         code = parts[8]
 
-        name = parts[1]
+        name = parts[1].lower()
         if code in todos_los_codigos and (not(" "in name and ignoreLocationsWithSpaces)):
             location2code[name] = code
 
