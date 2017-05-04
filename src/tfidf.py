@@ -69,6 +69,8 @@ def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis 
     print("Total de palabras: "+str(len(todas_las_palabras)))
 
 
+
+
     mapeo_inverso = {}
     lista_palabras = []
     nro_palabra =0
@@ -92,7 +94,7 @@ def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis 
         for document in todo_los_documentos:
             if palabra in document.words:
                 cant_apariciones = + 1
-        idf[mapeo_inverso[palabra]] = math.log(float(len(todas_las_palabras)) / float(cant_apariciones) , 10)
+        idf[mapeo_inverso[palabra]] = math.log(float(len(todo_los_documentos)) / float(cant_apariciones) , 10)
 
 
     tfidf = numpy.zeros(shape=(len(todo_los_documentos), len(lista_palabras))) # Más uno por la fila con las fechas (epoch)
@@ -160,10 +162,13 @@ def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis 
             doc = doc + 1
         writer.close()
         print("matrix construida satisfactoriamente")
-    return todo_los_documentos, tfidf
+    return todo_los_documentos, tfidf, lista_palabras
 
 def createSimilarityMatrix(matrix):
+    rowcount, _ = matrix.shape
     matrixCopy = numpy.copy(matrix)
-    transpose = numpy.transpose(matrix)
-    similarityMatrix = numpy.dot(matrix,transpose)
+    for row in range(rowcount):
+        _normalizeRow(row,matrixCopy)
+    transpose = numpy.transpose(matrixCopy)
+    similarityMatrix = numpy.dot(matrixCopy,transpose)
     return similarityMatrix

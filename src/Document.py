@@ -49,7 +49,7 @@ class Document(object):
         return len("".join(c for c in cadena if c in self.PERMITTED_CHARS))< len(cadena)
 
     def setOriginalText(self,originalText):
-        self._bodyText = cleanhtml(originalText)
+        self._bodyText = cleanhtml(originalText).lower()
     def obtenerTextoOriginal(self):
         return self._bodyText
 

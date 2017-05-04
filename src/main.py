@@ -52,7 +52,7 @@ documentosEtiquetados_File = Path("../db/pickle/documentosEtiquetados.p")
 centroides_File = Path("../db/pickle/centroides.p")
 if not documentosEtiquetados_File.is_file() or not  centroides_File.is_file():
     #Crear tf-idf.
-    documentos, matriz  = createTFIDF( INPUT) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
+    documentos, matriz,_  = createTFIDF( INPUT) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
     #Aplicar clustering Kmeans.
     documentosEtiquetados,centroides = applyClustering(matriz,documentos)
     pickle.dump(documentosEtiquetados, open(str(documentosEtiquetados_File), "wb"))

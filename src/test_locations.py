@@ -8,4 +8,4 @@ country2code = pickle.load(open(COUNTRIES, "rb"))
 
 lista = countryAnalysis.sortByRelevance()
 for elem in lista:
-    print(elem[0].title)
+    print(elem[0].title+", "+str(elem[1]))

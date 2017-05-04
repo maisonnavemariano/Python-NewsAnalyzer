@@ -37,7 +37,7 @@ def initVar():
     return stopwords,ignored_words_file,selected_country
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-INPUT = "../db/noticias/enero"
+INPUT = "../db/noticias/noticias2013"
 def sortByRelevance():
 # Obtenemos TODOS los documentos.
     stopwords_files, ignored_words_file,selected_country = initVar()
@@ -46,9 +46,22 @@ def sortByRelevance():
 
     # nos quedamos con los documentos que hablen de $selected_country
     documentosDelPais = [document for document in documentos if selected_country in document.locations]
+    print("Cantidad de documentos que hablan del país: "+str(len(documentosDelPais)))
 
-    _, matriz_tfidf = tfidf.createTFIDF(list_documents=documentosDelPais)
+    _, matriz_tfidf,lista_palabras = tfidf.createTFIDF(list_documents=documentosDelPais)
+    # writer = open("tmp.txt","w")
+    # line = ""
+    # for palabra in lista_palabras:
+    #     line = line + palabra+ " "
+    # writer.write(line[:-1]+"\n")
+    # for row in matriz_tfidf:
+    #     line = ""
+    #     for element in row:
+    #         line = line + str(element)+" "
+    #     writer.write(line[:-1]+"\n")
+    # writer.close()
 
+    #print(matriz_tfidf)
     #Creamos matrix similitud
     matrixSimilaridad = tfidf.createSimilarityMatrix(matriz_tfidf)
 
@@ -56,30 +69,33 @@ def sortByRelevance():
     docNro = 0
     for doc in documentosDelPais:
         f1 = funcionImportanciaNoticiaPais(doc,selected_country)
+        #print("f1: "+str(f1))
         f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad)
-        list_and_relevance.append( (f1*f2,doc ) )
+        #print("f2: "+str(f2))
+        list_and_relevance.append( [doc, f1*f2 ] )
         docNro = docNro + 1
 
-    return sorted(list_and_relevance)
+
+    list_and_relevance.sort(key=lambda x: x[1], reverse=True)
+    return list_and_relevance
 
 
 
 
 def funcionImportanciaNoticiaPais(document, pais):
-    if pais in document.title:
-        return 1.0
+    if pais not in document.obtenerTextoOriginal().lower():
+        return 0.0
     else:
-        if pais not in document.obtenerTextoOriginal():
-            return 0.0
-        else:
-            primeraAparicion = document.obtenerTextoOriginal().find(pais)
-            valor =  primeraAparicion/len(document.obtenerTextoOriginal())
-            if document.obtenerTextoOriginal().count(pais) > 1:
-                valor = valor * 1.1
-            return valor
+        primeraAparicion = len(document.obtenerTextoOriginal()) - document.obtenerTextoOriginal().find(pais)
+        valor =  float(primeraAparicion)/float(len(document.obtenerTextoOriginal()))
+        if document.obtenerTextoOriginal().count(pais) > 1:
+            valor = valor * 1.1
+        if pais in document.title.lower():
+            valor = valor * 1.5
+        return valor
 
 
 def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad):
     _,columncount = matrizSimilaridad.shape
-    return (sum(matrizSimilaridad[indiceNoticia])-1)/columncount
+    return (sum(matrizSimilaridad[indiceNoticia])-1)/float(columncount)
 
