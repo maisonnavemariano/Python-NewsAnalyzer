@@ -79,5 +79,7 @@ def getDocuments(INPUT,stopwords_files):
         document.addText(article.sectionName,stopwords)
         epoch = int(time.mktime(time.strptime(article.date, pattern)))
         document.date = epoch
+        document.setOriginalText(article.bodyText)
         documents.append(document)
+
     return documents

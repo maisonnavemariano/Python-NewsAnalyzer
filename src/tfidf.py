@@ -34,7 +34,9 @@ def initVar():
     return svd_analysis,stopwords, ignored_coeff,ignored_words_file,save_arff,con_fecha
 
 
-
+def _normalizeRow(nroRow, matrix):
+    module = math.sqrt(sum(math.pow(x,2) for x in matrix[nroRow] ))
+    matrix[nroRow] = [elem/module for elem in matrix[nroRow]]
 
 
 def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis = False, ignored_coefficients = 0 ):
@@ -159,3 +161,9 @@ def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis 
         writer.close()
         print("matrix construida satisfactoriamente")
     return todo_los_documentos, tfidf
+
+def createSimilarityMatrix(matrix):
+    matrixCopy = numpy.copy(matrix)
+    transpose = numpy.transpose(matrix)
+    similarityMatrix = numpy.dot(matrix,transpose)
+    return similarityMatrix

@@ -43,9 +43,15 @@ class Document(object):
         self.date = date
         self.title = "".join(c for c in title if c in self.PERMITTED_CHARS)
         self.locations = set()
+        self._bodyText = ""
 
     def hasInvalidCharacter(self, cadena):
         return len("".join(c for c in cadena if c in self.PERMITTED_CHARS))< len(cadena)
+
+    def setOriginalText(self,originalText):
+        self._bodyText = cleanhtml(originalText)
+    def obtenerTextoOriginal(self):
+        return self._bodyText
 
 
     def addText(self, text, stopwords):
