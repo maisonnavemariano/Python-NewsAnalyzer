@@ -53,11 +53,12 @@ def sortByRelevance():
     matrixSimilaridad = tfidf.createSimilarityMatrix(matriz_tfidf)
 
     list_and_relevance = []
-    doc = 0
+    docNro = 0
     for doc in documentosDelPais:
         f1 = funcionImportanciaNoticiaPais(doc,selected_country)
-        f2 = funcionImportanciaNoticiaEnDataset(doc,matrixSimilaridad)
-        list_and_relevance.append( (doc, f1*f2 ) )
+        f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad)
+        list_and_relevance.append( (f1*f2,doc ) )
+        docNro = docNro + 1
 
     return sorted(list_and_relevance)
 
