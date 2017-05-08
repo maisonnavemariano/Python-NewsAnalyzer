@@ -3,6 +3,8 @@ import pickle
 import countryAnalysis
 import re
 import datetime
+import tfidf
+import Clustering
 now = datetime.datetime.now()
 
 CONFIG = "../etc/var.config"
@@ -30,10 +32,28 @@ country2code = pickle.load(open(COUNTRIES, "rb"))
 
 print("cantidad de paises en la lista: "+str(len(country2code)))
 
-
-writer =  open(OUTPUT, "w")
 lista = countryAnalysis.sortByRelevance()
+
+index = 0
+writer =  open(OUTPUT, "w")
 for elem in lista:
-    writer.write(elem[0].title+", "+str(elem[1])+"\n")
+    writer.write(str(index) +": "+elem[0].title+", "+str(elem[1])+"\n")
+    index = index +1
+
+
+listaDocumentosDelPais = [x for (x,_) in lista]
+
+# Aplicar clustering sobre lista ordenada, mostrar resultados...
+
+todo_los_documentos, tfidf, _ = tfidf.createTFIDF( list_documents= listaDocumentosDelPais)
+documentos_Etiquetados,_ = Clustering.applyClustering(tfidf, listaDocumentosDelPais)
+
+clusters = Clustering.getClusters(documentos_Etiquetados)
+cluster_nro = 0
+for cluster in clusters:
+    writer.write(" * * * * * * * * * * * * * cluster nro. {0} * * * * * * * * * *".format(str(cluster_nro))+"\n")
+    for doc in cluster:
+        writer.write(doc.title+"\n")
 
 writer.close()
+Clustering.saveResult(documentos_Etiquetados,clusters)

@@ -75,13 +75,18 @@ def sortByRelevance():
     matrixSimilaridad = tfidf.createSimilarityMatrix(matriz_tfidf)
 
     list_and_relevance = []
-    docNro = 0
+    funcImportanciaPais = []
     for doc in documentosDelPais:
         f1 = funcionImportanciaNoticiaPais(doc,selected_country)
+        funcImportanciaPais.append(f1)
         #print("f1: "+str(f1))
-        f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad)
+
+
+    docNro = 0
+    for doc in documentosDelPais:
+        f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad,funcImportanciaPais)
         #print("f2: "+str(f2))
-        list_and_relevance.append( [doc, f1*f2 ] )
+        list_and_relevance.append( [doc, funcImportanciaPais[docNro]*f2 ] )
         docNro = docNro + 1
 
 
@@ -101,10 +106,17 @@ def funcionImportanciaNoticiaPais(document, pais):
             valor = valor * 1.1
         if pais in document.title.lower():
             valor = valor * 1.5
+        if len(document.locations) > 2:
+            valor = valor * 0.9
         return valor
 
 
-def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad):
+def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad,funcImportanciaPais):
+    max = numpy.amax([sum(x) for x in matrizSimilaridad])
     _,columncount = matrizSimilaridad.shape
-    return (sum(matrizSimilaridad[indiceNoticia])-1)/float(columncount)
+    suma = 0.0
+    for elem in matrizSimilaridad[indiceNoticia]:
+        if elem > 0.2:
+            suma = suma +  elem * funcImportanciaPais[indiceNoticia]
+    return (suma  - 1.0) / float(max)
 

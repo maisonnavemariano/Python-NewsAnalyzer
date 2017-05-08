@@ -46,10 +46,11 @@ def createTFIDF( INPUT="", list_documents=None): #,stopwords_list, svd_analysis 
 
     if INPUT == "":
         OUTPUT = "../db/resultados/matrix.arff"
-    if(svd_analysis):
-        OUTPUT = INPUT+"_svd.arff"
     else:
-        OUTPUT = INPUT+".arff"
+        if(svd_analysis):
+            OUTPUT = INPUT+"_svd.arff"
+        else:
+            OUTPUT = INPUT+".arff"
 
     if(list_documents == None):
         print("Recuperamos todos los documentos...")
