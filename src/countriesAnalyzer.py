@@ -1,17 +1,8 @@
 #!/usr/bin/python3
+# Genera los mapeos (*.p «pickle») de las locaciones y paises al código de país que los representa.
 
 import pickle
 
-CONFIG = "../etc/var.config"
-
-IGNORE_LOCATION_WITH_SPACES = "IGNORE_LOCATION_WITH_SPACES = "
-
-def initVar():
-    with open(CONFIG) as f:
-        for line in f:
-            if line.startswith(IGNORE_LOCATION_WITH_SPACES):
-                ignore_location_with_spaces = line[len(IGNORE_LOCATION_WITH_SPACES):-1] == "True"
-    return ignore_location_with_spaces
 
 country2code = {}
 location2code = {}
@@ -23,7 +14,6 @@ MAPEO_PAISES = "../db/pickle/map_country2code.p"
 MAPEO_LOCACIONES = "../db/pickle/map_location2code.p"
 
 print("Generando mapeos.")
-ignoreLocationsWithSpaces = initVar()
 countries_count = 0
 todos_los_codigos = set()
 with open(COUNTRY_INFO) as f:
@@ -43,12 +33,20 @@ with open(LOCATIONS) as f:
         code = parts[8]
 
         name = parts[1].lower()
-        if code in todos_los_codigos and (not(" "in name and ignoreLocationsWithSpaces)):
+        if code in todos_los_codigos :
             location2code[name] = code
 
 pickle.dump(country2code, open(MAPEO_PAISES, "wb"))
-pickle.dump(location2code, open(MAPEO_LOCACIONES, "wb"))
-print("mapeo locacion a codigo pais, tamanio: "+str(len(location2code))+" almacenado en: "+MAPEO_LOCACIONES)
+SAVE_LOCATIONS = False
+if ( SAVE_LOCATIONS ):
+    pickle.dump(location2code, open(MAPEO_LOCACIONES, "wb"))
+
+
+
+if (SAVE_LOCATIONS):
+    print("mapeo locacion a codigo pais, tamanio: "+str(len(location2code))+" almacenado en: "+MAPEO_LOCACIONES)
+else:
+    print("[WARNING] locaciones NO guardadas.")
 print("mapeo pais a codigo pais, tamanio: "+str(len(country2code))+" almacenado en: "+MAPEO_PAISES)
 
 # The main 'geoname' table has the following fields :

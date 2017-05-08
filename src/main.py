@@ -13,7 +13,7 @@ import pickle
 
 resultado_Clustering = None
 
-INPUT = "../db/noticias/enero"
+INPUT = "../db/noticias/noticias2013"
 IGNORED_WORDS_FILE = "../stopwords/ignored_words.txt"
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 # * * * * * * * * * * * * *  CONFIGURACION  * * * * * * * * * * * * *
@@ -48,63 +48,63 @@ if not (last_threshold == threshold):
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 
-documentosEtiquetados_File = Path("../db/pickle/documentosEtiquetados.p")
-centroides_File = Path("../db/pickle/centroides.p")
-if not documentosEtiquetados_File.is_file() or not  centroides_File.is_file():
-    #Crear tf-idf.
-    documentos, matriz,_  = createTFIDF( INPUT) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
-    #Aplicar clustering Kmeans.
-    documentosEtiquetados,centroides = applyClustering(matriz,documentos)
-    pickle.dump(documentosEtiquetados, open(str(documentosEtiquetados_File), "wb"))
-    pickle.dump(centroides, open(str(centroides_File),"wb"))
+# documentosEtiquetados_File = Path("../db/pickle/documentosEtiquetados.p")
+# centroides_File = Path("../db/pickle/centroides.p")
+# if not documentosEtiquetados_File.is_file() or not  centroides_File.is_file():
+#     #Crear tf-idf.
+#     documentos, matriz,_  = createTFIDF( INPUT) # luego como stop words usamos l as listas anteriores y las de palabras ignoradas
+#     #Aplicar clustering Kmeans.
+#     documentosEtiquetados,centroides = applyClustering(matriz,documentos)
+#     pickle.dump(documentosEtiquetados, open(str(documentosEtiquetados_File), "wb"))
+#     pickle.dump(centroides, open(str(centroides_File),"wb"))
+#
+# else:
+#     documentosEtiquetados = pickle.load(open(str(documentosEtiquetados_File), "rb"))
+#     centroides = pickle.load(open(str(centroides_File), "rb"))
 
-else:
-    documentosEtiquetados = pickle.load(open(str(documentosEtiquetados_File), "rb"))
-    centroides = pickle.load(open(str(centroides_File), "rb"))
 
-
-noticias_sin_locacion = 0
-noticias_con_mas_de_una_locacion = 0
-noticias_con_una_locacion = 0
-for doc in documentosEtiquetados:
-    if  len(doc.document.locations) == 0 :
-        noticias_sin_locacion = noticias_sin_locacion+1
-    else:
-        if len(doc.document.locations) == 1:
-            noticias_con_una_locacion = noticias_con_una_locacion +1
-        else:
-            print(doc.document.title+": locations <"+str(doc.document.locations)+">")
-            noticias_con_mas_de_una_locacion = noticias_con_mas_de_una_locacion+1
-
-print("noticicas sin locacion: " + str(noticias_sin_locacion))
-print("noticicas con una locacion: "+str(noticias_con_una_locacion))
-print("noticicas con mas de una locacion: "+str(noticias_con_mas_de_una_locacion))
+# noticias_sin_locacion = 0
+# noticias_con_mas_de_una_locacion = 0
+# noticias_con_una_locacion = 0
+# for doc in documentosEtiquetados:
+#     if  len(doc.document.locations) == 0 :
+#         noticias_sin_locacion = noticias_sin_locacion+1
+#     else:
+#         if len(doc.document.locations) == 1:
+#             noticias_con_una_locacion = noticias_con_una_locacion +1
+#         else:
+#             print(doc.document.title+": locations <"+str(doc.document.locations)+">")
+#             noticias_con_mas_de_una_locacion = noticias_con_mas_de_una_locacion+1
+#
+# print("noticicas sin locacion: " + str(noticias_sin_locacion))
+# print("noticicas con una locacion: "+str(noticias_con_una_locacion))
+# print("noticicas con mas de una locacion: "+str(noticias_con_mas_de_una_locacion))
 
 
 
 
 print("Kmeans terminado.")
-clusters = getClusters(documentosEtiquetados)
+#clusters = getClusters(documentosEtiquetados)
 #Guardar resultados.
-saveResult(documentosEtiquetados,clusters)
+#saveResult(documentosEtiquetados,clusters)
 
-columnas = ["cantidad_noticias","fecha_centroide","error_cuadratico","varianza_fechas"]
-dataset_clusters = np.zeros(shape = (len(clusters),len(columnas)))
+#columnas = ["cantidad_noticias","fecha_centroide","error_cuadratico","varianza_fechas"]
+#dataset_clusters = np.zeros(shape = (len(clusters),len(columnas)))
 
 # Columna cantidad_noticias
-c = 0
-for cluster in clusters:
-    dataset_clusters[c][0] = len(cluster)
-    dataset_clusters[c][1] = centroides[c][len(centroides[c])-1]
-    c = c +1
-
-writer = open("../db/clusters.tmp", "w")
-for row in dataset_clusters:
-    line = ""
-    for element in row:
-        line = line +" "+str(element)
-    writer.write(line+"\n")
-writer.close()
+# c = 0
+# for cluster in clusters:
+#     dataset_clusters[c][0] = len(cluster)
+#     dataset_clusters[c][1] = centroides[c][len(centroides[c])-1]
+#     c = c +1
+#
+# writer = open("../db/clusters.tmp", "w")
+# for row in dataset_clusters:
+#     line = ""
+#     for element in row:
+#         line = line +" "+str(element)
+#     writer.write(line+"\n")
+# writer.close()
 
 
 

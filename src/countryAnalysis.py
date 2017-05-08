@@ -2,6 +2,9 @@
 import readDocuments
 import tfidf
 import numpy
+from pathlib import Path
+import pickle
+
 ########################################################################
 #
 # Pasos:
@@ -38,11 +41,17 @@ def initVar():
 # * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 INPUT = "../db/noticias/noticias2013"
+OUTPUT_DOCS = Path("../db/pickle/todos_los_documentos.p")
 def sortByRelevance():
 # Obtenemos TODOS los documentos.
+
     stopwords_files, ignored_words_file,selected_country = initVar()
     stopwords_files.append(ignored_words_file)
-    documentos = readDocuments.getDocuments(INPUT, stopwords_files)
+    if not OUTPUT_DOCS.is_file():
+        documentos = readDocuments.getDocuments(INPUT, stopwords_files)
+        pickle.dump(documentos, open(str(OUTPUT_DOCS),"wb") )
+    else:
+        documentos = pickle.load(open(str(OUTPUT_DOCS),"rb"))
 
     # nos quedamos con los documentos que hablen de $selected_country
     documentosDelPais = [document for document in documentos if selected_country in document.locations]

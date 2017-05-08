@@ -36,12 +36,17 @@ def computeIgnoredWords(INPUT,IGNORED_WORDS_FILE):
     writer_ignored = open(IGNORED_WORDS_FILE, "w")
     writer.write("palabra,frecuencia\n")
     writer_ignored.write("palabra,frecuencia\n")
-
+    no_ignoradas = 0
     for palabra in word2frec:
         writer.write(palabra+","+str(word2frec[palabra])+"\n")
         if(word2frec[palabra] <= threshold):
             writer_ignored.write(palabra+"\n")
+            no_ignoradas = no_ignoradas + 1
+
 
     writer_ignored.close()
+    print("total de palabras: "+str(len(word2frec)))
+    print("total de palabras ignoradas: "+(str(len(word2frec)-no_ignoradas) ))
+    print("palabras aceptadas: "+str(no_ignoradas))
     writer.close()
     print("Archivo de Palabras generado exitosamente.")

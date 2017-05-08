@@ -1,6 +1,15 @@
 import re
 import enchant
 import pickle
+
+
+# re.sub(r"'(.*)'", "\g<1>", "what 'ever' you want")   eliminar comillas simples, dejar lo que esta adentro.
+
+PATTERN_COMILLAS = "\'[^\ ]*"
+PATTERN_SEPARADORES = "[\.\,\:\;\?\!]"
+PATTERN_CHAR_ESPECIALES = "[^\ ]*[^a-zA-Z\ ][^\ ]*"
+PATTERN_MULT_BLANKS = " +"
+
 from lib.yahooAPI import validPlace
 d = enchant.Dict("en_UK")
 CONFIG = "../etc/var.config"
@@ -21,8 +30,8 @@ from nltk.stem import RegexpStemmer
 from nltk.stem import LancasterStemmer
 st_regex = RegexpStemmer('ing$|s$|e$|able$', min=4)
 st_lancaster = LancasterStemmer()
-def hasNumbers(inputString):
-    return any(char.isdigit() for char in inputString)
+
+
 
 
 def cleanhtml(raw_html):
@@ -31,7 +40,6 @@ def cleanhtml(raw_html):
   return cleantext
 
 class Document(object):
-    PERMITTED_CHARS = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
 
     #location2code = pickle.load(open("../db/pickle/map_location2code.p","rb"))
     country2code = pickle.load(open("../db/pickle/map_country2code.p","rb"))
@@ -41,22 +49,27 @@ class Document(object):
         self.sectionName = sectionName.replace(" ","")
         self.words = {}
         self.date = date
-        self.title = "".join(c for c in title if c in self.PERMITTED_CHARS)
+        self.title = self._prefilterText(title)
         self.locations = set()
         self._bodyText = ""
 
-    def hasInvalidCharacter(self, cadena):
-        return len("".join(c for c in cadena if c in self.PERMITTED_CHARS))< len(cadena)
+
 
     def setOriginalText(self,originalText):
         self._bodyText = cleanhtml(originalText).lower()
     def obtenerTextoOriginal(self):
         return self._bodyText
 
-
-    def addText(self, text, stopwords):
-        text = text.lower()
+    def _prefilterText(self,text):
         text = cleanhtml(text)
+        text = re.sub(PATTERN_COMILLAS, "",text)
+        text = re.sub(PATTERN_SEPARADORES," ",text)
+        text = re.sub(PATTERN_CHAR_ESPECIALES, "",text)
+        text = re.sub(PATTERN_MULT_BLANKS, " ",text)
+        text = text.lower()
+        return text
+    def addText(self, text, stopwords):
+        text = self._prefilterText(text)
         #text = "".join(c for c in text if c in self.PERMITTED_CHARS)
         # for location in self.location2code:
         #     if location in text:
@@ -66,7 +79,7 @@ class Document(object):
                 self.locations.add(country)
         words_array = text.split(" ")
         for word in words_array:
-            if not word in stopwords and len(word) > 0 and not hasNumbers(word) and not self.hasInvalidCharacter(word):
+            if not word in stopwords and len(word) > 0:
                 frecuencia =  1
                 stem_word_regex = st_regex.stem(word)
                 stem_word_lancaster = st_lancaster.stem(word)
