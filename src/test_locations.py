@@ -34,6 +34,8 @@ print("cantidad de paises en la lista: "+str(len(country2code)))
 
 lista = countryAnalysis.sortByRelevance()
 
+print("Documentos ordenados por relevancia..")
+
 index = 0
 writer =  open(OUTPUT, "w")
 for elem in lista:
@@ -46,6 +48,7 @@ listaDocumentosDelPais = [x for (x,_) in lista]
 # Aplicar clustering sobre lista ordenada, mostrar resultados...
 
 todo_los_documentos, tfidf, _ = tfidf.createTFIDF( list_documents= listaDocumentosDelPais)
+print("comienza clustering de documentos en clusters")
 documentos_Etiquetados,_ = Clustering.applyClustering(tfidf, listaDocumentosDelPais)
 
 clusters = Clustering.getClusters(documentos_Etiquetados)
@@ -54,6 +57,7 @@ for cluster in clusters:
     writer.write(" * * * * * * * * * * * * * cluster nro. {0} * * * * * * * * * *".format(str(cluster_nro))+"\n")
     for doc in cluster:
         writer.write(doc.title+"\n")
+    cluster_nro = cluster_nro +1
 
 writer.close()
 Clustering.saveResult(documentos_Etiquetados,clusters)
