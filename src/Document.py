@@ -9,7 +9,7 @@ PATTERN_COMILLAS = "\'[^\ ]*"
 PATTERN_SEPARADORES = "[\.\,\:\;\?\!]"
 PATTERN_CHAR_ESPECIALES = "[^\ ]*[^a-zA-Z\ ][^\ ]*"
 PATTERN_MULT_BLANKS = " +"
-
+PATTERN_BETWEEN_QUOTES = "'([^\ ])'"
 from lib.yahooAPI import validPlace
 d = enchant.Dict("en_UK")
 CONFIG = "../etc/var.config"
@@ -62,6 +62,7 @@ class Document(object):
 
     def _prefilterText(self,text):
         text = cleanhtml(text)
+        text = re.sub(PATTERN_BETWEEN_QUOTES, "\g<1>", text)
         text = re.sub(PATTERN_COMILLAS, "",text)
         text = re.sub(PATTERN_SEPARADORES," ",text)
         text = re.sub(PATTERN_CHAR_ESPECIALES, "",text)

@@ -22,7 +22,7 @@ api_key = "5c622da5-f682-49f4-aaa5-a3d5e014b416"
 
 URL = 'http://content.guardianapis.com/search?from-date={0}&to-date={1}&show-fields=all&page-size={2}&page={3}&api-key={4}'
 
-for current_month in range(0,12):
+for current_month in range(4,12):
     nro_instancia = 0
     current_page = 1
     print("mes actual: "+str(month[current_month]))
@@ -56,5 +56,5 @@ for current_month in range(0,12):
             writer.write(DATE+date+"\n")
             writer.write(BODY+bodyText+"\n")
             nro_instancia = nro_instancia + 1
-        sleep(0.1)  # Time in seconds.
+        sleep(0.01)  # Time in seconds.
     writer.close()
