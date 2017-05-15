@@ -122,3 +122,12 @@ def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad,funcImpo
         doc_j+=1
     return (suma) / (len(matrizSimilaridad[indiceNoticia])-1)
 
+
+palabrasEconomia = set()
+def _economicNews(document):
+    for palabra in document.words:
+        if palabra in palabrasEconomia:
+            return True
+    return False
+
+
