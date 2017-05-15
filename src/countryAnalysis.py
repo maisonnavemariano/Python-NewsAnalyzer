@@ -103,20 +103,22 @@ def funcionImportanciaNoticiaPais(document, pais):
         primeraAparicion = len(document.obtenerTextoOriginal()) - document.obtenerTextoOriginal().find(pais)
         valor =  float(primeraAparicion)/float(len(document.obtenerTextoOriginal()))
         if document.obtenerTextoOriginal().count(pais) > 1:
-            valor = valor * 1.1
+            valor = valor + 0.1
         if pais in document.title.lower():
-            valor = valor * 1.5
+            valor = valor + 0.5
         if len(document.locations) > 2:
-            valor = valor * 0.9
-        return valor
+            valor = valor - 0.1
+        return valor/1.6
 
 
 def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad,funcImportanciaPais):
-    max = numpy.amax([sum(x) for x in matrizSimilaridad])
+   # max = numpy.amax([sum(x) for x in matrizSimilaridad])
     _,columncount = matrizSimilaridad.shape
     suma = 0.0
+    doc_j = 0
     for elem in matrizSimilaridad[indiceNoticia]:
-        if elem > 0.2:
-            suma = suma +  elem * funcImportanciaPais[indiceNoticia]
-    return (suma  - 1.0) / float(max)
+        if elem > 0.2 and not doc_j==indiceNoticia:
+            suma = suma +  elem * funcImportanciaPais[doc_j]
+        doc_j+=1
+    return (suma) / (len(matrizSimilaridad[indiceNoticia])-1)
 
