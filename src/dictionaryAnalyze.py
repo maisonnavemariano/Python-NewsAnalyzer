@@ -8,6 +8,9 @@ INPUT = "../db/H4Lvd_Dictionary/inqdict.txt"
 PATTERN_DEFINITION = '\ *\|\ *.*'
 PATTERN_MULTIPLE_DEFINITIONS = "^[A-Z]*#[0-9]*\ "
 
+#http://www.wjh.harvard.edu/~inquirer/spreadsheet_guide.htm
+#http://www.wjh.harvard.edu/~inquirer/homecat.htm
+
 #Entryword Source Pos Neg Pstv Affil Ngtv Hostile Strng Power Weak Subm Actv Psv Pleasure Pain Arousal EMOT Feel Virtue Vice Ovrst Undrst Acad Doctr Econ* Exch ECON Exprs Legal
 # Milit Polit* POLIT Relig Role COLL Work Ritual Intrel Race Kin* MALE Female Nonadlt HU ANI PLACE Social Region Route Aquatic Land Sky Object Tool Food Vehicle Bldgpt Natobj
 # Bodypt Comnobj Comform COM Say Need Goal Try Means Ach Persist Complt Fail Natpro Begin Vary Change Incr Decr Finish Stay Rise Move Exert Fetch Travel Fall Think Know Causal
