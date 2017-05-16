@@ -24,7 +24,7 @@ PATTERN_MULTIPLE_DEFINITIONS = "^[A-Z]*#[0-9]*\ "
 class DiccionarioPalabras(object):
 
     diccionario = {}
-    _RELATED_TO_ECONOMICS = ["ECON"]
+    _RELATED_TO_ECONOMICS = ["econ*"]#,"ECON"]
     _diccionarioEconomico = set()
     def __init__(self):
         print("Generamos diccionario de palabras H4Lvd")
@@ -49,6 +49,17 @@ class DiccionarioPalabras(object):
         print("Cantidad de palabras en el diccionario de economia: {0}".format(str(len(self._diccionarioEconomico))))
 
 
+    def _countEconomicTerms(self,document):
+        count = 0
+        for terminoEconomico in self._diccionarioEconomico:
+            if terminoEconomico in document.words:
+                count += int(document.words[terminoEconomico])
+        return count
+
+    def sortByEconomicRelevance(self, listOfDocuments):
+        sortedList = [(doc,self._countEconomicTerms(doc)) for doc in listOfDocuments]
+        sortedList.sort(key=lambda x : x[1], reverse=True)
+        return [elem[0] for elem in sortedList]
 
     def isEconomic(self, document):
         for word in self._diccionarioEconomico:
