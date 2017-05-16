@@ -19,23 +19,39 @@ PATTERN_MULTIPLE_DEFINITIONS = "^[A-Z]*#[0-9]*\ "
 # AFFLOSS AFFPT AFFOTH AFFTOT WLTPT WLTTRAN WLTOTH WLTTOT WLBGAIN WLBLOSS WLBPHYS WLBPSYC WLBPT WLBTOT ENLGAIN ENLLOSS ENLENDS ENLPT ENLOTH ENLTOT SKLAS SKLPT SKLOTH SKLTOT
 # TRNGAIN TRNLOSS TRANS MEANS ENDS ARENAS PARTIC NATIONS AUD ANOMIE NEGAFF POSAFF SURE IF NOT TIMESP FOOD FORM Othertags Definition
 
-def getSentimentMatrix():
-    # Leemos archivo para generar categorias
-    with open(INPUT) as f:
-        primeraLinea = f.readline()[:-1] # Descartamos primera linea
-        todas_las_palabras = []
-        todas_las_categorias = set()
-        diccionario = {} # Palabra --> set()
-        for line in f:
-            if not re.search(PATTERN_MULTIPLE_DEFINITIONS,line):
-                line = re.sub(PATTERN_DEFINITION, "", line[:-1])
-                parts = line.split(" ")
-                palabra = parts[0].lower()
-                categorias = set(parts[2:])
-                diccionario[palabra] = categorias
-                todas_las_categorias = todas_las_categorias.union(categorias)
+
+
+class DiccionarioPalabras(object):
+
+    diccionario = {}
+    _RELATED_TO_ECONOMICS = ["ECON"]
+    _diccionarioEconomico = set()
+    def __init__(self):
+        print("Generamos diccionario de palabras H4Lvd")
+        # Leemos archivo para generar categorias
+        with open(INPUT) as f:
+            primeraLinea = f.readline()[:-1] # Descartamos primera linea
+            todas_las_palabras = []
+            todas_las_categorias = set()
+            diccionario = {} # Palabra --> set()
+            for line in f:
+                if not re.search(PATTERN_MULTIPLE_DEFINITIONS,line):
+                    line = re.sub(PATTERN_DEFINITION, "", line[:-1])
+                    parts = line.split(" ")
+                    palabra = parts[0].lower()
+                    categorias = set(parts[2:])
+                    diccionario[palabra] = categorias
+                    todas_las_categorias = todas_las_categorias.union(categorias)
+        print("[OK]Diccionario finalizado.")
         for palabra in diccionario:
-            print("palabra: {0} --> ".format(palabra)+str(diccionario[palabra]))
+            if any(x  in diccionario[palabra] for x in self._RELATED_TO_ECONOMICS):
+                self._diccionarioEconomico.add(palabra)
+        print("Cantidad de palabras en el diccionario de economia: {0}".format(str(len(self._diccionarioEconomico))))
 
 
-getSentimentMatrix()
+
+    def isEconomic(self, document):
+        for word in self._diccionarioEconomico:
+            if word in document.words:
+                return True
+        return False

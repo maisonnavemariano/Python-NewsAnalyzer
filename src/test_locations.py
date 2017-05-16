@@ -43,6 +43,7 @@ for elem in lista:
     index = index +1
 
 
+
 listaDocumentosDelPais = [x for (x,_) in lista]
 
 # Aplicar clustering sobre lista ordenada, mostrar resultados...

@@ -4,6 +4,7 @@ import tfidf
 import numpy
 from pathlib import Path
 import pickle
+from dictionaryAnalyze import DiccionarioPalabras
 
 ########################################################################
 #
@@ -53,6 +54,16 @@ def sortByRelevance():
     else:
         documentos = pickle.load(open(str(OUTPUT_DOCS),"rb"))
 
+    dic = DiccionarioPalabras()
+    ec = 0
+    not_ec = 0
+    for doc in documentos:
+        if dic.isEconomic(doc):
+            ec +=1
+        else:
+            not_ec+=1
+    print("documentos no economicos: {0}. Vs documentos economicos: {1}.".format(str(not_ec),str(ec)))
+
     # nos quedamos con los documentos que hablen de $selected_country
     documentosDelPais = [document for document in documentos if selected_country in document.locations]
     print("Cantidad de documentos que hablan del país: "+str(len(documentosDelPais)))
@@ -74,21 +85,24 @@ def sortByRelevance():
     #Creamos matrix similitud
     matrixSimilaridad = tfidf.createSimilarityMatrix(matriz_tfidf)
 
+
     list_and_relevance = []
     funcImportanciaPais = []
     for doc in documentosDelPais:
-        f1 = funcionImportanciaNoticiaPais(doc,selected_country)
-        funcImportanciaPais.append(f1)
+        if dic.isEconomic(doc):
+            f1 = funcionImportanciaNoticiaPais(doc,selected_country)
+            funcImportanciaPais.append(f1)
         #print("f1: "+str(f1))
 
 
     docNro = 0
-    for doc in documentosDelPais:
-        f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad,funcImportanciaPais)
-        #print("f2: "+str(f2))
-        list_and_relevance.append( [doc, funcImportanciaPais[docNro]*f2 ] )
-        docNro = docNro + 1
 
+    for doc in documentosDelPais:
+        if dic.isEconomic(doc):
+            f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad,funcImportanciaPais)
+            #print("f2: "+str(f2))
+            list_and_relevance.append( [doc, funcImportanciaPais[docNro]*f2 ] )
+            docNro += 1
 
     list_and_relevance.sort(key=lambda x: x[1], reverse=True)
     return list_and_relevance
@@ -121,13 +135,5 @@ def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad,funcImpo
             suma = suma +  elem * funcImportanciaPais[doc_j]
         doc_j+=1
     return (suma) / (len(matrizSimilaridad[indiceNoticia])-1)
-
-
-palabrasEconomia = set()
-def _economicNews(document):
-    for palabra in document.words:
-        if palabra in palabrasEconomia:
-            return True
-    return False
 
 
