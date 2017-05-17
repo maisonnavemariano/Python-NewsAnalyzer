@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from dictionaryAnalyze import DiccionarioPalabras
 import readDocuments
 import tfidf
 import numpy
@@ -88,21 +89,28 @@ def sortByRelevance():
 
     list_and_relevance = []
     funcImportanciaPais = []
+
+    diccionario_economico = DiccionarioPalabras()
+    func_relevancia_economica = diccionario_economico.funcEconomicRelevance(documentosDelPais)
+
     for doc in documentosDelPais:
-        if dic.isEconomic(doc):
-            f1 = funcionImportanciaNoticiaPais(doc,selected_country)
-            funcImportanciaPais.append(f1)
+        f1 = funcionImportanciaNoticiaPais(doc,selected_country)
+        funcImportanciaPais.append(f1)
         #print("f1: "+str(f1))
 
 
     docNro = 0
-
+    factor_ajuste_importancia_en_pais = 1.5
+    factor_ajuste_importancia_economia = 1.5
+    factor_ajuste_importancia_en_dataset = 1
     for doc in documentosDelPais:
-        if dic.isEconomic(doc):
-            f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad,funcImportanciaPais)
-            #print("f2: "+str(f2))
-            list_and_relevance.append( [doc, funcImportanciaPais[docNro]*f2 ] )
-            docNro += 1
+        f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad,funcImportanciaPais)
+        #print("f2: "+str(f2))
+        relevancia = factor_ajuste_importancia_en_pais * funcImportanciaPais[docNro]
+        relevancia += factor_ajuste_importancia_economia * func_relevancia_economica[docNro]
+        relevancia += factor_ajuste_importancia_en_dataset * f2
+        list_and_relevance.append( [doc, relevancia] )
+        docNro += 1
 
     list_and_relevance.sort(key=lambda x: x[1], reverse=True)
     return list_and_relevance
@@ -135,5 +143,6 @@ def funcionImportanciaNoticiaEnDataset(indiceNoticia, matrizSimilaridad,funcImpo
             suma = suma +  elem * funcImportanciaPais[doc_j]
         doc_j+=1
     return (suma) / (len(matrizSimilaridad[indiceNoticia])-1)
+
 
 

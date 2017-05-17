@@ -32,9 +32,11 @@ def economic_print():
     else:
         documentos = pickle.load(open(str(OUTPUT_DOCS),"rb"))
 
+
     listaDocumentosDelPais = [documento for documento in documentos if selected_country in documento.locations]
     print("cantidad de documentos del pais: {0}".format(str(len(listaDocumentosDelPais))))
     dic = DiccionarioPalabras()
+
     sortedList = dic.sortByEconomicRelevance(listaDocumentosDelPais)
     indice = 0
     for element in sortedList:

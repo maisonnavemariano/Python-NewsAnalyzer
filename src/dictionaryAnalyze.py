@@ -24,7 +24,13 @@ PATTERN_MULTIPLE_DEFINITIONS = "^[A-Z]*#[0-9]*\ "
 class DiccionarioPalabras(object):
 
     diccionario = {}
-    _RELATED_TO_ECONOMICS = ["econ*"]#,"ECON"]
+    #_RELATED_TO_ECONOMICS = ["econ*"]#,"ECON"]
+    _ECON_CAT_1 = 'Econ*'
+    _ECON_CAT_2 = "ECON"
+    _econ_set_1 = set()
+    _econ_set_2 = set()
+    _econ_set_3 = set()
+    _econ_set_4 = set()
     _diccionarioEconomico = set()
     def __init__(self):
         print("Generamos diccionario de palabras H4Lvd")
@@ -44,9 +50,26 @@ class DiccionarioPalabras(object):
                     todas_las_categorias = todas_las_categorias.union(categorias)
         print("[OK]Diccionario finalizado.")
         for palabra in diccionario:
-            if any(x  in diccionario[palabra] for x in self._RELATED_TO_ECONOMICS):
-                self._diccionarioEconomico.add(palabra)
-        print("Cantidad de palabras en el diccionario de economia: {0}".format(str(len(self._diccionarioEconomico))))
+            if self._ECON_CAT_1 in diccionario[palabra]:
+                self._econ_set_1.add(palabra)
+            if self._ECON_CAT_2 in diccionario[palabra]:
+                self._econ_set_2.add(palabra)
+        self._econ_set_3 = self._econ_set_1.union(self._econ_set_2)
+        self._econ_set_4 = self._econ_set_1.intersection(self._econ_set_2)
+        print("El diccionario {0} tiene un total de {1} palabras.".format(1,len(self._econ_set_1)))
+        print("El diccionario {0} tiene un total de {1} palabras.".format(2,len(self._econ_set_2)))
+        print("El diccionario {0} tiene un total de {1} palabras.".format(3,len(self._econ_set_3)))
+        print("El diccionario {0} tiene un total de {1} palabras.".format(4,len(self._econ_set_4)))
+
+        writer = open("../db/H4Lvd_Dictionary/MyEconomicTerms.txt", "w")
+        for term in self._econ_set_4:
+            writer.write("{0}\n".format(term))
+        writer.close()
+        self._diccionarioEconomico = self._econ_set_4
+
+            #if any(x  in diccionario[palabra] for x in self._RELATED_TO_ECONOMICS):
+            #    self._diccionarioEconomico.add(palabra)
+        #print("Cantidad de palabras en el diccionario de economia: {0}".format(str(len(self._diccionarioEconomico))))
 
 
     def _countEconomicTerms(self,document):
@@ -60,6 +83,14 @@ class DiccionarioPalabras(object):
         sortedList = [(doc,self._countEconomicTerms(doc)) for doc in listOfDocuments]
         sortedList.sort(key=lambda x : x[1], reverse=True)
         return [elem[0] for elem in sortedList]
+
+    def funcEconomicRelevance(self,listOfDocuments):
+        list = [(doc,self._countEconomicTerms(doc)) for doc in listOfDocuments]
+        maxNro = max([count for (document,count) in list])
+        resultado_funcion = [float(count)/float(maxNro) for (document,count) in list]
+        return resultado_funcion
+
+
 
     def isEconomic(self, document):
         for word in self._diccionarioEconomico:
