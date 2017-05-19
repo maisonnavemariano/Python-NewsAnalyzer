@@ -100,15 +100,15 @@ def sortByRelevance():
 
 
     docNro = 0
-    factor_ajuste_importancia_en_pais = 1.5
-    factor_ajuste_importancia_economia = 1.5
+    factor_ajuste_importancia_en_pais = 2.0
+    factor_ajuste_importancia_economia = 1.0
     factor_ajuste_importancia_en_dataset = 1
     for doc in documentosDelPais:
         f2 = funcionImportanciaNoticiaEnDataset(docNro,matrixSimilaridad,funcImportanciaPais)
         #print("f2: "+str(f2))
         relevancia = factor_ajuste_importancia_en_pais * funcImportanciaPais[docNro]
-        relevancia += factor_ajuste_importancia_economia * func_relevancia_economica[docNro]
-        relevancia += factor_ajuste_importancia_en_dataset * f2
+        relevancia *= factor_ajuste_importancia_economia * func_relevancia_economica[docNro]
+        relevancia *= factor_ajuste_importancia_en_dataset * f2
         list_and_relevance.append( [doc, relevancia] )
         docNro += 1
 
