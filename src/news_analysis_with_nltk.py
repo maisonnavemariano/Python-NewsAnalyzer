@@ -1,17 +1,7 @@
 #!/usr/bin/python3
-INPUT = '../db/noticias/noticias2013'
 
-with open(INPUT) as f:
-    for line in f:
-        valor = line[:-1]
-        if line.startswith('webTitle: '):
-            title = line[len('webTitle: '):]
-        if line.startswith('sectionName: '):
-            section = line[len('sectionName: '):]
-        if line.startswith('webPublicationDate: '):
-            date = line[len('webPublicationDate: '):]
-        if line.startswith('bodyText: '):
-            text = line[len('bodyText: '):]
+# filtrar por pais:
+
 
 
 # clean libras
