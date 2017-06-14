@@ -1,61 +1,59 @@
 #!/usr/bin/python3
 
 from news_analysis_with_nltk import my_tokenizer
-INPUT = '../db/noticias/noticias2013'
+INPUT = '../db/noticias/argentina/argentina2013'
 
-TITLE = "webTitle: "
-SECTION = "sectionName: "
-HEADLINE = "headline: "
-TRAILTEXT = "trailText: "
-DATE = "webPublicationDate: "
-BODY = "bodytext: "
-INSTANCE_NRO = "instanceNro: "
-
-MAPEO_PAISES = "../db/pickle/map_country2code.p"
-import pickle
-_country2code = pickle.load(open(MAPEO_PAISES, "rb"))
-
-country =  "argentina"
+_title_cons = "webTitle: "
+_section_cons = "sectionName: "
+_date_cons = "webPublicationDate: "
+_bodytext_cons = "bodytext: "
 
 noticias = []
-indice = 0
+noticias_tokenized = []
+index = 0
+with open(INPUT) as f:
+    for line in f:
+        if line.startswith(_title_cons):
+            title = line[len(_title_cons):-1]
+        if line.startswith(_section_cons):
+            section = line[len(_section_cons):-1]
+        if line.startswith(_date_cons):
+            date = line[len(_date_cons):-1]
+        if line.startswith(_bodytext_cons):
+            body = line[len(_bodytext_cons):-1]
+            noticias.append((index,title,section,date,body))
+            noticias_tokenized.append( (index,my_tokenizer(title),section,date,my_tokenizer(body))  )
+            index += 1
+
 todas_las_palabras = set()
-# with open(INPUT) as f:
-#     for line in f:
-#         valor = line[:-1]
-#         if line.startswith(TITLE):
-#             title = line[len(TITLE):]
-#         if line.startswith(SECTION):
-#             section = line[len(SECTION):]
-#         if line.startswith(DATE):
-#             date = line[len(DATE):]
-#         if line.startswith(BODY):
-#             text = line[len(BODY):]
-#             if "argentina" in text.lower() or "argentina" in title.lower():
-#                 tokens = my_tokenizer(text)
-#                 noticias.append((indice, title, section, date,  ))
-#                 todas_las_palabras =todas_las_palabras.union(set(tokens))
-#                 print(str(indice))
-#                 indice +=  1
-#
-# noticias_file = '../db/noticias/noticias_tokenized.p'
-# pickle.dump(noticias,open(noticias_file, "wb"))
+lista_todas_las_palabras = []
+for noticia in noticias_tokenized:
+    print("title: "+str(noticia[1]))
+    for palabra in noticia[1]:
+        todas_las_palabras.add(palabra)
+        lista_todas_las_palabras.append(palabra)
+    print("body: "+str(noticia[4]))
+    for palabra in noticia[4]:
+        todas_las_palabras.add(palabra)
+        lista_todas_las_palabras.append(palabra)
 
+print('cantidad de palabras ' + str(len(todas_las_palabras)))
+map = dict((palabra ,lista_todas_las_palabras.count(palabra)) for palabra in todas_las_palabras)
 
-noticias_file = '../db/noticias/noticias_tokenized.p'
-noticias = pickle.load(open(noticias_file, "rb"))
-print("cantidad de noticias: "+str(len(noticias)))
-lista_palabras = []
-for noticia in noticias:
-    todas_las_palabras = todas_las_palabras.union(set(noticia[4]))
-    lista_palabras = lista_palabras + noticia[4]
+count_frec_1 = 0
+count_frec_2 = 0
+count_frec_3 = 0
 
-print("todas las palabras: "+str(len(todas_las_palabras)))
-print("palabras que aparecen más de una vez: "+str(len([elem for elem in todas_las_palabras if lista_palabras.count(elem)>3])))
+for palabra in map:
+    if map[palabra] ==1:
+        count_frec_1 += 1
+    if map[palabra] ==2:
+        count_frec_2 += 1
+    if map[palabra] ==3:
+        count_frec_3 += 1
 
-
-
-
-
+print("una unica aparicion: " + str(count_frec_1))
+print("dos apariciones: "+str(count_frec_2))
+print("tres apariciones: "+str(count_frec_3))
 
 
