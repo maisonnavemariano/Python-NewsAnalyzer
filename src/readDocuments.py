@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+# Script que permite leer archivos de noticias generados por generarBase.py.
+# Genera objetos tipo Documento, con aquellos articulos validos.
+# Retornando una lista con documentos ya prefiltrados.
+
 from Article import Article
 from Document import Document
 

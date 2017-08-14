@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+# Script que permite consultar la API del portal de noticias The Guardian, extraer las noticias y almacenarlas en un archivo.
+# Este script consulta iterativamente el portal extrayendo todas las noticias de cada mes. Almacena todas las noticias de cada mes en archivos separados.
+
 import json
 import requests
 import sys

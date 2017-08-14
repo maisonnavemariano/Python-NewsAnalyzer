@@ -1,3 +1,16 @@
+#!/usr/bin/python3
+
+# Esta clase permite la manipulación y almacenamiento de noticias de The Guardian.
+# permite hacer prefiltrado, y almacena las palabras como un mapeo palabra a frecuencia.
+# dentro del prefiltrado se incluye:
+#   - Eliminacion del código html.
+#   - Eliminación de caracteres especiales,
+#   - Lemmatization (con el uso de un diccionario y varias herramientas de Stemming).
+#   - Y se puede filtrar por país con la incorporación del diccionario de ubicaciones geograficas GeoNames.org
+#           (cada país almacena un conjunto de paises mencionados dentro de la noticia).
+
+
+
 import re
 import enchant
 import pickle

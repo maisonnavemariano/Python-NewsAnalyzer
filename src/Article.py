@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+# Clase para representar un archivo (noticia) de The Guardian.
+# Permite determinar cuando un archivo es invalido. Esto es cuando el cuerpo del texto es vacío, o pertenece a secciones consideradas irrelevantes (como por ejemplo:
+# Music, Film, Sport, etc).
+
 import re
-
-
 
 CONFIG = "../etc/var.config"
 def initVar():

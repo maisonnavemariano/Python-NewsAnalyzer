@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# Script para la aplicacion de tfidf.
 
 from Document import Document
 from numpy.linalg import svd

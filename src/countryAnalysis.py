@@ -7,6 +7,7 @@ from pathlib import Path
 import pickle
 from dictionaryAnalyze import DiccionarioPalabras
 
+# Realiza clustering con aquellas noticias levantadas de un archivo, filtrando por país.
 ########################################################################
 #
 # Pasos:
@@ -20,7 +21,7 @@ from dictionaryAnalyze import DiccionarioPalabras
 #   2. Generar conjunto de documentos que tienen como ubicacion el país INPUT
 #   3. Aplicar tf-idf sobre el conjunto de documentos.
 #   4. Obtener matriz similitud entre documentos multiplicando matrix por inversa transpuesta.
-#   5. Clustering ?
+#   5. Clustering
 #
 #
 ########################################################################
